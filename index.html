@@ -9,35 +9,28 @@ body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f8fb; 
 header { background:#005f99; color:#fff; text-align:center; padding:50px 20px; }
 header h1 { margin:0; font-size:2.5em; }
 header p { font-size:1.2em; margin-top:10px; }
-.video-container { text-align:center; margin:30px 0; animation:fadeIn 1s ease-in; }
-.video-container iframe { width:90%; max-width:800px; height:450px; border:none; }
-section { padding:50px 20px; max-width:1000px; margin:0 auto; opacity:0; transform: translateY(30px); animation:fadeUp 1s forwards; animation-delay:0.2s; }
-h2 { color:#005f99; margin-bottom:20px; text-align:center; }
-.benefits ul { list-style:none; padding:0; }
-.benefits li { background:#e1f0ff; margin:10px 0; padding:15px; border-radius:8px; font-size:1.1em; }
-.carousel-container { position:relative; overflow:hidden; }
-.carousel { display:flex; transition: transform 0.5s ease; }
-.carousel-item { min-width:100%; box-sizing:border-box; padding:20px; }
-.whatsapp .message { background:#dcf8c6; padding:10px 15px; margin:10px 0; border-radius:20px; max-width:80%; }
-.whatsapp .name { font-weight:bold; margin-bottom:5px; }
-video { width:100%; border-radius:8px; }
-.bonus ul, .guarantee p, .social-proof { list-style:none; padding:0; text-align:center; }
-.bonus li { background:#e1f0ff; margin:10px 0; padding:15px; border-radius:8px; font-size:1.1em; }
-.guarantee p { background:#e1f0ff; padding:20px; border-radius:8px; font-size:1.2em; }
-.cta { text-align:center; margin:30px 0; }
-.cta a { background:#ff5a00; color:#fff; text-decoration:none; font-size:1.5em; padding:20px 40px; border-radius:10px; transition:0.3s; display:inline-block; }
-.cta a:hover { background:#e04e00; }
+.cta-top, .cta-bottom { text-align:center; margin:20px 0; }
+.cta-top a, .cta-bottom a { background:#ff5a00; color:#fff; text-decoration:none; font-size:1.5em; padding:20px 40px; border-radius:10px; transition:0.3s; display:inline-block; }
+.cta-top a:hover, .cta-bottom a:hover { background:#e04e00; }
 .timer { text-align:center; font-size:1.5em; color:#ff0000; margin-bottom:10px; }
+section { padding:50px 20px; max-width:1000px; margin:0 auto; }
+h2 { color:#005f99; margin-bottom:20px; text-align:center; }
+.benefits ul, .bonus ul { list-style:none; padding:0; }
+.benefits li, .bonus li { background:#e1f0ff; margin:10px 0; padding:15px; border-radius:8px; font-size:1.1em; }
+.carousel-container { position:relative; overflow:hidden; margin-bottom:40px; }
+.carousel { display:flex; transition: transform 0.5s ease; }
+.carousel-item { min-width:100%; box-sizing:border-box; padding:10px; position:relative; }
+video { width:100%; border-radius:8px; }
+.sound-btn { position:absolute; top:10px; right:10px; background:rgba(0,0,0,0.5); color:#fff; border:none; padding:8px 12px; border-radius:5px; cursor:pointer; font-size:0.9em; }
 button.carousel-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.3); border:none; color:#fff; font-size:2em; padding:10px; cursor:pointer; border-radius:50%; }
 button.prev { left:10px; }
 button.next { right:10px; }
 .carousel-indicators { text-align:center; margin-top:10px; }
 .carousel-indicators span { display:inline-block; width:12px; height:12px; background:#ccc; margin:0 5px; border-radius:50%; cursor:pointer; }
 .carousel-indicators .active { background:#005f99; }
+.social-proof { text-align:center; margin:30px 0; font-size:1.2em; color:#005f99; }
 footer { background:#005f99; color:#fff; text-align:center; padding:20px; }
-@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
-@keyframes fadeUp { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
-@media(max-width:600px){ .video-container iframe { height:250px; } button.carousel-btn { font-size:1.5em; padding:5px; } }
+@media(max-width:600px){ video { height:250px; } button.carousel-btn { font-size:1.5em; padding:5px; } .sound-btn { font-size:0.8em; padding:5px 8px; } }
 </style>
 </head>
 <body>
@@ -47,8 +40,9 @@ footer { background:#005f99; color:#fff; text-align:center; padding:20px; }
     <p>Do zero à fluência de forma prática, rápida e sem enrolação</p>
 </header>
 
-<div class="video-container">
-    <iframe src="https://www.youtube.com/embed/uJ5jXR1Sdo8?autoplay=1&mute=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div class="cta-top">
+    <div class="timer" id="timer-top">Oferta especial termina em 05:00</div>
+    <a href="https://pay.kiwify.com.br/8TvpK7G?afid=kuQvvVDJ" target="_blank" id="buyButtonTop">Quero aprender agora!</a>
 </div>
 
 <section class="benefits">
@@ -63,36 +57,25 @@ footer { background:#005f99; color:#fff; text-align:center; padding:20px; }
 </section>
 
 <section class="social-proof">
-    <h2>Mais de 500 alunos já aprenderam com o Método SALR!</h2>
-</section>
-
-<section class="whatsapp">
-    <h2>Depoimentos de alunos</h2>
-    <div class="carousel-container" id="whatsappCarousel">
-        <div class="carousel">
-            <div class="carousel-item">
-                <div class="message"><div class="name">Maria S.</div>Comecei sem saber nada e já consigo conversar em inglês! O Método SALR é incrível.</div>
-            </div>
-            <div class="carousel-item">
-                <div class="message"><div class="name">João P.</div>Simples, direto e eficiente. Finalmente estou aprendendo inglês de verdade.</div>
-            </div>
-            <div class="carousel-item">
-                <div class="message"><div class="name">Ana C.</div>Os vídeos e explicações do Professor Merson mudaram totalmente minha forma de estudar.</div>
-            </div>
-        </div>
-        <button class="carousel-btn prev" onclick="moveCarousel('whatsappCarousel', -1)">‹</button>
-        <button class="carousel-btn next" onclick="moveCarousel('whatsappCarousel', 1)">›</button>
-        <div class="carousel-indicators" id="whatsappIndicators"></div>
-    </div>
+    <p>Mais de <strong>500 alunos</strong> já aprenderam com o Método SALR!</p>
 </section>
 
 <section class="videos">
-    <h2>Mais depoimentos em vídeo</h2>
+    <h2>Depoimentos de alunos</h2>
     <div class="carousel-container" id="videoCarousel">
         <div class="carousel">
-            <div class="carousel-item"><video controls src="https://drive.google.com/uc?export=download&id=1HqE1oTuIc94yCw37sgSBdQZusINaY9L_"></video></div>
-            <div class="carousel-item"><video controls src="https://drive.google.com/uc?export=download&id=1yXtWp5PbTsock9TLMaIueulVR1tzq5FR"></video></div>
-            <div class="carousel-item"><video controls src="https://drive.google.com/uc?export=download&id=1OPrj6AfBqj6RQ6mvvwTK3WtDAaYvPbUG"></video></div>
+            <div class="carousel-item">
+                <video muted src="videos/André_Luiz_-_Depoimento_curso_do_0_até_a_fluência (3).mp4" controls></video>
+                <button class="sound-btn" onclick="toggleSound(this)">Ativar Som</button>
+            </div>
+            <div class="carousel-item">
+                <video muted src="videos/Alexandre - Depoimento curso do 0 até a fluência.mp4" controls></video>
+                <button class="sound-btn" onclick="toggleSound(this)">Ativar Som</button>
+            </div>
+            <div class="carousel-item">
+                <video muted src="videos/A gente investe na gente - Anderson_Henrique_-_Depoimento_curso_do_0_até_a_fluência.mp4" controls></video>
+                <button class="sound-btn" onclick="toggleSound(this)">Ativar Som</button>
+            </div>
         </div>
         <button class="carousel-btn prev" onclick="moveCarousel('videoCarousel', -1)">‹</button>
         <button class="carousel-btn next" onclick="moveCarousel('videoCarousel', 1)">›</button>
@@ -100,23 +83,20 @@ footer { background:#005f99; color:#fff; text-align:center; padding:20px; }
     </div>
 </section>
 
-<section class="guarantee">
-    <h2>Garantia de 7 dias</h2>
-    <p>Se você não ficar satisfeito, devolvemos seu dinheiro sem complicações.</p>
-</section>
-
 <section class="bonus">
     <h2>Bônus Exclusivos</h2>
+    <p>Ao adquirir o curso, você recebe <strong>12 E-BOOKS exclusivos</strong> diretamente do Professor Merson!</p>
     <ul>
         <li>Checklist de estudos semanais</li>
         <li>Frases prontas para conversação diária</li>
         <li>Grupo de apoio com alunos do método</li>
+        <li>E muito mais...</li>
     </ul>
 </section>
 
-<div class="cta">
-    <div class="timer" id="timer">Oferta especial termina em 05:00</div>
-    <a href="https://pay.kiwify.com.br/8TvpK7G?afid=kuQvvVDJ" target="_blank" id="buyButton">Quero aprender agora!</a>
+<div class="cta-bottom">
+    <div class="timer" id="timer-bottom">Oferta especial termina em 05:00</div>
+    <a href="https://pay.kiwify.com.br/8TvpK7G?afid=kuQvvVDJ" target="_blank" id="buyButtonBottom">Quero aprender agora!</a>
 </div>
 
 <footer>
@@ -126,24 +106,31 @@ footer { background:#005f99; color:#fff; text-align:center; padding:20px; }
 <script>
 // Cronômetro regressivo de 5 minutos
 let timeLeft = 5 * 60;
-const timerEl = document.getElementById('timer');
-const buttonEl = document.getElementById('buyButton');
+const timerTop = document.getElementById('timer-top');
+const timerBottom = document.getElementById('timer-bottom');
+const buyTop = document.getElementById('buyButtonTop');
+const buyBottom = document.getElementById('buyButtonBottom');
 const countdown = setInterval(() => {
     let minutes = Math.floor(timeLeft / 60);
     let seconds = timeLeft % 60;
     if(seconds < 10) seconds = '0' + seconds;
-    timerEl.textContent = `Oferta especial termina em ${minutes}:${seconds}`;
+    timerTop.textContent = `Oferta especial termina em ${minutes}:${seconds}`;
+    timerBottom.textContent = `Oferta especial termina em ${minutes}:${seconds}`;
     timeLeft--;
     if(timeLeft < 0){
         clearInterval(countdown);
-        timerEl.textContent = "Oferta encerrada!";
-        buttonEl.textContent = "Oferta encerrada";
-        buttonEl.style.pointerEvents = "none";
-        buttonEl.style.background = "#999";
+        timerTop.textContent = "Oferta encerrada!";
+        timerBottom.textContent = "Oferta encerrada!";
+        buyTop.textContent = "Oferta encerrada";
+        buyBottom.textContent = "Oferta encerrada";
+        buyTop.style.pointerEvents = "none";
+        buyBottom.style.pointerEvents = "none";
+        buyTop.style.background = "#999";
+        buyBottom.style.background = "#999";
     }
 }, 1000);
 
-// Carrossel funcional
+// Carrossel funcional com autoplay
 function moveCarousel(id, direction){
     const container = document.getElementById(id);
     const carousel = container.querySelector('.carousel');
@@ -154,39 +141,20 @@ function moveCarousel(id, direction){
     if(index >= items) index = items -1;
     container.setAttribute('data-index', index);
     carousel.style.transform = `translateX(-${index*100}%)`;
+
+    const videos = carousel.querySelectorAll('video');
+    videos.forEach((v,i)=> {
+        v.pause();
+        v.currentTime = 0;
+        if(i === index){
+            v.muted = true;
+            v.play();
+        }
+    });
+
     updateIndicators(container, index);
 }
 
 function createIndicators(containerId){
     const container = document.getElementById(containerId);
     const indicators = container.querySelector('.carousel-indicators');
-    const items = container.querySelectorAll('.carousel-item').length;
-    for(let i=0;i<items;i++){
-        const dot = document.createElement('span');
-        if(i===0) dot.classList.add('active');
-        dot.addEventListener('click', ()=>moveCarouselTo(containerId,i));
-        indicators.appendChild(dot);
-    }
-}
-
-function moveCarouselTo(containerId,index){
-    const container = document.getElementById(containerId);
-    container.setAttribute('data-index',index);
-    const carousel = container.querySelector('.carousel');
-    carousel.style.transform = `translateX(-${index*100}%)`;
-    updateIndicators(container,index);
-}
-
-function updateIndicators(container,index){
-    const dots = container.querySelectorAll('.carousel-indicators span');
-    dots.forEach(dot=>dot.classList.remove('active'));
-    dots[index].classList.add('active');
-}
-
-// Inicializa indicadores
-createIndicators('whatsappCarousel');
-createIndicators('videoCarousel');
-</script>
-
-</body>
-</html>
