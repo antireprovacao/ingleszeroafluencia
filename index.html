@@ -7,7 +7,6 @@
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
 
-  /* Cabeçalho */
   header {
     text-align: center;
     padding: 50px 20px;
@@ -27,7 +26,6 @@
     margin-bottom: 30px;
   }
 
-  /* Botão principal */
   .btn-primary {
     display: inline-block;
     background: linear-gradient(90deg, #ff416c, #ff4b2b);
@@ -44,7 +42,6 @@
   }
   .btn-primary:hover { transform: scale(1.1); box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
 
-  /* Seções */
   section { padding: 60px 20px; }
   section h2 { font-size: 2.5rem; margin-bottom: 20px; color: #0d1b2a; text-align: center; }
   section p { font-size: 1.1rem; line-height: 1.8; color: #1b1b1b; max-width: 800px; margin: 0 auto 20px auto; }
@@ -52,7 +49,7 @@
   #metodo-salr ul { list-style: none; padding: 0; margin-top: 20px; color: #1b1b1b; font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin-left: auto; margin-right: auto; }
   #metodo-salr li { margin-bottom: 10px; }
 
-  /* Depoimentos WhatsApp */
+  /* WhatsApp */
   #depoimentos .whatsapp-container {
     display: flex;
     justify-content: center;
@@ -78,6 +75,7 @@
     margin-bottom: 8px;
     max-width: 80%;
     word-wrap: break-word;
+    position: relative;
   }
   .whatsapp-message.user {
     background: #dcf8c6;
@@ -87,8 +85,14 @@
     background: #fff;
     align-self: flex-start;
   }
+  .hora {
+    font-size: 11px;
+    color: #888;
+    position: absolute;
+    bottom: -15px;
+    right: 8px;
+  }
 
-  /* Botão flutuante */
   .btn-flutuante {
     position: fixed;
     bottom: 20px;
@@ -109,31 +113,33 @@
   }
   .btn-flutuante:hover { transform: scale(1.1); box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
 
-  /* Selo e Acesso Vitalício */
-  .selo-garantia {
-    display: inline-block;
-    margin-top: 20px;
-    background: gold;
-    color: #fff;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 50px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-    font-size: 1rem;
+  /* Novo selo moderno */
+  .selo-container {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
   }
-  .acesso-vitalicio {
-    display: block;
+  .selo-item {
+    background: #fff;
+    color: #0f2027;
+    border-radius: 50px;
+    padding: 10px 20px;
     font-weight: bold;
-    color: #ff4b2b;
-    font-size: 1.2rem;
-    margin-top: 10px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    gap: 8px;
+  }
+  .selo-item span {
+    font-size: 1.3rem;
   }
 
-  /* Animações */
   @keyframes fadeInHeader { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 
-  /* Responsividade */
   @media (max-width: 768px) {
     header h1 { font-size: 2.2rem; }
     header p { font-size: 1rem; }
@@ -152,10 +158,12 @@
   <iframe src="https://www.youtube.com/embed/uJ5jXR1Sdo8" frameborder="0" allowfullscreen></iframe>
   <div>Oferta válida por: <span id="timer">05:00</span> minutos!</div>
   <a href="https://pay.kiwify.com.br/8TvpK7G?afid=kuQvvVDJ" class="btn-primary">QUERO APRENDER AGORA</a>
-  
-  <!-- SELLO E ACESSO VITALICIO NA PRIMEIRA DOBRA -->
-  <div class="selo-garantia">7 Dias de Garantia</div>
-  <div class="acesso-vitalicio">Acesso Vitalício</div>
+
+  <!-- Novo selo visual -->
+  <div class="selo-container">
+    <div class="selo-item"><span>🔒</span> Garantia de 7 Dias</div>
+    <div class="selo-item"><span>♾️</span> Acesso Vitalício</div>
+  </div>
 
   <p style="margin-top: 15px; font-size: 1.1rem; color: #ffd700;">
     Ao adquirir o curso, você recebe <strong>12 E-BOOKS BÔNUS</strong> do próprio Professor Merson!
@@ -192,18 +200,20 @@
   <div class="whatsapp-container">
     <!-- Print 1 -->
     <div class="whatsapp-print">
-      <div class="whatsapp-message user">Nunca imaginei que poderia aprender inglês tão rápido. O método SALR é incrível!</div>
-      <div class="whatsapp-message bot">Que bom que está gostando! Continue praticando todos os dias.</div>
+      <div class="whatsapp-message bot">Professor, nunca imaginei que poderia aprender inglês tão rápido. O método SALR é incrível!<div class="hora">09:42</div></div>
+      <div class="whatsapp-message user">Fico muito feliz! Continue praticando todos os dias que vai chegar na fluência.<div class="hora">09:45</div></div>
     </div>
+
     <!-- Print 2 -->
     <div class="whatsapp-print">
-      <div class="whatsapp-message user">Estou finalmente conseguindo conversar em inglês sem medo. Recomendo demais!</div>
-      <div class="whatsapp-message bot">Excelente! Isso mostra que você está evoluindo rápido!</div>
+      <div class="whatsapp-message bot">Estou finalmente conseguindo conversar em inglês sem medo. Recomendo demais!<div class="hora">14:28</div></div>
+      <div class="whatsapp-message user">Excelente! Isso mostra que você está aplicando o método direitinho 👏<div class="hora">14:31</div></div>
     </div>
+
     <!-- Print 3 -->
     <div class="whatsapp-print">
-      <div class="whatsapp-message user">O Professor Merson explica de um jeito que tudo fica fácil de entender. Vale cada minuto!</div>
-      <div class="whatsapp-message bot">Fico feliz! Continue focado e logo estará fluente.</div>
+      <div class="whatsapp-message bot">Professor, suas aulas são muito claras. Finalmente estou entendendo o inglês do dia a dia!<div class="hora">20:17</div></div>
+      <div class="whatsapp-message user">Maravilha! Continue focado e logo estará conversando naturalmente 💪<div class="hora">20:21</div></div>
     </div>
   </div>
 </section>
