@@ -1,252 +1,281 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Aprenda Inglês com o Método SALR — criado pelo Prof. Merson</title>
 
   <!-- Meta Pixel -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '2267676137070072');
     fbq('track', 'PageView');
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=2267676137070072&ev=PageView&noscript=1"/>
+      src="https://www.facebook.com/tr?id=2267676137070072&ev=PageView&noscript=1"/>
   </noscript>
+  <!-- End Pixel -->
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', Arial, sans-serif; }
-    body { background: #ffffff; color: #1a1a1a; scroll-behavior: smooth; }
-    header {
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #0d1b2a, #1b263b);
-      color: white;
+    /* ===== Reset & Base ===== */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#111; background:#fff; line-height:1.5}
+    a{text-decoration:none}
+
+    /* ===== HERO / FIRST FOLD ===== */
+    header.hero{
+      min-height:80vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      padding:48px 20px;
+      color:#fff;
+      background:linear-gradient(180deg,#0d1b2a 0%, #000 100%);
+      text-align:center;
     }
-    header h1 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 700; }
-    header p { font-size: 1.2rem; margin-bottom: 25px; }
-    iframe {
-      width: 85%; max-width: 900px; height: 480px;
-      border-radius: 15px; border: none;
-      margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    .hero h1{font-size:2.4rem;line-height:1.05;margin-bottom:12px;font-weight:700}
+    .hero p.lead{font-size:1.05rem;color:rgba(255,255,255,0.9);max-width:980px;margin:0 auto 20px}
+    .hero .video-wrap{width:85%;max-width:980px;border-radius:12px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,0.45);margin:18px 0}
+    .hero iframe{width:100%;height:520px;border:0;display:block}
+    @media (max-width:768px){ .hero iframe{height:260px} .hero h1{font-size:1.6rem} .hero .video-wrap{width:96%} }
+
+    /* oferta */
+    .oferta {
+      margin-top:18px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:8px;
+    }
+    .oferta .prices {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:6px;
+    }
+    .preco-antigo{color:rgba(255,255,255,0.65);text-decoration:line-through;font-weight:600}
+    .preco-novo{font-size:2.6rem;font-weight:800;color:#ff2b2b;text-shadow:0 6px 22px rgba(255,43,43,0.12)}
+    .parcelado{color:#ffdfe0;font-weight:700}
+    .bonus { margin-top:6px; color:#dbefff; font-weight:700; font-size:1rem }
+    .urgencia { margin-top:8px; color:#ffd9b3; font-weight:700; font-size:0.98rem }
+
+    /* CTAs */
+    .cta-row{display:flex;gap:14px;align-items:center;margin-top:18px;flex-wrap:wrap;justify-content:center}
+    .btn-primary{
+      background:linear-gradient(90deg,#ffd23b,#f6b800);
+      color:#0b0b0b;
+      padding:16px 40px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:1.15rem;
+      box-shadow:0 10px 30px rgba(246,184,0,0.18);
+      transition:transform .18s ease, box-shadow .18s ease;
+      border:0;
+      cursor:pointer;
+    }
+    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(246,184,0,0.22)}
+    .btn-whatsapp{
+      background:linear-gradient(90deg,#25d366,#128c7e);
+      color:#fff;
+      padding:12px 28px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:0.98rem;
+      border:0;
+      cursor:pointer;
+    }
+    .btn-whatsapp:hover{transform:translateY(-2px)}
+
+    /* ===== METHOD SALR ===== */
+    .method{background:#fff;padding:48px 20px;max-width:1100px;margin:-40px auto 40px;border-radius:12px;box-shadow:0 20px 50px rgba(13,27,42,0.06)}
+    .method h2{font-size:1.6rem;color:#0d1b2a;margin-bottom:12px;text-align:left}
+    .method p{color:#333;margin-bottom:18px;text-align:left}
+    .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:12px}
+    .pillar{padding:14px;border-radius:10px;background:#fbfdff;box-shadow:0 6px 18px rgba(13,27,42,0.04);border-left:6px solid #e0e0e0}
+    .pillar h3{font-size:1rem;margin-bottom:8px;color:#0a2540}
+    .pillar p{font-size:0.98rem;color:#334155}
+
+    .see{border-left-color:#2ecc71}
+    .ask{border-left-color:#007bff}
+    .listen{border-left-color:#f39c12}
+    .repeat{border-left-color:#e74c3c}
+
+    /* ===== O QUE VAI APRENDER ===== */
+    .learn{padding:40px 20px;text-align:center;max-width:1100px;margin:0 auto}
+    .learn h2{margin-bottom:14px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px;text-align:left}
+    .topic{background:#f8fbff;padding:18px;border-radius:10px;box-shadow:0 8px 20px rgba(6,35,84,0.04)}
+    .topic h3{color:#003b7a;margin-bottom:8px}
+    .topic p{color:#223244;font-size:0.97rem}
+
+    /* ===== DEPOIMENTOS ===== */
+    .testimonials{padding:40px 20px;background:#fff;max-width:1100px;margin:28px auto;border-radius:12px}
+    .testimonials h2{margin-bottom:10px}
+    .stars{font-size:1.6rem;color:#FFD166;margin-bottom:10px}
+    .videos{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:12px}
+    .video-box{width:320px;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(9,30,63,0.06);background:#fff}
+    .video-box iframe{width:100%;height:420px;border:0}
+    @media (max-width:900px){ .video-box iframe{height:280px} .video-box{width:92%} }
+
+    /* ===== GARANTIA & SELOS ===== */
+    .trust{padding:36px 20px;text-align:center;max-width:1100px;margin:28px auto;border-radius:12px;background:#f6fafc}
+    .selos{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+    .selo{background:#fff;padding:10px 18px;border-radius:999px;box-shadow:0 6px 18px rgba(2,6,23,0.04);font-weight:700;color:#0d1b2a}
+
+    /* ===== FOOTER ===== */
+    footer{padding:26px 12px;text-align:center;background:#07121a;color:#dbefff;margin-top:36px;border-top:1px solid rgba(255,255,255,0.03)}
+
+    /* ===== WHATSAPP FLOAT ===== */
+    .whatsapp-float{
+      position:fixed;right:18px;bottom:18px;width:64px;height:64px;border-radius:50%;
+      background-color:#25d366;background-image:url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg');
+      background-repeat:no-repeat;background-position:center;background-size:60%;
+      box-shadow:0 12px 30px rgba(2,6,23,0.18);z-index:9999;border:0;display:block
     }
 
-    /* BOTÕES */
-    .btn-primary {
-      display: inline-block;
-      background: linear-gradient(90deg, #ffcc00, #ffb700);
-      color: #000;
-      padding: 18px 45px;
-      border-radius: 50px;
-      font-size: 1.4rem;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 5px 15px rgba(255,215,0,0.5);
-      transition: all 0.3s ease;
-    }
-    .btn-primary:hover {
-      transform: scale(1.08);
-      box-shadow: 0 10px 25px rgba(255,215,0,0.7);
-    }
-
-    .btn-whatsapp {
-      display: inline-block;
-      margin-top: 20px;
-      background: linear-gradient(90deg, #25d366, #128c7e);
-      color: white;
-      padding: 14px 35px;
-      border-radius: 50px;
-      font-weight: bold;
-      font-size: 1.1rem;
-      text-decoration: none;
-      transition: transform 0.3s;
-    }
-    .btn-whatsapp:hover { transform: scale(1.05); }
-
-    /* OFERTA */
-    .oferta-container {
-      margin-top: 20px;
-      color: #fff;
-      font-weight: bold;
-    }
-    .oferta-container .preco-antigo {
-      text-decoration: line-through;
-      color: #ccc;
-    }
-    .oferta-container .preco-novo {
-      font-size: 2.2rem;
-      color: #ffcc00;
-    }
-    .oferta-container .parcelado {
-      color: #ffcc00;
-      font-size: 1.2rem;
-    }
-    .bonus-text {
-      margin-top: 8px;
-      color: #ffd700;
-      font-weight: 600;
-    }
-
-    /* SEÇÕES */
-    section { padding: 60px 20px; max-width: 1000px; margin: auto; text-align: center; }
-    section h2 { color: #0d1b2a; font-size: 2.3rem; margin-bottom: 25px; }
-    section p { font-size: 1.1rem; line-height: 1.7; color: #333; margin-bottom: 25px; }
-
-    /* O QUE VAI APRENDER */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      text-align: left;
-    }
-    .topico {
-      background: #f9f9f9;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.05);
-    }
-    .topico h3 { color: #004aad; margin-bottom: 10px; }
-
-    /* DEPOIMENTOS */
-    .video-box { width: 300px; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); background: #fff; }
-    .video-box iframe { width: 100%; height: 530px; }
-    .video-caption { padding: 10px; font-weight: 600; color: #1a1a1a; }
-    #videos-depoimentos { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px; }
-
-    /* SELOS */
-    .selos {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 25px;
-    }
-    .selo {
-      background: #fff;
-      color: #0d1b2a;
-      border-radius: 50px;
-      padding: 10px 25px;
-      font-weight: bold;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      background: #0d1b2a;
-      color: #fff;
-      text-align: center;
-      padding: 25px;
-      font-size: 0.9rem;
-    }
-
-    /* BOTÃO WHATSAPP FLUTUANTE */
-    .whatsapp-float {
-      position: fixed;
-      width: 65px;
-      height: 65px;
-      bottom: 20px;
-      right: 20px;
-      background: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg') no-repeat center center;
-      background-size: 70%;
-      background-color: #25d366;
-      border-radius: 50%;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      z-index: 100;
-      transition: transform 0.3s ease;
-    }
-    .whatsapp-float:hover { transform: scale(1.1); }
-
-    @media (max-width: 768px) {
-      iframe { width: 95%; height: 250px; }
-      .video-box { width: 90%; }
-      .video-box iframe { height: 400px; }
+    /* small screens */
+    @media (max-width:600px){
+      .preco-novo{font-size:2rem}
+      .hero iframe{height:220px}
+      .hero h1{font-size:1.4rem}
+      .btn-primary{padding:14px 26px;font-size:1rem}
     }
   </style>
 </head>
-
 <body>
 
-<header>
-  <h1>Aprenda Inglês com o Método SALR</h1>
-  <p>Criado pelo Prof. Merson — o método mais eficiente do Brasil para quem quer sair do zero à fluência rapidamente.</p>
+  <!-- HERO / FIRST FOLD -->
+  <header class="hero">
+    <h1>Aprenda Inglês com o Método SALR</h1>
+    <p class="lead">Criado pelo Prof. Merson — método prático e comprovado para você sair do zero à fluência com confiança.</p>
 
-  <iframe src="https://www.youtube.com/embed/uJ5jXR1Sdo8" allowfullscreen></iframe>
-
-  <div class="oferta-container">
-    <p>🔥 De <span class="preco-antigo">R$497</span> por <span class="preco-novo">R$197</span></p>
-    <p class="parcelado">ou 12x de R$20,37 sem juros!</p>
-    <p class="bonus-text">💥 + 12 E-books bônus exclusivos do Prof. Merson</p>
-  </div>
-
-  <a href="https://pay.kiwify.com.br/8TvpK7G?afid=kuQvvVDJ" class="btn-primary">QUERO APRENDER AGORA</a>
-
-  <a href="https://wa.me/5511983836605?text=Ol%C3%A1!+Vi+a+p%C3%A1gina+do+curso+Ingl%C3%AAs+do+Zero+%C3%A0+Flu%C3%AAncia+e+quero+t" class="btn-whatsapp" target="_blank">
-    Falar com um especialista no WhatsApp
-  </a>
-</header>
-
-<section>
-  <h2>O que você vai aprender no curso</h2>
-  <div class="grid">
-    <div class="topico"><h3>🗣️ Conversação prática</h3><p>Aprenda a falar desde as primeiras aulas com diálogos reais e situações do dia a dia.</p></div>
-    <div class="topico"><h3>📘 Vocabulário útil</h3><p>Construa um vocabulário que realmente se usa no trabalho, viagens e conversas cotidianas.</p></div>
-    <div class="topico"><h3>🔊 Audição e pronúncia</h3><p>Treine seu ouvido com áudios reais e pratique sua pronúncia com feedback guiado.</p></div>
-    <div class="topico"><h3>🧠 Gramática simplificada</h3><p>Entenda as regras essenciais de forma prática, sem decoreba e sem complicação.</p></div>
-    <div class="topico"><h3>🎯 Pense em inglês</h3><p>Desenvolva a habilidade de pensar direto em inglês com exercícios e repetições inteligentes.</p></div>
-  </div>
-</section>
-
-<section>
-  <h2>Veja por que centenas de alunos estão alcançando a fluência 👇</h2>
-  <div style="font-size:2rem; color:#FFD700; margin-bottom:15px;">⭐️⭐️⭐️⭐️⭐️</div>
-
-  <div id="videos-depoimentos">
-    <div class="video-box">
-      <iframe src="https://www.youtube.com/embed/QFxtJirHTSQ" frameborder="0" allowfullscreen></iframe>
-      <div class="video-caption">Anderson Henrique - Fluência com o Método SALR</div>
+    <div class="video-wrap">
+      <!-- vídeo principal mantido; trocar depois se quiser -->
+      <iframe src="https://www.youtube.com/embed/uJ5jXR1Sdo8" allowfullscreen title="Apresentação do Curso"></iframe>
     </div>
-    <div class="video-box">
-      <iframe src="https://www.youtube.com/embed/Q8sKJyIhrGw" frameborder="0" allowfullscreen></iframe>
-      <div class="video-caption">Marineide - Evolução rápida e natural</div>
+
+    <div class="oferta" aria-hidden="false">
+      <div class="prices">
+        <div class="preco-antigo">De R$497</div>
+        <div class="preco-novo" style="color:#ff2b2b">R$197</div>
+        <div class="parcelado">ou 12x de R$20,37 sem juros</div>
+        <div class="bonus">💎 + 12 E-books bônus exclusivos do Prof. Merson (Presente Especial)</div>
+        <div class="urgencia">⏰ Vagas limitadas — oferta promocional por tempo limitado!</div>
+      </div>
+
+      <div class="cta-row" style="margin-top:18px">
+        <a href="https://pay.kiwify.com.br/8TvpK7G?afid=kuQvvVDJ" class="btn-primary" id="buyBtn">QUERO APRENDER AGORA</a>
+        <a href="https://wa.me/5511983836605?text=Ol%C3%A1!+Vi+a+p%C3%A1gina+do+curso+Ingl%C3%AAs+do+Zero+%C3%A0+Flu%C3%AAncia+e+gostaria+de+tirar+uma+d%C3%BAvida+rapidamente" class="btn-whatsapp" id="waBtn" target="_blank" rel="noopener">Falar com um especialista no WhatsApp</a>
+      </div>
     </div>
-    <div class="video-box">
-      <iframe src="https://www.youtube.com/embed/paTfB85o1IA" frameborder="0" allowfullscreen></iframe>
-      <div class="video-caption">André Luiz - Falei inglês em poucos meses</div>
+  </header>
+
+  <!-- METHOD SALR -->
+  <section class="method" id="metodo-salr">
+    <h2>Conheça o Método SALR</h2>
+    <p>Aprender inglês foi planejado para gerar resultados rápidos e duradouros. O Método SALR foca na prática, na imersão e na repetição inteligente — por isso traz resultados consistentes mesmo para quem começa do zero.</p>
+
+    <div class="pillars" role="list">
+      <div class="pillar see" role="listitem">
+        <h3>🟩 S — See (Ver)</h3>
+        <p>Você aprende a partir da associação entre imagens e palavras. Ao conectar significado visual e linguagem, o aprendizado fica mais rápido e natural — você passa a pensar direto em inglês.</p>
+      </div>
+      <div class="pillar ask" role="listitem">
+        <h3>🟦 A — Ask (Perguntar)</h3>
+        <p>Aprenda a criar um ambiente de imersão: técnicas simples para começar a perguntar, praticar e usar o inglês no seu dia a dia — assim seu cérebro se acostuma ao idioma desde o início.</p>
+      </div>
+      <div class="pillar listen" role="listitem">
+        <h3>🟧 L — Listen (Ouvir)</h3>
+        <p>Treine a audição com materiais reais e exercícios graduais. Ouvir inglês natural faz com que sua compreensão e fluência melhorem de forma consistente.</p>
+      </div>
+      <div class="pillar repeat" role="listitem">
+        <h3>🟥 R — Repeat (Repetir)</h3>
+        <p>Repetição inteligente: você vai praticar o que viu e ouviu com exercícios de fala e pronúncia guiados — isso fixa o conteúdo e libera você para falar com confiança.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <h2>Garantia e Confiança</h2>
-  <p>Você tem 7 dias para testar o curso. Se não for pra você, devolvemos 100% do dinheiro — sem burocracia.</p>
-  <div class="selos">
-    <div class="selo">🔒 Compra 100% Segura</div>
-    <div class="selo">♾️ Acesso Vitalício</div>
-    <div class="selo">💰 Garantia de 7 Dias</div>
-  </div>
-</section>
+  <!-- O QUE VAI APRENDER -->
+  <section class="learn" id="o-que-vai-aprender">
+    <h2>O que você vai aprender no curso</h2>
+    <div class="grid">
+      <div class="topic">
+        <h3>🗣️ Conversação prática desde o início</h3>
+        <p>Diálogos reais e situações do dia a dia para você começar a falar desde as primeiras aulas.</p>
+      </div>
+      <div class="topic">
+        <h3>📘 Vocabulário funcional</h3>
+        <p>Palavras e expressões que você realmente usa no trabalho, viagens e nas conversas cotidianas.</p>
+      </div>
+      <div class="topic">
+        <h3>🔊 Escuta ativa e pronúncia</h3>
+        <p>Áudios reais e exercícios de pronúncia para treinar o ouvido e falar com clareza.</p>
+      </div>
+      <div class="topic">
+        <h3>🧠 Gramática aplicada</h3>
+        <p>Regras essenciais apresentadas de forma prática — aprenda o que precisa para se comunicar, sem decoreba.</p>
+      </div>
+      <div class="topic">
+        <h3>🎯 Técnicas para pensar em inglês</h3>
+        <p>Exercícios para desenvolver o hábito de pensar no idioma e reduzir a necessidade de traduzir mentalmente.</p>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  <p>© 2025 Curso Inglês do Zero à Fluência — Página afiliada. Todos os direitos reservados.</p>
-</footer>
+  <!-- DEPOIMENTOS -->
+  <section class="testimonials">
+    <h2>Veja por que centenas de alunos estão alcançando a fluência 👇</h2>
+    <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+    <div class="videos" id="videos-depoimentos">
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/QFxtJirHTSQ" title="Depoimento Anderson" allowfullscreen></iframe>
+        <div class="video-caption">Anderson Henrique — Fluência com o Método SALR</div>
+      </div>
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/Q8sKJyIhrGw" title="Depoimento Marineide" allowfullscreen></iframe>
+        <div class="video-caption">Marineide — Evolução rápida e natural</div>
+      </div>
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/paTfB85o1IA" title="Depoimento André Luiz" allowfullscreen></iframe>
+        <div class="video-caption">André Luiz — Falei inglês em poucos meses</div>
+      </div>
+    </div>
+  </section>
 
-<!-- Botão flutuante WhatsApp -->
-<a href="https://wa.me/5511983836605?text=Ol%C3%A1!+Quero+saber+mais+sobre+o+curso+Ingl%C3%AAs+do+Zero+%C3%A0+Flu%C3%AAncia" 
-class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp"></a>
+  <!-- GARANTIA & SELOS -->
+  <section class="trust">
+    <h2>Garantia e confiança</h2>
+    <p>Teste por 7 dias — se não for pra você, devolvemos 100% do valor. Sem burocracia.</p>
+    <div class="selos" aria-hidden="false">
+      <div class="selo">🔒 Compra 100% Segura</div>
+      <div class="selo">♾️ Acesso Vitalício</div>
+      <div class="selo">💰 Garantia de 7 Dias</div>
+    </div>
+  </section>
 
-<script>
-  document.querySelectorAll('.btn-primary').forEach(btn => {
-    btn.addEventListener('click', () => fbq('track', 'InitiateCheckout'));
-  });
-</script>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Curso Inglês do Zero à Fluência — Página afiliada. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- WHATSAPP FLUTUANTE (ícone oficial) -->
+  <a class="whatsapp-float" href="https://wa.me/5511983836605?text=Ol%C3%A1!+Quero+saber+mais+sobre+o+curso+Ingl%C3%AAs+do+Zero+%C3%A0+Flu%C3%AAncia" target="_blank" aria-label="Fale conosco no WhatsApp"></a>
+
+  <!-- PIXEL EVENT / TRACK -->
+  <script>
+    // Evento de clique no botão de compra
+    document.getElementById('buyBtn').addEventListener('click', function(){
+      if(window.fbq){ try{ fbq('track','InitiateCheckout'); }catch(e){} }
+    });
+    // Pequena segurança para abrir WhatsApp com mensagem já codificada (botão normal e flutuante abrem o link)
+    document.getElementById('waBtn').addEventListener('click', function(){ /* noop - link opens */ });
+  </script>
 
 </body>
 </html>
