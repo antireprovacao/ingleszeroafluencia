@@ -22,7 +22,6 @@
     body{font-family:'Poppins',Arial,Helvetica,sans-serif;background:#fff;color:#111;line-height:1.5}
     a{text-decoration:none;color:inherit}
 
-    /* HERO */
     header.hero{
       text-align:center;
       padding:60px 20px;
@@ -35,7 +34,6 @@
     .video-wrap iframe{width:100%;height:480px;border:0;display:block}
     @media(max-width:768px){.video-wrap iframe{height:250px}.hero h1{font-size:1.8rem}}
 
-    /* OFERTA */
     .oferta{text-align:center;margin-top:20px}
     .preco-antigo{text-decoration:line-through;color:rgba(255,255,255,0.7);font-weight:600}
     .preco-novo{color:#ff2b2b;font-size:2.6rem;font-weight:900;margin-top:4px}
@@ -43,7 +41,6 @@
     .bonus{color:#e8f4ff;font-weight:700;margin-top:6px}
     .urgencia{color:#ffd699;font-weight:800;margin-top:8px}
 
-    /* CTA */
     .cta-col{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:20px}
     .btn-primary{
       background:linear-gradient(90deg,#ffd23b,#f6b800);
@@ -76,65 +73,10 @@
     }
     .btn-whatsapp:hover{transform:scale(1.03)}
     .preco-perto{margin-top:8px;font-size:1rem;color:#fff;font-weight:600}
-
-    /* SEÇÕES */
-    section{padding:60px 20px;max-width:1100px;margin:auto;text-align:center}
-    section h2{font-size:2rem;margin-bottom:20px;color:#0d1b2a}
-
-    /* MÉTODO SALR */
-    .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;text-align:left}
-    .pillar{background:#f8fbff;padding:18px;border-left:6px solid #ccc;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,0.05)}
-    .see{border-left-color:#2ecc71}.ask{border-left-color:#007bff}.listen{border-left-color:#f39c12}.repeat{border-left-color:#e74c3c}
-
-    /* O QUE VAI APRENDER */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:25px;text-align:left}
-    .topic{background:#f9fafc;border-radius:10px;padding:18px;box-shadow:0 5px 15px rgba(0,0,0,0.05)}
-    .topic h3{color:#004aad;margin-bottom:8px}
-
-    /* DEPOIMENTOS */
-    .testimonials{padding:60px 20px;text-align:center;background:#fff}
-    .stars{font-size:1.6rem;color:#FFD700;margin-bottom:10px}
-    .avaliacao{color:#333;font-weight:600;margin-bottom:20px}
-    .videos{display:flex;flex-wrap:wrap;justify-content:center;gap:25px}
-    .video-box{width:300px;background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 6px 25px rgba(0,0,0,0.1)}
-    .video-box iframe{width:100%;height:450px;border:0}
-    @media(max-width:768px){.video-box{width:90%;}.video-box iframe{height:280px}}
-
-    /* PRINTS */
-    .prints{background:#f4f9ff;padding:60px 20px;text-align:center}
-    .print-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:25px}
-    .print-card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,0.08);width:320px}
-    .print-card img{width:100%;display:block}
-    .caption{padding:10px;font-size:.95rem;color:#333;font-weight:500}
-
-    /* GARANTIA */
-    .trust{text-align:center;background:#fff;padding:50px 20px;border-radius:12px;margin-top:40px}
-    .trust svg{width:100px;height:100px;fill:url(#grad);margin-bottom:14px}
-    .selos{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:20px}
-    .selo{background:#fff;padding:10px 20px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,0.05);font-weight:700;color:#0d1b2a}
-    .trust .btn-primary{margin-top:25px}
-    .trust .preco-perto{color:#0d1b2a;margin-top:8px}
-
-    /* FAQ */
-    .faq-item{background:#f8fbff;margin-bottom:10px;padding:14px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.05);text-align:left}
-    .faq-question{font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
-    .faq-answer{display:none;margin-top:8px;color:#333}
-    .toggle{font-size:1.2rem;color:#888}
-
-    footer{background:#0d1b2a;color:#fff;text-align:center;padding:25px;font-size:.9rem;margin-top:30px}
-
-    /* WHATSAPP FLOAT */
-    .whatsapp-float{position:fixed;bottom:18px;right:18px;width:64px;height:64px;border-radius:50%;background-color:#25d366;background-image:url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg');background-repeat:no-repeat;background-position:center;background-size:60%;box-shadow:0 12px 36px rgba(2,6,23,0.18);z-index:999}
-
-    @media(max-width:600px){
-      .btn-primary{padding:18px 40px;font-size:1.15rem;width:95%}
-      .preco-perto{font-size:0.95rem}
-    }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
   <header class="hero">
     <h1>Fale Inglês com Confiança em Poucas Semanas</h1>
     <p class="lead">Com o Método SALR do Prof. Merson — simples, rápido e feito pra quem parte do zero.</p>
@@ -149,6 +91,92 @@
       <p class="parcelado">ou 12x de R$20,37 sem juros</p>
       <p class="bonus">💎 + 12 E-books bônus exclusivos do Prof. Merson</p>
       <p class="urgencia">⏰ Vagas limitadas — oferta promocional por tempo limitado!</p>
+<!-- MÉTODO SALR -->
+  <section id="metodo-salr" style="background:#fff;padding:60px 20px;text-align:center;max-width:1100px;margin:auto;">
+    <h2>Conheça o Método SALR</h2>
+    <p>O Método SALR foi criado para gerar resultados rápidos e duradouros, com foco em prática, imersão e repetição inteligente — ideal para quem começa do zero.</p>
+
+    <div class="pillars" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;text-align:left;margin-top:25px;">
+      <div class="pillar see" style="border-left:6px solid #2ecc71;background:#f8fbff;padding:18px;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,0.05);">
+        <h3>🟩 S — See (Ver)</h3>
+        <p>Aprenda com associações visuais. Ao ver e ouvir ao mesmo tempo, você memoriza o significado naturalmente.</p>
+      </div>
+      <div class="pillar ask" style="border-left:6px solid #007bff;background:#f8fbff;padding:18px;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,0.05);">
+        <h3>🟦 A — Ask (Perguntar)</h3>
+        <p>Aprenda a criar imersão no idioma fazendo perguntas, como uma criança aprendendo naturalmente.</p>
+      </div>
+      <div class="pillar listen" style="border-left:6px solid #f39c12;background:#f8fbff;padding:18px;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,0.05);">
+        <h3>🟧 L — Listen (Ouvir)</h3>
+        <p>Treine sua audição com áudios reais e acostume-se ao inglês do dia a dia para entender sem traduzir.</p>
+      </div>
+      <div class="pillar repeat" style="border-left:6px solid #e74c3c;background:#f8fbff;padding:18px;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,0.05);">
+        <h3>🟥 R — Repeat (Repetir)</h3>
+        <p>Repita o que aprendeu e ou viu para fortalecer sua pronúncia e transformar aprendizado em fluência.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE VAI APRENDER -->
+  <section id="o-que-vai-aprender" style="background:#f9fafc;padding:60px 20px;text-align:center;max-width:1100px;margin:auto;">
+    <h2>O que você vai aprender no curso</h2>
+    <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:25px;text-align:left;">
+      <div class="topic" style="background:#fff;border-radius:10px;padding:18px;box-shadow:0 5px 15px rgba(0,0,0,0.05);">
+        <h3>🗣️ Conversação prática</h3>
+        <p>Fale desde as primeiras aulas com situações reais e diálogos do dia a dia.</p>
+      </div>
+      <div class="topic" style="background:#fff;border-radius:10px;padding:18px;box-shadow:0 5px 15px rgba(0,0,0,0.05);">
+        <h3>📘 Vocabulário útil</h3>
+        <p>Aprenda as palavras e expressões mais usadas no trabalho, viagens e estudos.</p>
+      </div>
+      <div class="topic" style="background:#fff;border-radius:10px;padding:18px;box-shadow:0 5px 15px rgba(0,0,0,0.05);">
+        <h3>🔊 Escuta ativa</h3>
+        <p>Treine seu ouvido com materiais reais e entenda o inglês natural de nativos.</p>
+      </div>
+      <div class="topic" style="background:#fff;border-radius:10px;padding:18px;box-shadow:0 5px 15px rgba(0,0,0,0.05);">
+        <h3>🧠 Gramática simplificada</h3>
+        <p>Aprenda apenas o essencial da gramática, de forma prática e sem decoreba.</p>
+      </div>
+      <div class="topic" style="background:#fff;border-radius:10px;padding:18px;box-shadow:0 5px 15px rgba(0,0,0,0.05);">
+        <h3>🎯 Pense em inglês</h3>
+        <p>Desbloqueie sua mente para pensar em inglês naturalmente, sem traduzir.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="testimonials" style="background:#fff;padding:60px 20px;text-align:center;">
+    <h2>Depoimentos de Alunos</h2>
+    <div class="stars" style="font-size:1.6rem;color:#FFD700;margin-bottom:10px;">⭐️⭐️⭐️⭐️⭐️</div>
+    <p class="avaliacao" style="color:#333;font-weight:600;margin-bottom:20px;">Avaliação média de 4.9/5 baseada na satisfação de mais de 1.000 alunos!</p>
+
+    <div class="videos" style="display:flex;flex-wrap:wrap;justify-content:center;gap:25px;">
+      <div class="video-box" style="width:300px;background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 6px 25px rgba(0,0,0,0.1);">
+        <iframe src="https://www.youtube.com/embed/QFxtJirHTSQ" allowfullscreen></iframe>
+      </div>
+      <div class="video-box" style="width:300px;background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 6px 25px rgba(0,0,0,0.1);">
+        <iframe src="https://www.youtube.com/embed/Q8sKJyIhrGw" allowfullscreen></iframe>
+      </div>
+      <div class="video-box" style="width:300px;background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 6px 25px rgba(0,0,0,0.1);">
+        <iframe src="https://www.youtube.com/embed/paTfB85o1IA" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINTS -->
+  <section class="prints" style="background:#f4f9ff;padding:60px 20px;text-align:center;">
+    <h2>Veja o que nossos alunos estão dizendo 👇</h2>
+    <div class="print-grid" style="display:flex;flex-wrap:wrap;justify-content:center;gap:25px;">
+      <div class="print-card" style="background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,0.08);width:320px;">
+        <img src="prints/fernando.png" alt="Feedback de Fernando" style="width:100%;display:block;">
+        <div class="caption" style="padding:10px;font-size:.95rem;color:#333;font-weight:500;">Fernando — já aprendendo no primeiro dia!</div>
+      </div>
+      <div class="print-card" style="background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,0.08);width:320px;">
+        <img src="prints/jeferson.png" alt="Comentário de Jeferson" style="width:100%;display:block;">
+        <div class="caption" style="padding:10px;font-size:.95rem;color:#333;font-weight:500;">Jeferson — recomenda o curso!</div>
+      </div>
+    </div>
+  </section>
+
     </div>
 
     <div class="cta-col">
@@ -157,73 +185,94 @@
       <a href="https://wa.me/5511983836605" class="btn-whatsapp" target="_blank">Falar com um especialista no WhatsApp</a>
     </div>
   </header>
-
-  <!-- MÉTODO SALR -->
-  <section>
-    <h2>Conheça o Método SALR</h2>
-    <p>O Método SALR foi criado para gerar resultados rápidos e duradouros...</p>
-  </section>
-
-  <!-- DEPOIMENTOS -->
-  <section class="testimonials">
-    <h2>Depoimentos de Alunos</h2>
-    <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
-    <p class="avaliacao">Avaliação média de 4.9/5 baseada em mais de 1.000 alunos!</p>
-    <div class="videos">
-      <div class="video-box"><iframe src="https://www.youtube.com/embed/QFxtJirHTSQ" allowfullscreen></iframe></div>
-      <div class="video-box"><iframe src="https://www.youtube.com/embed/Q8sKJyIhrGw" allowfullscreen></iframe></div>
-      <div class="video-box"><iframe src="https://www.youtube.com/embed/paTfB85o1IA" allowfullscreen></iframe></div>
-    </div>
-  </section>
-
-  <!-- PRINTS -->
-  <section class="prints">
-    <h2>Veja o que nossos alunos estão dizendo 👇</h2>
-    <div class="print-grid">
-      <div class="print-card"><img src="prints/fernando.png" alt="Feedback de Fernando"><div class="caption">Fernando — já aprendendo no primeiro dia!</div></div>
-      <div class="print-card"><img src="prints/jeferson.png" alt="Comentário de Jeferson"><div class="caption">Jeferson — recomenda o curso!</div></div>
-    </div>
-  </section>
-
-  <!-- GARANTIA -->
-  <section class="trust">
-    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<!-- GARANTIA -->
+  <section class="trust" style="text-align:center;background:#fff;padding:60px 20px;border-radius:12px;margin-top:40px;">
+    <!-- Selo metálico dourado -->
+    <svg width="159" height="159" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs>
-        <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" style="stop-color:#ffd23b;stop-opacity:1" />
+        <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#f9d423;stop-opacity:1" />
+          <stop offset="50%" style="stop-color:#ffcc00;stop-opacity:1" />
           <stop offset="100%" style="stop-color:#f6b800;stop-opacity:1" />
         </linearGradient>
       </defs>
-      <path d="M32 2l25 10v15c0 20-10 31-25 35-15-4-25-15-25-35V12z"/>
+      <path d="M32 2l25 10v15c0 20-10 31-25 35-15-4-25-15-25-35V12z" fill="url(#metalGrad)" />
       <path fill="#fff" d="M27 34l-6-6 2-2 4 4 10-10 2 2z"/>
     </svg>
-    <h2>Garantia Incondicional de 7 Dias</h2>
-    <p>Teste o curso por 7 dias — se não for pra você, devolvemos 100% do valor.</p>
-    <div class="selos">
-      <div class="selo">🔒 Compra 100% Segura</div>
-      <div class="selo">♾️ Acesso Vitalício</div>
-      <div class="selo">💰 Reembolso Garantido</div>
+
+    <h2 style="margin-top:15px;font-size:2rem;color:#0d1b2a;">Garantia Incondicional de 7 Dias</h2>
+    <p style="color:#333;font-size:1rem;max-width:700px;margin:10px auto 0;">
+      Teste o curso por 7 dias — se não for pra você, devolvemos 100% do valor. Sem burocracia, sem risco.
+    </p>
+
+    <div class="selos" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:20px;">
+      <div class="selo" style="background:#fff;padding:10px 20px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,0.05);font-weight:700;color:#0d1b2a;">
+        🔒 Compra 100% Segura
+      </div>
+      <div class="selo" style="background:#fff;padding:10px 20px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,0.05);font-weight:700;color:#0d1b2a;">
+        ♾️ Acesso Vitalício
+      </div>
+      <div class="selo" style="background:#fff;padding:10px 20px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,0.05);font-weight:700;color:#0d1b2a;">
+        💰 Reembolso Garantido
+      </div>
     </div>
-    <a href="https://pay.kiwify.com.br/8TvpK7G?afid=kuQvvVDJ" class="btn-primary">Quero Aprender Agora</a>
-    <p class="preco-perto">💥 Apenas R$197 ou 12x de R$20,37 sem juros!</p>
+
+    <a href="https://pay.kiwify.com.br/8TvpK7G?afid=kuQvvVDJ" class="btn-primary" style="display:inline-block;margin-top:25px;">
+      Quero Aprender Agora
+    </a>
+    <p class="preco-perto" style="color:#0d1b2a;margin-top:10px;font-weight:700;">
+      💥 Apenas R$197 ou 12x de R$20,37 sem juros!
+    </p>
   </section>
 
   <!-- FAQ -->
-  <section class="faq">
-    <h2>Perguntas Frequentes</h2>
-    <div class="faq-item">
-      <div class="faq-question">Posso acessar pelo celular?<span class="toggle">+</span></div>
-      <div class="faq-answer">Sim! O curso é 100% compatível com celular, tablet e PC.</div>
+  <section class="faq" style="padding:60px 20px;text-align:center;max-width:900px;margin:auto;">
+    <h2 style="color:#0d1b2a;font-size:2rem;margin-bottom:20px;">Perguntas Frequentes</h2>
+
+    <div class="faq-item" style="background:#f8fbff;margin-bottom:10px;padding:14px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.05);text-align:left;">
+      <div class="faq-question" style="font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;">
+        Posso acessar pelo celular?
+        <span class="toggle" style="font-size:1.2rem;color:#888;">+</span>
+      </div>
+      <div class="faq-answer" style="display:none;margin-top:8px;color:#333;">
+        Sim! O curso é 100% compatível com celular, tablet e computador.
+      </div>
     </div>
-    <div class="faq-item">
-      <div class="faq-question">Recebo certificado?<span class="toggle">+</span></div>
-      <div class="faq-answer">Sim, ao concluir o curso você recebe seu certificado digital.</div>
+
+    <div class="faq-item" style="background:#f8fbff;margin-bottom:10px;padding:14px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.05);text-align:left;">
+      <div class="faq-question" style="font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;">
+        Recebo certificado?
+        <span class="toggle" style="font-size:1.2rem;color:#888;">+</span>
+      </div>
+      <div class="faq-answer" style="display:none;margin-top:8px;color:#333;">
+        Sim, você recebe um certificado digital ao concluir o curso.
+      </div>
+    </div>
+
+    <div class="faq-item" style="background:#f8fbff;margin-bottom:10px;padding:14px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.05);text-align:left;">
+      <div class="faq-question" style="font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;">
+        Tenho acesso vitalício ao conteúdo?
+        <span class="toggle" style="font-size:1.2rem;color:#888;">+</span>
+      </div>
+      <div class="faq-answer" style="display:none;margin-top:8px;color:#333;">
+        Sim! Após a compra, o acesso é vitalício e você pode estudar no seu ritmo.
+      </div>
     </div>
   </section>
 
-  <footer>© 2025 Curso Inglês do Zero à Fluência — Página afiliada. Todos os direitos reservados.</footer>
-  <a href="https://wa.me/5511983836605" class="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp"></a>
+  <!-- RODAPÉ -->
+  <footer style="background:#0d1b2a;color:#fff;text-align:center;padding:25px;font-size:.9rem;margin-top:30px;">
+    © 2025 Curso Inglês do Zero à Fluência — Página de afiliado. Todos os direitos reservados.
+  </footer>
 
+  <!-- WHATSAPP FLUTUANTE -->
+  <a href="https://wa.me/5511983836605" class="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp"
+     style="position:fixed;bottom:18px;right:18px;width:64px;height:64px;border-radius:50%;background-color:#25d366;
+     background-image:url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg');
+     background-repeat:no-repeat;background-position:center;background-size:60%;box-shadow:0 12px 36px rgba(2,6,23,0.18);z-index:999;">
+  </a>
+
+  <!-- SCRIPT FAQ -->
   <script>
     document.querySelectorAll('.faq-question').forEach(q=>{
       q.addEventListener('click',()=>{
