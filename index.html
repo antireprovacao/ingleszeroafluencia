@@ -483,34 +483,78 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 <!-- FAQ -->
-<section class="faq" aria-labelledby="faq-title">
-  <h2 id="faq-title">Perguntas Frequentes</h2>
+<section class="faq" aria-labelledby="faq-title" style="padding:80px 20px; background:#f9f9f9; color:#000;">
+  <h2 id="faq-title" style="text-align:center; font-size:2em; font-weight:800; margin-bottom:40px;">
+    Perguntas Frequentes
+  </h2>
 
-  <div class="faq-item">
-    <div class="faq-question">Por quanto tempo terei acesso ao curso? <span class="toggle">+</span></div>
-    <div class="faq-answer">Você tem acesso vitalício ao conteúdo — assista quando e quantas vezes quiser.</div>
+  <div class="faq-item" style="margin-bottom:20px;">
+    <div class="faq-question" style="cursor:pointer; font-weight:700; margin-bottom:10px;">
+      Por quanto tempo terei acesso ao curso? <span class="toggle" style="float:right;">+</span>
+    </div>
+    <div class="faq-answer" style="display:none; font-size:1.1em; color:#333;">
+      Você tem acesso vitalício ao conteúdo — assista quando e quantas vezes quiser.
+    </div>
   </div>
 
-  <div class="faq-item">
-    <div class="faq-question">Posso estudar pelo celular? <span class="toggle">+</span></div>
-    <div class="faq-answer">Sim — as aulas são compatíveis com qualquer dispositivo (celular, tablet e computador).</div>
+  <div class="faq-item" style="margin-bottom:20px;">
+    <div class="faq-question" style="cursor:pointer; font-weight:700; margin-bottom:10px;">
+      Posso estudar pelo celular? <span class="toggle" style="float:right;">+</span>
+    </div>
+    <div class="faq-answer" style="display:none; font-size:1.1em; color:#333;">
+      Sim — as aulas são compatíveis com qualquer dispositivo (celular, tablet e computador).
+    </div>
   </div>
 
-  <div class="faq-item">
-    <div class="faq-question">O curso é realmente para iniciantes? <span class="toggle">+</span></div>
-    <div class="faq-answer">Sim — o Método SALR foi pensado exatamente para quem parte do zero, com progressão clara e prática.</div>
+  <div class="faq-item" style="margin-bottom:20px;">
+    <div class="faq-question" style="cursor:pointer; font-weight:700; margin-bottom:10px;">
+      O curso é realmente para iniciantes? <span class="toggle" style="float:right;">+</span>
+    </div>
+    <div class="faq-answer" style="display:none; font-size:1.1em; color:#333;">
+      Sim — o Método SALR foi pensado exatamente para quem parte do zero, com progressão clara e prática.
+    </div>
   </div>
 
-  <div class="faq-item">
-    <div class="faq-question">Recebo algum certificado? <span class="toggle">+</span></div>
-    <div class="faq-answer">Ao finalizar os módulos principais, você recebe um certificado de conclusão emitido pelo curso.</div>
+  <div class="faq-item" style="margin-bottom:20px;">
+    <div class="faq-question" style="cursor:pointer; font-weight:700; margin-bottom:10px;">
+      Recebo algum certificado? <span class="toggle" style="float:right;">+</span>
+    </div>
+    <div class="faq-answer" style="display:none; font-size:1.1em; color:#333;">
+      Ao finalizar os módulos principais, você recebe um certificado de conclusão emitido pelo curso.
+    </div>
   </div>
 
-  <div class="faq-item">
-    <div class="faq-question">Como funciona a garantia de 7 dias? <span class="toggle">+</span></div>
-    <div class="faq-answer">Se dentro de 7 dias você não estiver satisfeito, basta solicitar reembolso e devolvemos 100% do valor.</div>
+  <div class="faq-item" style="margin-bottom:20px;">
+    <div class="faq-question" style="cursor:pointer; font-weight:700; margin-bottom:10px;">
+      Como funciona a garantia de 7 dias? <span class="toggle" style="float:right;">+</span>
+    </div>
+    <div class="faq-answer" style="display:none; font-size:1.1em; color:#333;">
+      Se dentro de 7 dias você não estiver satisfeito, basta solicitar reembolso e devolvemos 100% do valor.
+    </div>
   </div>
 </section>
+
+<!-- SCRIPT: Abrir e fechar perguntas -->
+<script>
+document.querySelectorAll('.faq-question').forEach(question => {
+  question.addEventListener('click', () => {
+    const answer = question.nextElementSibling;
+    const toggle = question.querySelector('.toggle');
+    const isOpen = answer.style.display === 'block';
+
+    // Fecha todas as outras respostas
+    document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+    document.querySelectorAll('.toggle').forEach(t => t.textContent = '+');
+
+    // Abre a clicada
+    if (!isOpen) {
+      answer.style.display = 'block';
+      toggle.textContent = '–';
+    }
+  });
+});
+</script>
+
 
 <footer style="text-align:center; padding:40px 0; font-size:0.9em; color:#555;">
   © 2025 Curso Inglês do Zero à Fluência — Página afiliada. Todos os direitos reservados.
@@ -550,7 +594,6 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
-  +Flu%C3%AAncia" target="_blank" aria-label="Fale conosco no WhatsApp"></a>
 
   <!-- SCRIPTS: FAQ toggle + Pixel event -->    <script>  
     // FAQ toggle  
