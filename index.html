@@ -23,16 +23,43 @@
   a{color:inherit;text-decoration:none}
   img{max-width:100%;display:block;height:auto}
   .page{max-width:var(--maxwidth);margin:0 auto;padding:18px}
-  /* HERO */
-  .hero{padding:28px 12px 18px;text-align:center}
-  .dove{width:36px;height:36px;margin:0 auto 10px;opacity:0.9}
-  h1{font-family:'Playfair Display',serif;font-size:40px;line-height:1.02;margin:10px 0;color:#122b30}
-  .sub{font-size:16px;color:var(--muted);line-height:1.6;max-width:820px;margin:0 auto 18px}
+  /* BIG HERO IMAGE (header-style) */
+  .hero {
+    padding:0 12px 18px;
+    text-align:center;
+  }
+  .hero-banner {
+    width:100%;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 16px 40px rgba(15,15,15,0.06);
+    margin-bottom:18px;
+    position:relative;
+  }
+  .hero-banner img {
+    width:100%;
+    height:320px;             /* mobile height */
+    object-fit:cover;
+    display:block;
+  }
+  /* dark overlay for text legibility if you overlay text later */
+  .hero-banner::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.06));
+    pointer-events:none;
+  }
+  .hero-text {
+    margin-top:8px;
+  }
+  h1{font-family:'Playfair Display',serif;font-size:32px;line-height:1.02;margin:6px 0;color:#122b30}
+  .sub{font-size:15px;color:var(--muted);line-height:1.6;max-width:820px;margin:8px auto 16px}
   .price-wrap{margin-top:6px}
   .price-old{font-size:14px;color:#a8a8a8;text-decoration:line-through}
-  .price-now{font-size:22px;color:var(--gold);font-weight:900;margin-top:6px}
-  .cta-large{display:inline-block;margin:16px auto;padding:16px 24px;border-radius:40px;background:linear-gradient(90deg,var(--teal),#165b57);color:#fff;font-weight:800;box-shadow:0 16px 40px rgba(15,80,80,0.12)}
-  .cta-ghost{display:inline-block;padding:12px 16px;border-radius:12px;border:2px solid rgba(30,111,111,0.08);color:var(--text);font-weight:700;margin-left:8px}
+  .price-now{font-size:20px;color:var(--gold);font-weight:900;margin-top:6px}
+  .cta-large{display:inline-block;margin:12px auto;padding:14px 20px;border-radius:40px;background:linear-gradient(90deg,var(--teal),#165b57);color:#fff;font-weight:800;box-shadow:0 14px 34px rgba(15,80,80,0.12)}
+  .cta-ghost{display:inline-block;padding:10px 14px;border-radius:12px;border:2px solid rgba(30,111,111,0.08);color:var(--text);font-weight:700;margin-left:8px}
   /* layout sections */
   section{margin-top:20px;padding:0 8px}
   .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 12px 36px rgba(12,12,12,0.04)}
@@ -72,9 +99,8 @@
     .page{padding:28px}
     .grid{grid-template-columns:1fr 420px}
     .media-row{align-items:flex-start}
-    h1{font-size:56px}
-    .hero{padding:40px 20px}
-    .media-row .thumb{width:100%}
+    h1{font-size:44px}
+    .hero-banner img { height:520px; } /* desktop height */
     .pop-purchase{left:24px;bottom:120px}
     .pop-online{right:24px;top:24px}
   }
@@ -83,17 +109,23 @@
 <body>
 <div class="page" id="page">
 
-  <!-- HERO -->
+  <!-- HERO: big header-style image -->
   <header class="hero" role="banner" aria-labelledby="hero-title">
-    <img class="dove" src="55b3b8ed-1b94-4839-9e12-29e6635262f8.jpeg" alt="" aria-hidden="true">
-    <h1 id="hero-title">Acabe com a ansiedade que te paralisa — rotinas práticas em PDF para retomar controle agora.</h1>
-    <p class="sub">PAX é um método prático, objetivo e testado — tudo entregue em PDFs fáceis de aplicar. Bônus incluso: <strong>120 Hábitos para transformar seu dia</strong>. Oferta: de R$129,90 por <strong>R$39,90</strong>.</p>
+    <div class="hero-banner" role="img" aria-label="Imagem de apresentação do PAX — O Caminho da Calma Divina">
+      <!-- Substitua o src abaixo pelo caminho real da sua imagem (ex: assets/hero.jpg ou hero.jpg) -->
+      <img src="assets/hero.jpg" alt="Apresentação visual do PAX — O Caminho da Calma Divina">
+    </div>
 
-    <div style="margin-top:12px">
-      <a class="cta-large" href="https://pay.kiwify.com.br/r3bathm" id="primary-cta" target="_blank">QUERO PAX + BÔNUS — R$ 39,90</a>
-      <div class="price-wrap">
-        <div class="price-old">De R$129,90</div>
-        <div class="price-now">Por R$39,90</div>
+    <div class="hero-text">
+      <h1 id="hero-title">Acabe com a ansiedade que te paralisa — rotinas práticas em PDF para retomar controle agora.</h1>
+      <p class="sub">PAX é um método prático, objetivo e testado — tudo entregue em PDFs fáceis de aplicar. Bônus incluso: <strong>120 Hábitos para transformar seu dia</strong>. Oferta: de R$129,90 por <strong>R$39,90</strong>.</p>
+
+      <div style="margin-top:12px">
+        <a class="cta-large" href="https://pay.kiwify.com.br/r3bathm" id="primary-cta" target="_blank">QUERO PAX + BÔNUS — R$ 39,90</a>
+        <div class="price-wrap" aria-hidden="true">
+          <div class="price-old">De R$129,90</div>
+          <div class="price-now">Por R$39,90</div>
+        </div>
       </div>
     </div>
   </header>
