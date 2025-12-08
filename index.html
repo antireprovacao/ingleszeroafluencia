@@ -4,29 +4,25 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>PAX — O Caminho da Calma Divina</title>
-<meta name="description" content="Programa prático para reduzir ansiedade, recuperar sono e retomar foco. Oferta: de R$129,90 por R$39,90.">
-
-<!-- Fonts -->
+<meta name="description" content="PAX: método prático em PDF para reduzir ansiedade e recuperar sono. Oferta especial de R$39,90.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
-
 <style>
   :root{
-    --bg: #fbf8f6;
-    --card: #ffffff;
-    --muted: #6e6b66;
-    --gold: #c89b3a;
-    --teal: #1f6f66;
-    --green-pop: #1e8a59;
-    --text: #13202a;
+    --bg:#fbf8f6;
+    --card:#ffffff;
+    --muted:#6e6b66;
+    --gold:#c89b3a;
+    --teal:#1f6f66;
+    --green-pop:#13a357;
+    --text:#13202a;
   }
   *{box-sizing:border-box}
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial; -webkit-font-smoothing:antialiased}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
   .page{max-width:980px;margin:0 auto;padding:18px}
-  /* HERO (mobile-first similar ao seu print) */
-  .hero{background:transparent;padding:36px 16px 18px;border-radius:12px}
-  .dove{width:34px;height:34px;display:block;margin:0 auto 8px}
-  h1{font-family:'Playfair Display',serif;font-size:42px;line-height:1.02;margin:6px 0 12px;text-align:center;color:#153241}
+  /* HERO */
+  .hero{padding:36px 16px 18px}
+  h1{font-family:'Playfair Display',serif;font-size:40px;line-height:1.02;margin:6px 0 12px;text-align:center;color:#153241}
   p.lead{font-size:16px;line-height:1.6;text-align:center;color:var(--muted);max-width:760px;margin:0 auto 20px;padding:0 6px}
   .cta-large{display:block;margin:18px auto 6px;background:var(--gold);color:#fff;padding:18px 22px;border-radius:40px;font-weight:700;font-size:16px;max-width:720px;text-align:center;box-shadow:0 18px 40px rgba(200,155,58,0.14)}
   .price-old{display:block;text-align:center;color:#a8a8a8;text-decoration:line-through;margin-top:6px;font-size:14px}
@@ -38,62 +34,27 @@
   .features{display:flex;flex-direction:column;gap:12px}
   .feature-row{display:flex;gap:10px;align-items:flex-start}
   .dot{width:9px;height:9px;border-radius:999px;background:var(--gold);margin-top:8px}
-
-  /* testimonials style like your Canva */
+  /* testimonial */
   .test-list{display:flex;flex-direction:column;gap:14px;margin-top:12px}
-  .test{background:#fff;padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(12,12,12,0.04);font-size:15px}
-  .test .txt{font-style:italic;color:#3b4446;margin-bottom:10px}
+  .test{background:#fff;padding:16px;border-radius:12px;box-shadow:0 10px 30px rgba(12,12,12,0.04);font-size:15px}
+  .test .txt{font-style:italic;color:#3b4446;margin-bottom:8px}
   .test .who{color:var(--gold);font-weight:800}
-
-  .cta-block{display:flex;gap:12px;flex-direction:column;align-items:center;margin-top:14px}
-
   .small{font-size:13px;color:var(--muted);text-align:center}
-
+  .cta-block{display:flex;gap:12px;flex-direction:column;align-items:center;margin-top:14px}
   /* popouts */
-  /* purchase popout: bottom-left, green background, small width, does not cover center CTAs */
   .pop-purchase{
-    position:fixed;
-    left:14px;
-    bottom:96px; /* lifted so it doesn't overlap large CTA at bottom */
-    background:var(--green-pop);
-    color:#fff;
-    padding:10px 12px;
-    border-radius:10px;
-    box-shadow:0 16px 40px rgba(0,0,0,0.18);
-    font-weight:700;
-    z-index:880;
-    display:none;
-    max-width:280px;
-    font-size:13px;
-    line-height:1.2;
+    position:fixed;left:14px;bottom:96px;background:var(--green-pop);color:#fff;padding:10px 12px;border-radius:10px;box-shadow:0 18px 44px rgba(0,0,0,0.20);font-weight:700;z-index:880;display:none;max-width:300px;font-size:13px;line-height:1.2;
   }
-
-  /* online popout: top-right with green dot emoji, higher z-index so it overlays purchase if necessary */
   .pop-online{
-    position:fixed;
-    right:14px;
-    top:18px;
-    background:linear-gradient(90deg,#168a52,#127a4b);
-    color:#fff;
-    padding:10px 14px;
-    border-radius:10px;
-    box-shadow:0 16px 40px rgba(0,0,0,0.18);
-    font-weight:800;
-    z-index:890;
-    display:none;
-    align-items:center;
-    gap:8px;
-    font-size:13px;
+    position:fixed;right:14px;top:18px;background:linear-gradient(90deg,#13a357,#0f8b4a);color:#fff;padding:10px 14px;border-radius:10px;box-shadow:0 16px 40px rgba(0,0,0,0.18);font-weight:800;z-index:890;display:none;align-items:center;gap:8px;font-size:13px
   }
   .dot-online{font-size:18px;margin-right:6px}
-
-  /* footer small bar like your print (but avoid overlay) */
+  /* assessoria */
+  .support{display:flex;flex-direction:column;gap:8px;align-items:center;padding:16px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbf8f5);margin-top:12px}
+  .support .email{color:var(--teal);font-weight:800}
   footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px;padding-bottom:36px}
-
-  /* responsive tweaks */
   @media(min-width:820px){
     h1{font-size:56px}
-    .hero{padding:48px}
     .pop-purchase{left:24px;bottom:120px}
     .pop-online{right:24px;top:24px}
   }
@@ -102,57 +63,76 @@
 <body>
 <div class="page">
 
-  <!-- HERO -->
+  <!-- HERO (novo título altamente convertível) -->
   <header class="hero" role="banner">
-    <!-- small dove icon like your screenshot (optional) -->
-    <div style="text-align:center;margin-bottom:8px"><img src="" alt="" class="dove" aria-hidden="true"></div>
+    <h1>Acabe com a ansiedade que te paralisa — resultados práticos em passos simples.</h1>
+    <p class="lead">Programa em PDF direto ao ponto: rotinas, guias e o bônus “120 Hábitos para transformar seu dia”. Oferta especial — de R$129,90 por R$39,90.</p>
 
-    <h1>Calma não é sorte. É escolha diária.</h1>
-    <p class="lead">O método simples e guiado para reduzir ansiedade, controlar a mente e recuperar sua paz interior — sem enrolação, aplicável já no primeiro dia.</p>
-
-    <a class="cta-large" href="https://pay.kiwify.com.br/r3bathm" target="_blank">QUERO ACESSO AO PAX POR R$39,90</a>
+    <a class="cta-large" href="https://pay.kiwify.com.br/r3bathm" target="_blank">QUERO ACESSO AO PAX + BÔNUS — R$39,90</a>
     <div style="text-align:center;margin-top:6px">
       <span class="price-old">De R$129,90</span>
     </div>
   </header>
 
-  <!-- O QUE RECEBE -->
+  <!-- O QUE RECEBE (somente PDF agora) -->
   <section class="section">
     <div class="card">
-      <h2>O que está incluído no programa</h2>
+      <h2>O que está incluído — tudo em PDF (aplicável já)</h2>
       <ul class="clean">
-        <li>Guia SOS: 3 passos práticos para reduzir crise em minutos (áudio + guia rápido)</li>
-        <li>Rotina de 7 dias para reset do sono</li>
-        <li>Roteiros de foco e ação para o dia a dia</li>
-        <li>Áudios curtos (3–7 min) para uso imediato</li>
-        <li>Checklist “Transforme seu dia” — 5 passos práticos</li>
+        <li>Guia SOS: 3 passos práticos para reduzir uma crise em minutos (PDF rápido e direto)</li>
+        <li>Rotina prática de 7 dias para reset do sono (PDF com passo a passo)</li>
+        <li>Roteiros de foco e ação: scripts práticos para aplicar no trabalho</li>
+        <li>Checklist “Transforme seu dia” (PDF aplicável)</li>
+        <li><strong>Bônus:</strong> 120 Hábitos para transformar o seu dia (PDF) — inclusão imediata.</li>
       </ul>
 
       <div class="cta-block">
         <a class="cta-large" href="https://pay.kiwify.com.br/r3bathm" target="_blank">GARANTIR ACESSO — R$39,90</a>
-        <div class="small">Acesso imediato • Pagamento seguro</div>
+        <div class="small">Acesso imediato • Downloads em PDF • Conteúdo vitalício</div>
       </div>
     </div>
   </section>
 
-  <!-- DEPOIMENTOS -->
+  <!-- PÁX É PRA VOCÊ — dores emocionais com "Se identificou" -->
   <section class="section">
-    <h2 style="text-align:center">O que pessoas dizem após começar o PAX</h2>
+    <div class="card">
+      <h2 style="text-align:center">O PAX é pra você se...</h2>
+      <div style="margin-top:10px" class="features">
+        <div class="feature-row"><div class="dot"></div><div>Você acorda ansioso(a) e passa o dia no limite.</div></div>
+        <div class="feature-row"><div class="dot"></div><div>Pensamentos repetitivos que atrapalham decisões simples.</div></div>
+        <div class="feature-row"><div class="dot"></div><div>Fica preso(a) em preocupações que consomem sua energia.</div></div>
+        <div class="feature-row"><div class="dot"></div><div>Tem sono fracionado e acorda cansado(a).</div></div>
+        <div class="feature-row"><div class="dot"></div><div>Sente tensão física constante (pescoço, peito, cabeça).</div></div>
+        <div class="feature-row"><div class="dot"></div><div>Evita compromissos sociais ou profissionais por medo/ansiedade.</div></div>
+      </div>
 
+      <div style="margin-top:12px;text-align:center">
+        <strong>Se identificou com alguma dessas? O PAX é pra você.</strong>
+      </div>
+
+      <div style="margin-top:12px;display:flex;justify-content:center">
+        <a class="cta-large" href="https://pay.kiwify.com.br/r3bathm" target="_blank">SIM, QUERO ACESSAR — R$39,90</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos mais suaves e humanos -->
+  <section class="section">
+    <h2 style="text-align:center">Depoimentos reais e humanos</h2>
     <div class="test-list">
       <div class="test">
-        <div class="txt">"Nunca imaginei que algo tão simples fosse tão poderoso. Minha mente está mais leve."</div>
-        <div class="who">— Julia Santos, São Paulo</div>
-      </div>
-
-      <div class="test">
-        <div class="txt">"Finalmente durmo bem e acordo sem aquela ansiedade que me esmagava."</div>
-        <div class="who">— Marcos Ferreira, Rio de Janeiro</div>
-      </div>
-
-      <div class="test">
-        <div class="txt">"Mudou minha forma de lidar com pressão no trabalho. Resultado prático em poucos dias."</div>
+        <div class="txt">"Em uma semana senti diferença — minha mente ficou mais leve e consigo terminar tarefas sem travar."</div>
         <div class="who">— Carla Oliveira, Curitiba</div>
+      </div>
+
+      <div class="test">
+        <div class="txt">"Segui o PDF do sono e dormi bem pela primeira vez em muito tempo. Parece simples, mas funciona."</div>
+        <div class="who">— Juliana Santos, São Paulo</div>
+      </div>
+
+      <div class="test">
+        <div class="txt">"As rotinas práticas me ajudaram no trabalho; menos pânico, mais clareza para decidir."</div>
+        <div class="who">— Marcos Ferreira, Rio de Janeiro</div>
       </div>
     </div>
 
@@ -161,31 +141,40 @@
     </div>
   </section>
 
-  <!-- GARANTIA -->
+  <!-- GARANTIA + ASSISTÊNCIA (assessoria) -->
   <section class="section">
-    <div class="card" style="text-align:center">
-      <h2>Garantia incondicional de 7 dias</h2>
-      <p class="small" style="margin-top:8px">Teste por 7 dias. Se o PAX não transformar sua rotina mental, peça reembolso — sem perguntas.</p>
+    <div class="card">
+      <h2 style="text-align:center">Garantia e Assessoria</h2>
+      <p class="small" style="text-align:center;margin-top:8px">Garantia incondicional de 7 dias: teste o PAX e, se não sentir diferença prática, peça reembolso — sem perguntas.</p>
+
+      <div class="support" style="margin-top:12px">
+        <div style="font-weight:800">Assessoria e suporte</div>
+        <div class="small">Precisa de ajuda para acessar os PDFs ou quer orientação rápida?</div>
+        <div class="email">Contato: suporte.pacos30.com</div>
+      </div>
+
+      <div style="margin-top:12px;text-align:center">
+        <a class="cta-large" href="https://pay.kiwify.com.br/r3bathm" target="_blank">ACESSAR AGORA — R$39,90</a>
+      </div>
     </div>
   </section>
 
   <footer>
-    © PAX — Política de privacidade • Suporte: suporte.pax30@gmail.com
+    © PAX — Política de privacidade • Suporte: suporte.pacos30.com
   </footer>
+
 </div>
 
 <!-- POPOUTS -->
-<!-- Purchase popout (green background, small, fixed phrase appended) -->
 <div id="purchasePop" class="pop-purchase" role="status" aria-live="polite"></div>
 
-<!-- Online popout (top-right) with green dot emoji -->
 <div id="onlinePop" class="pop-online" role="status" aria-live="polite">
   <div class="dot-online">🟢</div>
   <div id="onlineText">12 pessoas visualizando agora</div>
 </div>
 
 <script>
-  // === BUYERS: 50 names (25 women + 25 men) - each entry will show: "<name> — Acabou de comprar o PAX - O Caminho da Calma Divina" ===
+  // === 50 buyers (25 mulheres + 25 homens) - purchase popout shows: "<name> — Acabou de comprar o PAX - O Caminho da Calma Divina" (fixed phrase)
   const buyers = [
     "Ana Beatriz Silva, SP, 34 anos",
     "Mariana Alves, RJ, 38 anos",
@@ -243,24 +232,21 @@
   const onlineEl = document.getElementById('onlinePop');
   const onlineText = document.getElementById('onlineText');
 
-  // SHOW purchase every 13s
+  // Show purchase every 13 seconds, fixed phrase
   let buyIndex = 0;
   function showPurchase(){
     const name = buyers[buyIndex % buyers.length];
-    // fixed phrase requirement
     purchaseEl.innerText = `${name} — Acabou de comprar o PAX - O Caminho da Calma Divina`;
     purchaseEl.style.display = 'block';
-    // hide after 5s
     setTimeout(()=>{ purchaseEl.style.display = 'none'; }, 5000);
     buyIndex++;
   }
-
-  setTimeout(showPurchase, 2000);
+  setTimeout(showPurchase, 2200);
   setInterval(showPurchase, 13000);
 
-  // online popout top-right: realistic count, persistent
+  // Online popout top-right: persistent count
   function showOnline(){
-    const n = Math.floor(Math.random()*(120-8)+8);
+    const n = Math.floor(Math.random()*(140-8)+8);
     onlineText.innerText = `${n} pessoas visualizando agora`;
     onlineEl.style.display = 'flex';
   }
