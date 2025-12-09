@@ -398,26 +398,17 @@
 <div id="purchasePop" class="pop-purchase" role="status" aria-live="polite"></div>
 <div id="onlinePop" class="pop-online" role="status" aria-live="polite"><div class="dot-online">🟢</div><div id="onlineText">12 pessoas visualizando agora</div></div>
 
+<!-- SCRIPT REPLACE: roda só depois do DOM, cria elementos se necessário, protege contra outros scripts -->
 <script>
-  // === Purchase popout: 50 names (25 women + 25 men) ===
-  const buyers = [
-    "Ana Beatriz Silva, SP, 34 anos",
-    "Mariana Alves, RJ, 38 anos",
-    "Patrícia Oliveira, RJ, 42 anos",
-    "Renata Costa, MG, 35 anos",
-    "Amanda Pereira, PR, 39 anos",
-    "Gabriela Ramos, BA, 36 anos",
-    "Mariana Souza, SP, 33 anos",
-    "Fernanda Lima, CE, 40 anos",
-    "Juliana Rocha, RS, 37 anos",
-    "Camila Ferreira, PE, 41 anos",
-    "Bianca Martins, SP, 45 anos",
-    "Larissa Almeida, DF, 32 anos",
-    "Tatiana Gomes, RJ, 43 anos",
-    "Patrícia Nascimento, BA, 38 anos",
-    "Sofia Cardoso, MG, 36 anos",
-    "Carla Menezes, PR, 44 anos",
-    "Adriana Pinto, SP, 47 anos",
-    "Isabela Duarte, RJ, 31 anos",
-    "Cláudia Moraes, MG, 50 anos",
-    "Priscila Teixeira, PE, 37 
+(function(){
+  'use strict';
+
+  function init(){
+    // nomes de exemplo
+    const buyers = [
+      "Ana Beatriz Silva, SP, 34 anos","Mariana Alves, RJ, 38 anos","Patrícia Oliveira, RJ, 42 anos",
+      "Renata Costa, MG, 35 anos","Amanda Pereira, PR, 39 anos","Gabriela Ramos, BA, 36 anos",
+      "Mariana Souza, SP, 33 anos","Fernanda Lima, CE, 40 anos","Juliana Rocha, RS, 37 anos",
+      "Camila Ferreira, PE, 41 anos","Bianca Martins, SP, 45 anos","Larissa Almeida, DF, 32 anos",
+      "Tatiana Gomes, RJ, 43 anos","Patrícia Nascimento, BA, 38 anos","Sofia Cardoso, MG, 36 anos",
+      "Carla Menezes, PR, 44 anos","Adriana Pinto, SP, 47 anos","Isabela Duarte, RJ, 
