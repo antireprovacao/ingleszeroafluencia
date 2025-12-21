@@ -1,151 +1,298 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>PAX — A sua paz não pode esperar</title>
-<meta name="description" content="PAX — Devocional prático para acalmar a mente e reduzir a ansiedade em poucos minutos por dia.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Anti-Reprovação | Método Prático</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
 
-<!-- Meta Pixel -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
- n.callMethod.apply(n,arguments):n.queue.push(arguments)};
- if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
- n.queue=[];t=b.createElement(e);t.async=!0;
- t.src=v;s=b.getElementsByTagName(e)[0];
- s.parentNode.insertBefore(t,s)}(window, document,'script',
- 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2004570006755557');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
- src="https://www.facebook.com/tr?id=2004570006755557&ev=PageView&noscript=1"/></noscript>
+    <style>
+        /* --- RESET E VARIÁVEIS --- */
+        :root {
+            --bg-color: #050505;
+            --card-bg: #121212;
+            --highlight-yellow: #FFD700;
+            --alert-red: #FF2E2E;
+            --cta-green: #00E640;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
 
-<style>
-:root{--bg:#f0f8ff;--accent:#0b63a7;--sun:#ffd27a;--muted:#567;--text:#083047}
-*{box-sizing:border-box}
-body{font-family:Arial,Helvetica,sans-serif;background:linear-gradient(#f0f8ff,#e6f7ff);margin:0;color:var(--text)}
-.wrap{max-width:880px;margin:28px auto;padding:20px}
-.hero{background:linear-gradient(90deg,var(--accent),#3aa0ff);color:#fff;padding:20px;border-radius:10px}
-.hero strong{font-size:24px;display:block}
-.hero .sub{font-size:15px;opacity:.95;margin-top:6px}
-.card{background:#fff;border-radius:10px;padding:18px;margin-top:16px;box-shadow:0 8px 20px rgba(0,0,0,.06)}
-.row{display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap}
-.left{flex:1;min-width:240px}
-.badge{display:inline-block;background:var(--sun);color:#5a3f00;padding:6px 12px;border-radius:999px;font-weight:700}
-.price{margin:10px 0;font-weight:800;color:var(--accent)}
-.old{opacity:.6;text-decoration:line-through;font-weight:400}
-.cta{background:var(--accent);color:#fff;padding:14px 18px;border-radius:8px;text-decoration:none;display:inline-block;margin-top:14px;font-weight:700}
-.cta.small{padding:8px 12px;font-size:13px}
-.highlight-bonus{display:inline-block;background:#fff;border:1px solid rgba(11,99,167,0.12);padding:6px 10px;border-radius:8px;font-weight:700;color:#0b63a7;margin-top:8px}
-.features{margin-top:20px}
-.ul{padding-left:18px;line-height:1.6}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
-.footer{margin-top:14px;color:var(--muted);font-size:13px;text-align:center}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-white); 
+            font-family: 'Roboto', sans-serif; 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-/* imagem central */
-.media-wrap{display:flex;justify-content:center;margin-top:20px}
-.hero-img{width:260px;height:260px;object-fit:cover;border-radius:14px;box-shadow:0 10px 30px rgba(8,48,71,0.12);border:1px solid rgba(11,99,167,0.06)}
+        /* --- TIPOGRAFIA DE IMPACTO --- */
+        h1, h2, h3 { font-family: 'Anton', sans-serif; text-transform: uppercase; letter-spacing: 1px; line-height: 1.1; }
+        
+        .text-yellow { color: var(--highlight-yellow); }
+        .text-red { color: var(--alert-red); }
+        .text-green { color: var(--cta-green); }
+        
+        strong { font-weight: 900; color: #fff; }
 
-@media(max-width:640px){
-.hero-img{width:200px;height:200px}
-.wrap{padding:16px}
-.grid{grid-template-columns:1fr}
-}
+        /* --- CONTAINER MOBILE --- */
+        .container {
+            max-width: 500px; /* Limita largura para parecer app no desktop */
+            margin: 0 auto;
+            padding: 0 20px;
+            background-color: var(--bg-color);
+        }
 
-/* pop-out menor */
-.pop{
-position:fixed;
-right:14px;
-bottom:14px;
-background:linear-gradient(135deg,#042b3a,#063d52);
-color:#fff;
-padding:10px 12px;
-border-radius:10px;
-display:none;
-z-index:9999;
-border:1px solid rgba(255,210,122,.25);
-max-width:240px;
-font-size:13px
-}
-.pop .stock{color:var(--sun);font-weight:800}
-</style>
+        /* --- HERO SECTION (TOPO) --- */
+        header {
+            padding: 30px 0 20px 0;
+            text-align: center;
+        }
+
+        .headline {
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-shadow: 0px 0px 15px rgba(255, 215, 0, 0.15);
+        }
+
+        .subheadline {
+            font-size: 18px;
+            color: var(--text-gray);
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        /* MOCKUP IMAGEM */
+        .hero-img {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            margin-bottom: 20px;
+        }
+
+        /* --- BOTÃO PULSANTE (CTA) --- */
+        .btn-wrapper { margin: 25px 0; width: 100%; }
+        
+        .cta-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            background: linear-gradient(180deg, #00FF47 0%, #00C236 100%);
+            color: #000;
+            font-family: 'Anton', sans-serif;
+            font-size: 26px;
+            padding: 20px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-transform: uppercase;
+            box-shadow: 0 0 25px rgba(0, 255, 71, 0.3);
+            animation: pulse 1.5s infinite ease-in-out;
+            border-bottom: 4px solid #008f28;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:active { transform: scale(0.98); border-bottom: 0; margin-top: 4px; }
+        
+        .cta-sub { font-size: 12px; display: block; margin-top: -5px; font-family: 'Roboto', sans-serif; font-weight: 700; opacity: 0.8; }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        /* --- CAIXA DE ALERTA (DOR) --- */
+        .alert-box {
+            background-color: rgba(255, 46, 46, 0.08);
+            border-left: 4px solid var(--alert-red);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 6px;
+        }
+        
+        .cost-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .cost-list li {
+            margin-bottom: 10px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .cost-icon { margin-right: 10px; font-size: 20px; }
+
+        /* --- O QUE TEM DENTRO (SOLUÇÃO) --- */
+        .features {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border: 1px solid #222;
+        }
+
+        .feature-item {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+        
+        .check-icon {
+            color: var(--cta-green);
+            font-weight: bold;
+            font-size: 22px;
+            margin-right: 15px;
+            min-width: 25px;
+        }
+
+        /* --- GARANTIA E PREÇO --- */
+        .guarantee-box {
+            text-align: center;
+            margin: 40px 0;
+            padding: 20px;
+            border: 1px dashed #444;
+            border-radius: 8px;
+        }
+
+        .price-anchor {
+            text-decoration: line-through;
+            color: #666;
+            font-size: 18px;
+        }
+
+        .price-final {
+            font-family: 'Anton', sans-serif;
+            font-size: 56px;
+            color: var(--highlight-yellow);
+            line-height: 1;
+            margin: 10px 0;
+        }
+
+        /* --- FOOTER COMPLIANCE (ANTI-BAN) --- */
+        footer {
+            margin-top: 60px;
+            padding: 40px 20px;
+            background-color: #000;
+            text-align: center;
+            font-size: 11px;
+            color: #555;
+            border-top: 1px solid #222;
+        }
+
+        footer a { color: #555; text-decoration: underline; }
+    </style>
 </head>
-
 <body>
-<div class="wrap">
-  <header class="hero">
-    <strong>A sua paz não pode esperar</strong>
-    <div class="sub">Acalme a mente e reduza a ansiedade em poucos minutos por dia.</div>
-  </header>
 
-  <main class="card">
-    <div class="row">
-      <div class="left">
-        <div class="badge">PAX — O Caminho da Calma Divina</div>
-        <div class="price"><span class="old">De R$129,90</span> por <span style="font-size:22px">R$39,90</span></div>
-        <div style="font-size:13px;color:var(--muted)">
-          <strong>BÔNUS INCLUSO:</strong>
-          <span class="highlight-bonus">120 hábitos para transformar seu dia</span>
+    <div class="container">
+        
+        <header>
+            <h1 class="headline">REPROVADO NA <span class="text-red">BALIZA?</span> PREPARE O BOLSO.</h1>
+            <p class="subheadline">Ou descubra como evitar o prejuízo de <strong>R$ 800,00</strong> e passar de primeira.</p>
+            
+            <img src="https://placehold.co/600x400/000000/FFD700?text=IMAGEM+DO+EXAMINADOR" alt="Examinador Detran" class="hero-img">
+        </header>
+
+        <div class="alert-box">
+            <h2 class="text-red" style="font-size: 22px;">A CONTA É ALTA:</h2>
+            <ul class="cost-list">
+                <li><span class="cost-icon">❌</span> Taxa de Reprovação: R$ 350,00</li>
+                <li><span class="cost-icon">❌</span> Aulas Extras: R$ 400,00</li>
+                <li><span class="cost-icon">❌</span> Meses de espera...</li>
+            </ul>
+            <p style="margin-top: 15px; font-size: 14px; color: #ddd;">
+                O examinador não quer saber se você sabe dirigir. Ele quer saber se você sabe <strong>fazer a prova</strong>. Existe uma diferença.
+            </p>
         </div>
-        <a id="buy" class="cta" href="https://pay.kiwify.com.br/r3bathm" target="_blank">Resgatar minha paz agora</a>
-      </div>
+
+        <div class="btn-wrapper">
+            <a href="LINK_DO_SEU_CHECKOUT_KIWIFY" class="cta-button">
+                <div>
+                    QUERO EVITAR A REPROVAÇÃO
+                    <span class="cta-sub">Acesso Imediato ao Manual</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="features">
+            <h2 class="text-yellow" style="margin-bottom: 20px; font-size: 24px;">O QUE É O MANUAL?</h2>
+            <p style="margin-bottom: 20px; font-size: 15px; color: #ccc;">
+                Não é um curso chato de legislação. É um <strong>Checklist de Guerra</strong> com tudo o que o examinador olha (e o que ele usa pra te reprovar em 5 minutos).
+            </p>
+
+            <div class="feature-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <strong>Os Erros Invisíveis:</strong> Detalhes bobos na embreagem e seta que eliminam 80% dos alunos.
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <strong>Roteiro Anti-Nervosismo:</strong> O que fazer mentalmente 10 minutos antes de entrar no carro.
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <strong>O Olhar do Examinador:</strong> Saiba exatamente onde ele está olhando em cada manobra.
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <h2 style="color: #fff; font-size: 20px; margin-bottom: 15px;">MATERIAL COMPLETO EM PDF</h2>
+            <img src="https://placehold.co/600x600/000000/FFD700?text=MOCKUP+LIVRO+AMARELO" alt="Manual Anti Reprovação" class="hero-img" style="border: none; box-shadow: none; background: transparent;">
+        </div>
+
+        <div class="guarantee-box">
+            <p class="price-anchor">De R$ 97,00</p>
+            <p style="font-size: 14px; color: var(--cta-green);">OFERTA POR TEMPO LIMITADO</p>
+            <div class="price-final">R$ 27,00</div>
+            <p style="font-size: 14px; margin-bottom: 20px;">(Menos que o Uber até o Detran)</p>
+
+            <a href="LINK_DO_SEU_CHECKOUT_KIWIFY" class="cta-button">
+                QUERO PASSAR DE PRIMEIRA
+            </a>
+
+            <div style="margin-top: 20px; display: flex; justify-content: center; align-items: center; gap: 10px;">
+                <img src="https://img.icons8.com/ios-filled/50/40C057/lock.png" width="20" alt="Cadeado">
+                <span style="font-size: 13px; color: #888;">Pagamento Seguro • Garantia de 7 Dias</span>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <h3 style="margin-bottom: 20px; font-size: 20px;">DÚVIDAS COMUNS</h3>
+            <details style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+                <summary style="font-weight: bold; cursor: pointer;">Serve para qualquer estado?</summary>
+                <p style="font-size: 14px; color: #ccc; margin-top: 10px;">Sim. O Manual foca nas regras nacionais do CONTRAN e no comportamento padrão dos examinadores em todo o Brasil.</p>
+            </details>
+            <details style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+                <summary style="font-weight: bold; cursor: pointer;">Como recebo o acesso?</summary>
+                <p style="font-size: 14px; color: #ccc; margin-top: 10px;">Imediatamente no seu e-mail após a confirmação do pagamento (Pix ou Cartão).</p>
+            </details>
+        </div>
+
     </div>
 
-    <div class="media-wrap">
-      <img class="hero-img" src="55b3b8ed-1b94-4839-9e12-29e6635262f8.jpeg" alt="PAX — O Caminho da Calma Divina">
-    </div>
+    <footer>
+        <p><strong>Isenção de Responsabilidade:</strong> Este produto não garante a obtenção da CNH. O resultado depende do desempenho individual do candidato. Este site não é afiliado ao Facebook, Meta ou a qualquer entidade governamental (DETRAN).</p>
+        <br>
+        <p>Contato: suporte@seudominio.com</p>
+        <br>
+        <p><a href="#">Termos de Uso</a> | <a href="#">Políticas de Privacidade</a></p>
+        <br>
+        <p>© 2025 Manual Anti-Reprovação. Todos os direitos reservados.</p>
+    </footer>
 
-    <section class="features">
-      <h4>O que você vai receber</h4>
-      <ul class="ul">
-        <li>Cartões diários com leituras práticas (30 dias completos)</li>
-        <li>Leituras rápidas de 3 a 7 minutos por dia</li>
-        <li>Exercícios simples para aplicar no dia a dia</li>
-        <li>Acesso imediato + atualizações futuras</li>
-      </ul>
-    </section>
-
-    <div class="grid">
-      <div>
-        <h4>O que muda</h4>
-        <p style="color:var(--muted)">Mente mais calma, menos ansiedade, sono mais profundo e mais controle emocional.</p>
-      </div>
-      <div>
-        <h4>Garantia</h4>
-        <p style="color:var(--muted)"><strong>Garantia de 7 dias.</strong> Se não for o seu momento, devolvemos 100% do valor.</p>
-      </div>
-    </div>
-
-    <div class="footer">⏰ Oferta limitada • Entrega imediata por e-mail</div>
-  </main>
-</div>
-
-<div class="pop" id="pop">
-  <div style="font-size:11px">🔥 ATIVIDADE RECENTE</div>
-  <strong>Alguém garantiu o acesso há instantes</strong>
-</div>
-
-<script>
-(function(){
-  var pop = document.getElementById('pop');
-
-  function showPop(){
-    pop.style.display = 'block';
-    setTimeout(function(){ pop.style.display = 'none'; }, 6000);
-  }
-
-  window.addEventListener('load', function(){
-    setTimeout(showPop, 3000);
-    setInterval(showPop, 35000);
-  });
-
-  var buy = document.getElementById('buy');
-  buy.addEventListener('click', function(){
-    try{ fbq('track','InitiateCheckout'); }catch(e){}
-  });
-})();
-</script>
 </body>
-</html> 
+</html>
