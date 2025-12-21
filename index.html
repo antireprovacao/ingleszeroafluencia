@@ -10,8 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
 
     <script>
-        // Cole o código do seu Pixel aqui dentro se tiver
-        // Se não tiver, pode deixar vazio por enquanto
+        // Cole o código do seu Pixel aqui dentro
     </script>
 
     <style>
@@ -28,7 +27,7 @@
         body { background-color: var(--bg-color); color: var(--text-white); font-family: 'Roboto', sans-serif; line-height: 1.5; overflow-x: hidden; }
         
         h1, h2, h3 { font-family: 'Anton', sans-serif; text-transform: uppercase; line-height: 1.1; }
-        .container { max-width: 500px; margin: 0 auto; padding: 0 20px; }
+        .container { max-width: 500px; margin: 0 auto; padding: 0 20px; position: relative; }
         img { max-width: 100%; display: block; border-radius: 8px; }
 
         /* --- BOTÃO PULSANTE --- */
@@ -39,16 +38,27 @@
             padding: 18px; border-radius: 8px; text-decoration: none; text-transform: uppercase;
             box-shadow: 0 0 20px rgba(0, 255, 71, 0.4); animation: pulse 1.5s infinite;
             border-bottom: 4px solid #008f28; margin: 25px 0;
+            cursor: pointer;
         }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
 
-        /* --- SEÇÃO DE BÔNUS (NOVO!) --- */
+        /* --- SEÇÃO DE BÔNUS --- */
         .bonus-section { margin-top: 30px; background: #0f0f0f; border: 1px dashed #333; padding: 20px; border-radius: 10px; }
         .bonus-card { display: flex; align-items: center; margin-bottom: 15px; background: #1a1a1a; padding: 10px; border-radius: 6px; }
         .bonus-img { width: 60px; height: 80px; background: #333; margin-right: 15px; object-fit: cover; }
         .bonus-info h4 { color: var(--highlight-yellow); font-size: 16px; margin-bottom: 4px; }
         .bonus-price { font-size: 12px; color: #aaa; text-decoration: line-through; }
         .bonus-free { color: var(--cta-green); font-weight: bold; font-size: 14px; }
+
+        /* --- CARROSSEL DE DEPOIMENTOS (SWIPE) --- */
+        .carousel-container {
+            display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 15px; padding-bottom: 10px; margin-top: 20px;
+            -webkit-overflow-scrolling: touch;
+        }
+        .carousel-container::-webkit-scrollbar { height: 4px; }
+        .carousel-container::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        .carousel-item { min-width: 85%; scroll-snap-align: center; border: 1px solid #333; border-radius: 12px; overflow: hidden; background: #111; }
+        .carousel-item img { width: 100%; height: auto; border-bottom: 2px solid var(--cta-green); }
 
         /* --- CRONÔMETRO --- */
         .timer-box { background: var(--alert-red); color: white; text-align: center; padding: 10px; font-weight: bold; margin: -20px -20px 20px -20px; font-size: 14px; }
@@ -59,9 +69,26 @@
 
         /* --- FOOTER --- */
         footer { margin-top: 50px; padding: 30px 20px; background: #000; text-align: center; font-size: 11px; color: #555; border-top: 1px solid #222; }
+
+        /* --- NOTIFICAÇÃO TOAST (PUMP OUT) --- */
+        #toast-notification {
+            visibility: hidden; min-width: 280px; background-color: #111; color: #fff; text-align: left;
+            border-radius: 8px; padding: 12px; position: fixed; z-index: 9999;
+            left: 50%; top: -100px; transform: translateX(-50%);
+            border-left: 4px solid #00E640; box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+            font-family: 'Roboto', sans-serif; font-size: 13px; opacity: 0; transition: all 0.5s ease-in-out;
+            display: flex; align-items: center; gap: 10px;
+        }
+        #toast-notification.show { visibility: visible; opacity: 1; top: 20px; } /* Aparece no topo */
+        .toast-icon { font-size: 20px; }
     </style>
 </head>
 <body>
+
+    <div id="toast-notification">
+        <span class="toast-icon">✅</span>
+        <div id="toast-text"></div>
+    </div>
 
     <div class="container">
         <div style="padding: 30px 0;">
@@ -69,7 +96,7 @@
             <p style="color: #ccc;">Ou descubra como evitar o prejuízo de <strong>R$ 800,00</strong> e passar de primeira.</p>
         </div>
 
-        <img src="https://placehold.co/600x400/111/FFD700?text=FOTO+EXAMINADOR+(GitHub)" alt="Examinador" style="width:100%; border: 1px solid #333;">
+        <img src="https://placehold.co/600x400/111/FFD700?text=FOTO+EXAMINADOR" alt="Examinador" style="width:100%; border: 1px solid #333;">
 
         <div style="background: rgba(255,46,46,0.1); border-left: 4px solid var(--alert-red); padding: 15px; margin: 25px 0; border-radius: 4px;">
             <h2 style="color: var(--alert-red); font-size: 20px; margin-bottom: 10px;">A CONTA É ALTA:</h2>
@@ -93,8 +120,7 @@
             <div class="bonus-card">
                 <img src="https://placehold.co/100x140/222/FFF?text=Check" class="bonus-img">
                 <div class="bonus-info">
-                    <h4>CHECKLIST FINAL DA PROVA</h4>
-                    <span class="bonus-price">Vendido por: R$ 20,00</span><br>
+                    <h4>CHECKLIST FINAL</h4>
                     <span class="bonus-free">HOJE: GRÁTIS</span>
                 </div>
             </div>
@@ -103,18 +129,29 @@
                 <img src="https://placehold.co/100x140/222/FFF?text=Mente" class="bonus-img">
                 <div class="bonus-info">
                     <h4>ROTEIRO MENTAL</h4>
-                    <span class="bonus-price">Vendido por: R$ 15,00</span><br>
                     <span class="bonus-free">HOJE: GRÁTIS</span>
                 </div>
             </div>
 
-            <div class="bonus-card">
+             <div class="bonus-card">
                 <img src="https://placehold.co/100x140/222/FFF?text=Erros" class="bonus-img">
                 <div class="bonus-info">
-                    <h4>ERROS BOBOS QUE REPROVAM</h4>
-                    <span class="bonus-price">Vendido por: R$ 15,00</span><br>
+                    <h4>ERROS BOBOS</h4>
                     <span class="bonus-free">HOJE: GRÁTIS</span>
                 </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <h2 style="text-align: center; margin-bottom: 10px; font-size: 22px;">QUEM LEU, PASSOU:</h2>
+            <p style="text-align: center; color: #888; font-size: 13px; margin-bottom: 15px;">Arraste para o lado para ver ➔</p>
+            
+            <div class="carousel-container">
+                <div class="carousel-item"><img src="https://placehold.co/400x600/111/FFF?text=PRINT+WHATSAPP+01"></div>
+                <div class="carousel-item"><img src="https://placehold.co/400x600/111/FFF?text=PRINT+WHATSAPP+02"></div>
+                <div class="carousel-item"><img src="https://placehold.co/400x600/111/FFF?text=PRINT+WHATSAPP+03"></div>
+                <div class="carousel-item"><img src="https://placehold.co/400x600/111/FFF?text=PRINT+WHATSAPP+04"></div>
+                <div class="carousel-item"><img src="https://placehold.co/400x600/111/FFF?text=PRINT+WHATSAPP+05"></div>
             </div>
         </div>
 
@@ -129,7 +166,6 @@
             
             <p style="font-size: 12px; margin-top: 10px; color: #666;">🔒 Pagamento Seguro • Acesso Imediato</p>
         </div>
-
     </div>
 
     <footer>
@@ -139,7 +175,7 @@
     </footer>
 
     <script>
-        // Contagem regressiva simples de 10 minutos
+        // 1. LÓGICA DO CRONÔMETRO (10 MIN)
         function startTimer(duration, display) {
             var timer = duration, minutes, seconds;
             setInterval(function () {
@@ -151,10 +187,38 @@
                 if (--timer < 0) { timer = duration; }
             }, 1000);
         }
+
+        // 2. LÓGICA DA NOTIFICAÇÃO (PUMP OUT)
+        const buyers = [
+            { name: "João M.", loc: "São Paulo, SP" }, { name: "Ana P.", loc: "Rio de Janeiro, RJ" },
+            { name: "Carlos S.", loc: "Minas Gerais" }, { name: "Fernanda L.", loc: "Paraná" },
+            { name: "Pedro H.", loc: "Rio Grande do Sul" }, { name: "Lucas R.", loc: "Bahia" },
+            { name: "Beatriz C.", loc: "Brasília" }
+        ];
+
+        function showToast() {
+            const toast = document.getElementById("toast-notification");
+            const textContainer = document.getElementById("toast-text");
+            const randomBuyer = buyers[Math.floor(Math.random() * buyers.length)];
+            
+            textContainer.innerHTML = `<strong style="color:#00E640">${randomBuyer.name}</strong> de ${randomBuyer.loc}<br>acabou de comprar.`;
+            toast.className = "show";
+
+            // Fica na tela por 3 segundos
+            setTimeout(function(){ 
+                toast.className = toast.className.replace("show", ""); 
+                // Espera 39 segundos para aparecer de novo
+                setTimeout(showToast, 39000); 
+            }, 3000);
+        }
+
         window.onload = function () {
-            var tenMinutes = 60 * 10,
-                display = document.querySelector('#timer');
+            // Inicia Cronômetro
+            var tenMinutes = 60 * 10, display = document.querySelector('#timer');
             startTimer(tenMinutes, display);
+
+            // Inicia Notificação após 4 segundos
+            setTimeout(showToast, 4000);
         };
     </script>
 
