@@ -9,290 +9,154 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
 
+    <script>
+        // Cole o código do seu Pixel aqui dentro se tiver
+        // Se não tiver, pode deixar vazio por enquanto
+    </script>
+
     <style>
-        /* --- RESET E VARIÁVEIS --- */
+        /* --- ESTILOS GERAIS (BLACK MODE) --- */
         :root {
             --bg-color: #050505;
-            --card-bg: #121212;
+            --card-bg: #151515;
             --highlight-yellow: #FFD700;
             --alert-red: #FF2E2E;
             --cta-green: #00E640;
             --text-white: #ffffff;
-            --text-gray: #b3b3b3;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-color); color: var(--text-white); font-family: 'Roboto', sans-serif; line-height: 1.5; overflow-x: hidden; }
         
-        body { 
-            background-color: var(--bg-color); 
-            color: var(--text-white); 
-            font-family: 'Roboto', sans-serif; 
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+        h1, h2, h3 { font-family: 'Anton', sans-serif; text-transform: uppercase; line-height: 1.1; }
+        .container { max-width: 500px; margin: 0 auto; padding: 0 20px; }
+        img { max-width: 100%; display: block; border-radius: 8px; }
 
-        /* --- TIPOGRAFIA DE IMPACTO --- */
-        h1, h2, h3 { font-family: 'Anton', sans-serif; text-transform: uppercase; letter-spacing: 1px; line-height: 1.1; }
-        
-        .text-yellow { color: var(--highlight-yellow); }
-        .text-red { color: var(--alert-red); }
-        .text-green { color: var(--cta-green); }
-        
-        strong { font-weight: 900; color: #fff; }
-
-        /* --- CONTAINER MOBILE --- */
-        .container {
-            max-width: 500px; /* Limita largura para parecer app no desktop */
-            margin: 0 auto;
-            padding: 0 20px;
-            background-color: var(--bg-color);
-        }
-
-        /* --- HERO SECTION (TOPO) --- */
-        header {
-            padding: 30px 0 20px 0;
-            text-align: center;
-        }
-
-        .headline {
-            font-size: 36px;
-            margin-bottom: 10px;
-            text-shadow: 0px 0px 15px rgba(255, 215, 0, 0.15);
-        }
-
-        .subheadline {
-            font-size: 18px;
-            color: var(--text-gray);
-            font-weight: 300;
-            margin-bottom: 20px;
-        }
-
-        /* MOCKUP IMAGEM */
-        .hero-img {
-            width: 100%;
-            border-radius: 12px;
-            border: 1px solid #333;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-            margin-bottom: 20px;
-        }
-
-        /* --- BOTÃO PULSANTE (CTA) --- */
-        .btn-wrapper { margin: 25px 0; width: 100%; }
-        
+        /* --- BOTÃO PULSANTE --- */
         .cta-button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
+            display: flex; justify-content: center; align-items: center; width: 100%;
             background: linear-gradient(180deg, #00FF47 0%, #00C236 100%);
-            color: #000;
-            font-family: 'Anton', sans-serif;
-            font-size: 26px;
-            padding: 20px 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            text-transform: uppercase;
-            box-shadow: 0 0 25px rgba(0, 255, 71, 0.3);
-            animation: pulse 1.5s infinite ease-in-out;
-            border-bottom: 4px solid #008f28;
-            transition: transform 0.2s;
+            color: #000; font-family: 'Anton', sans-serif; font-size: 24px;
+            padding: 18px; border-radius: 8px; text-decoration: none; text-transform: uppercase;
+            box-shadow: 0 0 20px rgba(0, 255, 71, 0.4); animation: pulse 1.5s infinite;
+            border-bottom: 4px solid #008f28; margin: 25px 0;
         }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
 
-        .cta-button:active { transform: scale(0.98); border-bottom: 0; margin-top: 4px; }
-        
-        .cta-sub { font-size: 12px; display: block; margin-top: -5px; font-family: 'Roboto', sans-serif; font-weight: 700; opacity: 0.8; }
+        /* --- SEÇÃO DE BÔNUS (NOVO!) --- */
+        .bonus-section { margin-top: 30px; background: #0f0f0f; border: 1px dashed #333; padding: 20px; border-radius: 10px; }
+        .bonus-card { display: flex; align-items: center; margin-bottom: 15px; background: #1a1a1a; padding: 10px; border-radius: 6px; }
+        .bonus-img { width: 60px; height: 80px; background: #333; margin-right: 15px; object-fit: cover; }
+        .bonus-info h4 { color: var(--highlight-yellow); font-size: 16px; margin-bottom: 4px; }
+        .bonus-price { font-size: 12px; color: #aaa; text-decoration: line-through; }
+        .bonus-free { color: var(--cta-green); font-weight: bold; font-size: 14px; }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-            100% { transform: scale(1); }
-        }
+        /* --- CRONÔMETRO --- */
+        .timer-box { background: var(--alert-red); color: white; text-align: center; padding: 10px; font-weight: bold; margin: -20px -20px 20px -20px; font-size: 14px; }
 
-        /* --- CAIXA DE ALERTA (DOR) --- */
-        .alert-box {
-            background-color: rgba(255, 46, 46, 0.08);
-            border-left: 4px solid var(--alert-red);
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 6px;
-        }
-        
-        .cost-list {
-            list-style: none;
-            margin-top: 15px;
-        }
-        
-        .cost-list li {
-            margin-bottom: 10px;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .cost-icon { margin-right: 10px; font-size: 20px; }
+        /* --- PREÇO --- */
+        .price-box { border: 2px solid var(--cta-green); padding: 20px; border-radius: 12px; text-align: center; margin-top: 30px; background: #0a0a0a; }
+        .price-big { font-family: 'Anton', sans-serif; font-size: 50px; color: var(--highlight-yellow); }
 
-        /* --- O QUE TEM DENTRO (SOLUÇÃO) --- */
-        .features {
-            background-color: var(--card-bg);
-            padding: 25px;
-            border-radius: 12px;
-            margin: 30px 0;
-            border: 1px solid #222;
-        }
-
-        .feature-item {
-            display: flex;
-            margin-bottom: 20px;
-            align-items: flex-start;
-        }
-        
-        .check-icon {
-            color: var(--cta-green);
-            font-weight: bold;
-            font-size: 22px;
-            margin-right: 15px;
-            min-width: 25px;
-        }
-
-        /* --- GARANTIA E PREÇO --- */
-        .guarantee-box {
-            text-align: center;
-            margin: 40px 0;
-            padding: 20px;
-            border: 1px dashed #444;
-            border-radius: 8px;
-        }
-
-        .price-anchor {
-            text-decoration: line-through;
-            color: #666;
-            font-size: 18px;
-        }
-
-        .price-final {
-            font-family: 'Anton', sans-serif;
-            font-size: 56px;
-            color: var(--highlight-yellow);
-            line-height: 1;
-            margin: 10px 0;
-        }
-
-        /* --- FOOTER COMPLIANCE (ANTI-BAN) --- */
-        footer {
-            margin-top: 60px;
-            padding: 40px 20px;
-            background-color: #000;
-            text-align: center;
-            font-size: 11px;
-            color: #555;
-            border-top: 1px solid #222;
-        }
-
-        footer a { color: #555; text-decoration: underline; }
+        /* --- FOOTER --- */
+        footer { margin-top: 50px; padding: 30px 20px; background: #000; text-align: center; font-size: 11px; color: #555; border-top: 1px solid #222; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        
-        <header>
-            <h1 class="headline">REPROVADO NA <span class="text-red">BALIZA?</span> PREPARE O BOLSO.</h1>
-            <p class="subheadline">Ou descubra como evitar o prejuízo de <strong>R$ 800,00</strong> e passar de primeira.</p>
+        <div style="padding: 30px 0;">
+            <h1 style="font-size: 34px; margin-bottom: 10px;">REPROVADO NA <span style="color:var(--alert-red)">BALIZA?</span> PREPARE O BOLSO.</h1>
+            <p style="color: #ccc;">Ou descubra como evitar o prejuízo de <strong>R$ 800,00</strong> e passar de primeira.</p>
+        </div>
+
+        <img src="https://placehold.co/600x400/111/FFD700?text=FOTO+EXAMINADOR+(GitHub)" alt="Examinador" style="width:100%; border: 1px solid #333;">
+
+        <div style="background: rgba(255,46,46,0.1); border-left: 4px solid var(--alert-red); padding: 15px; margin: 25px 0; border-radius: 4px;">
+            <h2 style="color: var(--alert-red); font-size: 20px; margin-bottom: 10px;">A CONTA É ALTA:</h2>
+            <p>❌ Taxa de Reprovação: R$ 350,00</p>
+            <p>❌ Aulas Extras: R$ 400,00</p>
+            <p style="margin-top: 10px; font-size: 14px; color: #fff;">O examinador só precisa de <strong>um erro bobo</strong> para levar seu dinheiro.</p>
+        </div>
+
+        <a href="SEU_LINK_KIWIFY_AQUI" class="cta-button">QUERO EVITAR A REPROVAÇÃO</a>
+
+        <div style="margin-top: 40px; text-align: center;">
+            <h2 style="color: var(--highlight-yellow);">O MANUAL ANTI-REPROVAÇÃO</h2>
+            <p style="font-size: 14px; margin-bottom: 15px; color: #bbb;">O guia de bolso com os segredos da prova prática.</p>
             
-            <img src="https://placehold.co/600x400/000000/FFD700?text=IMAGEM+DO+EXAMINADOR" alt="Examinador Detran" class="hero-img">
-        </header>
-
-        <div class="alert-box">
-            <h2 class="text-red" style="font-size: 22px;">A CONTA É ALTA:</h2>
-            <ul class="cost-list">
-                <li><span class="cost-icon">❌</span> Taxa de Reprovação: R$ 350,00</li>
-                <li><span class="cost-icon">❌</span> Aulas Extras: R$ 400,00</li>
-                <li><span class="cost-icon">❌</span> Meses de espera...</li>
-            </ul>
-            <p style="margin-top: 15px; font-size: 14px; color: #ddd;">
-                O examinador não quer saber se você sabe dirigir. Ele quer saber se você sabe <strong>fazer a prova</strong>. Existe uma diferença.
-            </p>
+            <img src="https://placehold.co/500x500/111/FFD700?text=MOCKUP+LIVRO+AMARELO" alt="Livro Manual" style="margin: 0 auto;">
         </div>
 
-        <div class="btn-wrapper">
-            <a href="LINK_DO_SEU_CHECKOUT_KIWIFY" class="cta-button">
-                <div>
-                    QUERO EVITAR A REPROVAÇÃO
-                    <span class="cta-sub">Acesso Imediato ao Manual</span>
-                </div>
-            </a>
-        </div>
-
-        <div class="features">
-            <h2 class="text-yellow" style="margin-bottom: 20px; font-size: 24px;">O QUE É O MANUAL?</h2>
-            <p style="margin-bottom: 20px; font-size: 15px; color: #ccc;">
-                Não é um curso chato de legislação. É um <strong>Checklist de Guerra</strong> com tudo o que o examinador olha (e o que ele usa pra te reprovar em 5 minutos).
-            </p>
-
-            <div class="feature-item">
-                <span class="check-icon">✓</span>
-                <div>
-                    <strong>Os Erros Invisíveis:</strong> Detalhes bobos na embreagem e seta que eliminam 80% dos alunos.
+        <div class="bonus-section">
+            <h3 style="text-align: center; margin-bottom: 20px; color: #fff;">LEVANDO HOJE VOCÊ GANHA:</h3>
+            
+            <div class="bonus-card">
+                <img src="https://placehold.co/100x140/222/FFF?text=Check" class="bonus-img">
+                <div class="bonus-info">
+                    <h4>CHECKLIST FINAL DA PROVA</h4>
+                    <span class="bonus-price">Vendido por: R$ 20,00</span><br>
+                    <span class="bonus-free">HOJE: GRÁTIS</span>
                 </div>
             </div>
-            <div class="feature-item">
-                <span class="check-icon">✓</span>
-                <div>
-                    <strong>Roteiro Anti-Nervosismo:</strong> O que fazer mentalmente 10 minutos antes de entrar no carro.
+
+            <div class="bonus-card">
+                <img src="https://placehold.co/100x140/222/FFF?text=Mente" class="bonus-img">
+                <div class="bonus-info">
+                    <h4>ROTEIRO MENTAL</h4>
+                    <span class="bonus-price">Vendido por: R$ 15,00</span><br>
+                    <span class="bonus-free">HOJE: GRÁTIS</span>
                 </div>
             </div>
-            <div class="feature-item">
-                <span class="check-icon">✓</span>
-                <div>
-                    <strong>O Olhar do Examinador:</strong> Saiba exatamente onde ele está olhando em cada manobra.
+
+            <div class="bonus-card">
+                <img src="https://placehold.co/100x140/222/FFF?text=Erros" class="bonus-img">
+                <div class="bonus-info">
+                    <h4>ERROS BOBOS QUE REPROVAM</h4>
+                    <span class="bonus-price">Vendido por: R$ 15,00</span><br>
+                    <span class="bonus-free">HOJE: GRÁTIS</span>
                 </div>
             </div>
         </div>
 
-        <div style="text-align: center; margin: 40px 0;">
-            <h2 style="color: #fff; font-size: 20px; margin-bottom: 15px;">MATERIAL COMPLETO EM PDF</h2>
-            <img src="https://placehold.co/600x600/000000/FFD700?text=MOCKUP+LIVRO+AMARELO" alt="Manual Anti Reprovação" class="hero-img" style="border: none; box-shadow: none; background: transparent;">
-        </div>
+        <div class="price-box">
+            <div class="timer-box">OFERTA EXPIRA EM: <span id="timer">09:59</span></div>
+            
+            <p style="text-decoration: line-through; color: #666;">Total: R$ 97,00</p>
+            <div class="price-big">R$ 27,00</div>
+            <p style="font-size: 13px; color: #aaa; margin-bottom: 20px;">(Menos que o Uber até o Detran)</p>
 
-        <div class="guarantee-box">
-            <p class="price-anchor">De R$ 97,00</p>
-            <p style="font-size: 14px; color: var(--cta-green);">OFERTA POR TEMPO LIMITADO</p>
-            <div class="price-final">R$ 27,00</div>
-            <p style="font-size: 14px; margin-bottom: 20px;">(Menos que o Uber até o Detran)</p>
-
-            <a href="LINK_DO_SEU_CHECKOUT_KIWIFY" class="cta-button">
-                QUERO PASSAR DE PRIMEIRA
-            </a>
-
-            <div style="margin-top: 20px; display: flex; justify-content: center; align-items: center; gap: 10px;">
-                <img src="https://img.icons8.com/ios-filled/50/40C057/lock.png" width="20" alt="Cadeado">
-                <span style="font-size: 13px; color: #888;">Pagamento Seguro • Garantia de 7 Dias</span>
-            </div>
-        </div>
-
-        <div style="margin-top: 40px;">
-            <h3 style="margin-bottom: 20px; font-size: 20px;">DÚVIDAS COMUNS</h3>
-            <details style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
-                <summary style="font-weight: bold; cursor: pointer;">Serve para qualquer estado?</summary>
-                <p style="font-size: 14px; color: #ccc; margin-top: 10px;">Sim. O Manual foca nas regras nacionais do CONTRAN e no comportamento padrão dos examinadores em todo o Brasil.</p>
-            </details>
-            <details style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
-                <summary style="font-weight: bold; cursor: pointer;">Como recebo o acesso?</summary>
-                <p style="font-size: 14px; color: #ccc; margin-top: 10px;">Imediatamente no seu e-mail após a confirmação do pagamento (Pix ou Cartão).</p>
-            </details>
+            <a href="SEU_LINK_KIWIFY_AQUI" class="cta-button">QUERO PASSAR DE PRIMEIRA</a>
+            
+            <p style="font-size: 12px; margin-top: 10px; color: #666;">🔒 Pagamento Seguro • Acesso Imediato</p>
         </div>
 
     </div>
 
     <footer>
-        <p><strong>Isenção de Responsabilidade:</strong> Este produto não garante a obtenção da CNH. O resultado depende do desempenho individual do candidato. Este site não é afiliado ao Facebook, Meta ou a qualquer entidade governamental (DETRAN).</p>
-        <br>
-        <p>Contato: suporte@seudominio.com</p>
-        <br>
-        <p><a href="#">Termos de Uso</a> | <a href="#">Políticas de Privacidade</a></p>
-        <br>
-        <p>© 2025 Manual Anti-Reprovação. Todos os direitos reservados.</p>
+        <p><strong>Isenção de Responsabilidade:</strong> Este site não é afiliado ao Facebook ou ao DETRAN.</p>
+        <p style="margin-top: 10px;">© 2025 Manual Anti-Reprovação.</p>
+        <p><a href="#" style="color: #555;">Termos de Uso</a> | <a href="#" style="color: #555;">Privacidade</a></p>
     </footer>
+
+    <script>
+        // Contagem regressiva simples de 10 minutos
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = minutes + ":" + seconds;
+                if (--timer < 0) { timer = duration; }
+            }, 1000);
+        }
+        window.onload = function () {
+            var tenMinutes = 60 * 10,
+                display = document.querySelector('#timer');
+            startTimer(tenMinutes, display);
+        };
+    </script>
 
 </body>
 </html>
