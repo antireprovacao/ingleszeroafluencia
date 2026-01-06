@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>120 Sucos Detox + Bônus</title>
+    <title>120 Sucos Detox + Bônus Exclusivo</title>
     <style>
         /* RESET E ESTILO BÁSICO (MOBILE FIRST) */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
@@ -29,6 +29,7 @@
             border-radius: 5px;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
 
         /* TEXTO */
@@ -41,7 +42,6 @@
 
         /* OFERTA BOX */
         .offer-box { background: #fffbe6; border: 2px dashed #e6c300; padding: 20px; text-align: center; margin: 30px 0; border-radius: 10px; }
-        .bonus-tag { background: #cc0000; color: #fff; padding: 5px 10px; border-radius: 4px; font-size: 12px; font-weight: bold; text-transform: uppercase; display: inline-block; margin-bottom: 10px; }
         .old-price { text-decoration: line-through; color: #999; font-size: 16px; }
         .new-price { color: #27ae60; font-size: 36px; font-weight: 900; }
         
@@ -62,6 +62,18 @@
         }
         .cta-button:active { transform: translateY(4px); box-shadow: none; }
 
+        /* AVISOS DE SEGURANÇA */
+        .security-text { 
+            margin-top: 15px; 
+            font-size: 13px; 
+            color: #555; 
+            background-color: #f0f0f0; 
+            padding: 10px; 
+            border-radius: 8px;
+            display: inline-block;
+            width: 100%;
+        }
+
         /* COMENTÁRIOS */
         .comments-section { margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px; }
         .fb-comment { display: flex; margin-bottom: 15px; }
@@ -70,15 +82,16 @@
         .comment-body { background: #f0f2f5; padding: 10px 15px; border-radius: 18px; font-size: 14px; }
         .name { font-weight: bold; color: #365899; font-size: 14px; }
         .time { font-size: 12px; color: #999; margin-left: 10px; }
+        .likes { color: #365899; font-size: 12px; margin-top: 5px; cursor: pointer; }
+
+        /* FOOTER */
+        footer { text-align: center; font-size: 12px; color: #999; margin-top: 50px; padding-bottom: 20px; }
         
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.02); }
             100% { transform: scale(1); }
         }
-        
-        /* ALERTA DE SEGURANÇA */
-        .security-icons { text-align: center; margin-top: 15px; font-size: 12px; color: #777; }
     </style>
 </head>
 <body>
@@ -89,12 +102,14 @@
 
     <div class="container">
         
-        <h1 class="headline">O Fim do Inchaço: Como 1 Copo Disso Por Dia Pode Sugar a Gordura da Barriga</h1>
+        <h1 class="headline">O Fim do Inchaço: Como 1 Copo Disso Por Dia Pode "Sugar" a Gordura da Barriga</h1>
         <p class="subheadline">Nunca mais repita o mesmo suco ruim. Descubra o segredo dos sabores que emagrecem.</p>
 
-        <div class="video-box" onclick="alert('Coloque a imagem da capa do Ebook aqui!')">
-            <div style="position: absolute; width: 100%; height: 100%; background: url('https://placehold.co/600x400/000000/FFF?text=CAPA+DO+EBOOK+AQUI') center/cover;"></div>
-        </div>
+        <a href="https://pay.kiwify.com.br/JBNa0U3" style="text-decoration: none;">
+            <div class="video-box">
+                <div style="position: absolute; width: 100%; height: 100%; background: url('https://placehold.co/600x400/000000/FFF?text=TOQUE+AQUI+PARA+VER+O+SEGREDO') center/cover;"></div>
+            </div>
+        </a>
 
         <p>Você começa a dieta na segunda e para na quarta porque cansou de comer ovo e salada?</p>
         <p>O segredo das famosas não é passar fome. É saber misturar os ingredientes certos para ativar o <span class="highlight">Modo Queima de Gordura</span>.</p>
@@ -107,49 +122,66 @@
 
         <div class="offer-box">
             <p style="font-weight: bold; margin-bottom: 10px;">VOCÊ VAI RECEBER:</p>
-            <div style="text-align: left; margin-bottom: 15px; font-size: 15px;">
+            <div style="text-align: left; margin-bottom: 15px; font-size: 15px; padding: 0 10px;">
                 📚 <strong>E-book:</strong> 120 Receitas de Sucos Detox<br>
-                🎁 <strong>BÔNUS:</strong> 10 Jantares Low Carb (Para Secar Dormindo)<br>
+                🎁 <strong>BÔNUS GRÁTIS:</strong> 10 Jantares Low Carb (Para Secar Dormindo)<br>
             </div>
 
             <div class="old-price">De R$ 97,00</div>
             <div class="new-price">Por R$ 19,90</div>
             
-            <a href="SEU_LINK_DO_CHECKOUT_AQUI" class="cta-button">QUERO DESINCHAR AGORA 👉</a>
+            <a href="https://pay.kiwify.com.br/JBNa0U3" class="cta-button">QUERO DESINCHAR AGORA 👉</a>
             
-            <div class="security-icons">🔒 Acesso Imediato via E-mail</div>
+            <div class="security-text">
+                🔒 <strong>Compra 100% Segura</strong><br>
+                📧 Acesso Imediato enviado para seu E-mail
+            </div>
         </div>
 
         <div class="comments-section">
-            <h3>Quem comprou, amou:</h3>
-            <br>
+            <h3 style="margin-bottom: 20px;">Quem comprou, amou:</h3>
+
             <div class="fb-comment">
-                <div class="avatar"><img src="https://randomuser.me/api/portraits/women/42.jpg" alt="Foto"></div>
+                <div class="avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto"></div>
                 <div>
                     <div class="comment-body">
-                        <div class="name">Juliana Costa</div>
-                        Adorei o bônus dos jantares! Fiz a receita de abobrinha ontem e é perfeita. Os sucos são ótimos.
+                        <div class="name">Fernanda Lima</div>
+                        Gente, funciona mesmo! Em 2 dias desinchei muito. Já perdi medidas na cintura. Por 19 reais tá de graça.
                     </div>
-                    <div class="time">Curtir · Responder · 4 min</div>
+                    <div class="likes">Curtir · Responder · 3 min</div>
                 </div>
             </div>
-            
+
             <div class="fb-comment">
-                <div class="avatar"><img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Foto"></div>
+                <div class="avatar"><img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Foto"></div>
                 <div>
                     <div class="comment-body">
-                        <div class="name">Carla Dias</div>
-                        Finalmente receitas que dá pra tomar kkkk aquele suco verde amargo ninguém merece. Essas são deliciosas!
+                        <div class="name">Cláudia Martins</div>
+                        Comprei ontem. O material é muito bem feito e os sucos são deliciosos, nada a ver com aquele gosto amargo de folha. Amei!
                     </div>
-                    <div class="time">Curtir · Responder · 15 min</div>
+                    <div class="likes">Curtir · Responder · 12 min</div>
                 </div>
             </div>
+
+             <div class="fb-comment">
+                <div class="avatar"><img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Foto"></div>
+                <div>
+                    <div class="comment-body">
+                        <div class="name">Patrícia Gomes</div>
+                        Eu tava com medo de não chegar, mas recebi no email na hora que paguei o Pix. Já tô fazendo o jantar do bônus!
+                    </div>
+                    <div class="likes">Curtir · Responder · 55 min</div>
+                </div>
+            </div>
+
         </div>
 
     </div>
 
     <footer>
+        <p>Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook.</p>
         <p>&copy; 2026 Essência Detox. Todos os direitos reservados.</p>
+        <p style="margin-top: 10px; font-size: 10px;">Pirataria é crime.</p>
     </footer>
 
 </body>
