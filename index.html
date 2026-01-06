@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Essência Detox - Oferta Exclusiva</title>
+    <title>120 Sucos Detox + Bônus</title>
     <style>
         /* RESET E ESTILO BÁSICO (MOBILE FIRST) */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #f7f7f7; color: #333; line-height: 1.6; }
         
-        /* CONTAINER CENTRAL (Fica igual página de notícia) */
+        /* CONTAINER CENTRAL */
         .container { max-width: 600px; margin: 0 auto; background: #fff; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
 
-        /* HEADLINE AGRESSIVA */
-        .headline { font-size: 26px; font-weight: 800; color: #cc0000; text-align: center; margin-bottom: 10px; line-height: 1.2; text-transform: uppercase; }
+        /* HEADLINE */
+        .headline { font-size: 24px; font-weight: 800; color: #cc0000; text-align: center; margin-bottom: 10px; line-height: 1.2; text-transform: uppercase; }
         .subheadline { font-size: 16px; color: #555; text-align: center; margin-bottom: 20px; font-weight: 500; }
 
-        /* VSL / IMAGEM DE DESTAQUE */
+        /* VIDEO BOX / IMAGEM */
         .video-box { 
             width: 100%; 
             height: 250px; 
@@ -25,22 +25,25 @@
             align-items: center; 
             justify-content: center; 
             color: #fff; 
-            font-size: 20px; 
             margin-bottom: 25px;
             border-radius: 5px;
             position: relative;
+            overflow: hidden;
         }
-        .play-btn { width: 60px; height: 60px; background: rgba(255,0,0,0.8); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
-        .play-triangle { width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 20px solid #fff; margin-left: 5px; }
 
-        /* TEXTO PERSUASIVO */
+        /* TEXTO */
         p { margin-bottom: 15px; font-size: 18px; text-align: justify; }
         .highlight { background-color: #ffff00; font-weight: bold; padding: 0 5px; }
 
-        /* OFERTA E BOTÃO */
+        /* LISTA DE BENEFÍCIOS */
+        ul { margin: 20px 0; padding-left: 20px; }
+        li { margin-bottom: 10px; font-size: 16px; }
+
+        /* OFERTA BOX */
         .offer-box { background: #fffbe6; border: 2px dashed #e6c300; padding: 20px; text-align: center; margin: 30px 0; border-radius: 10px; }
+        .bonus-tag { background: #cc0000; color: #fff; padding: 5px 10px; border-radius: 4px; font-size: 12px; font-weight: bold; text-transform: uppercase; display: inline-block; margin-bottom: 10px; }
         .old-price { text-decoration: line-through; color: #999; font-size: 16px; }
-        .new-price { color: #27ae60; font-size: 32px; font-weight: 900; }
+        .new-price { color: #27ae60; font-size: 36px; font-weight: 900; }
         
         .cta-button {
             display: block;
@@ -49,7 +52,7 @@
             color: #fff;
             padding: 20px;
             text-align: center;
-            font-size: 22px;
+            font-size: 20px;
             font-weight: bold;
             text-decoration: none;
             border-radius: 50px;
@@ -59,7 +62,7 @@
         }
         .cta-button:active { transform: translateY(4px); box-shadow: none; }
 
-        /* COMENTÁRIOS ESTILO FACEBOOK (PROVA SOCIAL) */
+        /* COMENTÁRIOS */
         .comments-section { margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px; }
         .fb-comment { display: flex; margin-bottom: 15px; }
         .avatar { width: 50px; height: 50px; background: #ddd; border-radius: 50%; margin-right: 10px; flex-shrink: 0; overflow: hidden; }
@@ -67,97 +70,86 @@
         .comment-body { background: #f0f2f5; padding: 10px 15px; border-radius: 18px; font-size: 14px; }
         .name { font-weight: bold; color: #365899; font-size: 14px; }
         .time { font-size: 12px; color: #999; margin-left: 10px; }
-        .likes { color: #365899; font-size: 12px; margin-top: 5px; cursor: pointer; }
-
-        /* FOOTER */
-        footer { text-align: center; font-size: 12px; color: #999; margin-top: 50px; padding-bottom: 20px; }
-
-        /* ANIMAÇÃO DO BOTÃO */
+        
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.02); }
             100% { transform: scale(1); }
         }
+        
+        /* ALERTA DE SEGURANÇA */
+        .security-icons { text-align: center; margin-top: 15px; font-size: 12px; color: #777; }
     </style>
 </head>
 <body>
 
     <div style="background: #cc0000; color: #fff; text-align: center; padding: 10px; font-size: 14px; font-weight: bold;">
-        ⚠️ ATENÇÃO: Este vídeo pode sair do ar hoje.
+        🔥 ÚLTIMAS 7 UNIDADES COM DESCONTO
     </div>
 
     <div class="container">
         
-        <h1 class="headline">O Ritual Caseiro de "7 Segundos" que Derrete o Inchaço Abdominal</h1>
-        <p class="subheadline">Você não precisa parar de comer o que gosta. Descubra o segredo.</p>
+        <h1 class="headline">O Fim do Inchaço: Como 1 Copo Disso Por Dia Pode Sugar a Gordura da Barriga</h1>
+        <p class="subheadline">Nunca mais repita o mesmo suco ruim. Descubra o segredo dos sabores que emagrecem.</p>
 
-        <div class="video-box" onclick="alert('Aqui você colocaria seu vídeo ou link do VSL!')">
-            <div style="position: absolute; width: 100%; height: 100%; background: url('https://placehold.co/600x400/000000/FFF?text=CLIQUE+PARA+ASSISTIR') center/cover;"></div>
-            <div class="play-btn"><div class="play-triangle"></div></div>
+        <div class="video-box" onclick="alert('Coloque a imagem da capa do Ebook aqui!')">
+            <div style="position: absolute; width: 100%; height: 100%; background: url('https://placehold.co/600x400/000000/FFF?text=CAPA+DO+EBOOK+AQUI') center/cover;"></div>
         </div>
 
-        <p>Você se sente inchada(o) mesmo bebendo água? Sente que suas roupas estão apertando cada dia mais?</p>
+        <p>Você começa a dieta na segunda e para na quarta porque cansou de comer ovo e salada?</p>
+        <p>O segredo das famosas não é passar fome. É saber misturar os ingredientes certos para ativar o <span class="highlight">Modo Queima de Gordura</span>.</p>
         
-        <p>A culpa <strong>NÃO é sua.</strong></p>
-        
-        <p>Estudos recentes mostram que existe uma <span class="highlight">"trava tóxica"</span> no seu intestino que impede seu corpo de eliminar gordura, não importa o quanto você faça dieta.</p>
-        
-        <p>O <strong>Essência Detox</strong> é o único método passo-a-passo capaz de destravar esse mecanismo em 24 horas.</p>
+        <p>Apresentamos o guia definitivo: <strong>120 Sucos Detox Exterminadores de Gordura.</strong></p>
+
+        <p>✅ Receitas que ficam prontas em 2 minutos.<br>
+        ✅ Ingredientes baratos que você acha no mercado da esquina.<br>
+        ✅ Sabores deliciosos (você vai esquecer que é dieta).</p>
 
         <div class="offer-box">
-            <p style="margin:0; font-size: 14px;">OFERTA RELÂMPAGO</p>
+            <p style="font-weight: bold; margin-bottom: 10px;">VOCÊ VAI RECEBER:</p>
+            <div style="text-align: left; margin-bottom: 15px; font-size: 15px;">
+                📚 <strong>E-book:</strong> 120 Receitas de Sucos Detox<br>
+                🎁 <strong>BÔNUS:</strong> 10 Jantares Low Carb (Para Secar Dormindo)<br>
+            </div>
+
             <div class="old-price">De R$ 97,00</div>
             <div class="new-price">Por R$ 19,90</div>
             
             <a href="SEU_LINK_DO_CHECKOUT_AQUI" class="cta-button">QUERO DESINCHAR AGORA 👉</a>
             
-            <p style="font-size: 12px; margin-top: 10px; color: #555;">🔒 Compra 100% Segura e Discreta</p>
+            <div class="security-icons">🔒 Acesso Imediato via E-mail</div>
         </div>
 
         <div class="comments-section">
-            <h3 style="margin-bottom: 20px;">Comentários Recentes</h3>
-
+            <h3>Quem comprou, amou:</h3>
+            <br>
             <div class="fb-comment">
-                <div class="avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto"></div>
+                <div class="avatar"><img src="https://randomuser.me/api/portraits/women/42.jpg" alt="Foto"></div>
                 <div>
                     <div class="comment-body">
-                        <div class="name">Fernanda Lima</div>
-                        Gente, funciona mesmo! Em 2 dias desinchei muito. O gosto é tranquilo e o material é super prático. Por 19 reais tá de graça.
+                        <div class="name">Juliana Costa</div>
+                        Adorei o bônus dos jantares! Fiz a receita de abobrinha ontem e é perfeita. Os sucos são ótimos.
                     </div>
-                    <div class="likes">Curtir · Responder · 3 min</div>
+                    <div class="time">Curtir · Responder · 4 min</div>
                 </div>
             </div>
-
+            
             <div class="fb-comment">
-                <div class="avatar"><img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Foto"></div>
+                <div class="avatar"><img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Foto"></div>
                 <div>
                     <div class="comment-body">
-                        <div class="name">Cláudia Martins</div>
-                        Comprei ontem e já recebi no email. Comecei hoje o ritual matinal e já me sinto mais leve. Obrigada!
+                        <div class="name">Carla Dias</div>
+                        Finalmente receitas que dá pra tomar kkkk aquele suco verde amargo ninguém merece. Essas são deliciosas!
                     </div>
-                    <div class="likes">Curtir · Responder · 12 min</div>
+                    <div class="time">Curtir · Responder · 15 min</div>
                 </div>
             </div>
-
-             <div class="fb-comment">
-                <div class="avatar"><img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Foto"></div>
-                <div>
-                    <div class="comment-body">
-                        <div class="name">Patrícia Gomes</div>
-                        Eu tava com medo de ser golpe mas é pela Kiwify, super seguro. Valeu cada centavo.
-                    </div>
-                    <div class="likes">Curtir · Responder · 55 min</div>
-                </div>
-            </div>
-
         </div>
 
     </div>
 
     <footer>
-        <p>Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site.</p>
         <p>&copy; 2026 Essência Detox. Todos os direitos reservados.</p>
-        <p><a href="#">Termos de Uso</a> | <a href="#">Privacidade</a></p>
     </footer>
 
 </body>
