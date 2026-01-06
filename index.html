@@ -5,87 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>120 Sucos Detox + Bônus Exclusivo</title>
     <style>
-        /* RESET E ESTILO BÁSICO (MOBILE FIRST) */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f7f7f7; color: #333; line-height: 1.6; }
+        /* RESET E ESTILO BÁSICO (FOCADO EM MOBILE) */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: #f0f2f5; color: #1c1e21; line-height: 1.4; }
         
-        /* CONTAINER CENTRAL */
-        .container { max-width: 600px; margin: 0 auto; background: #fff; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        /* CONTAINER CENTRAL MAIS APERTADO */
+        .container { max-width: 600px; margin: 0 auto; background: #fff; padding: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
 
-        /* HEADLINE */
-        .headline { font-size: 24px; font-weight: 800; color: #cc0000; text-align: center; margin-bottom: 10px; line-height: 1.2; text-transform: uppercase; }
-        .subheadline { font-size: 16px; color: #555; text-align: center; margin-bottom: 20px; font-weight: 500; }
+        /* HEADLINES COMPACTAS */
+        .headline { font-size: 22px; font-weight: 800; color: #cc0000; text-align: center; margin-bottom: 8px; line-height: 1.1; text-transform: uppercase; }
+        .subheadline { font-size: 15px; color: #555; text-align: center; margin-bottom: 15px; font-weight: 500; }
 
         /* VIDEO BOX / IMAGEM */
         .video-box { 
             width: 100%; 
-            height: 250px; 
+            height: 220px; 
             background: #000; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            color: #fff; 
-            margin-bottom: 25px;
-            border-radius: 5px;
             position: relative;
             overflow: hidden;
             cursor: pointer;
+            margin-bottom: 20px;
+            border-radius: 8px;
         }
 
-        /* TEXTO */
-        p { margin-bottom: 15px; font-size: 18px; text-align: justify; }
-        .highlight { background-color: #ffff00; font-weight: bold; padding: 0 5px; }
+        /* TEXTO DO CORPO MAIS DINÂMICO */
+        p { margin-bottom: 10px; font-size: 17px; text-align: left; color: #333; }
+        .highlight { background-color: #ffff00; font-weight: bold; padding: 2px 5px; }
 
-        /* LISTA DE BENEFÍCIOS */
-        ul { margin: 20px 0; padding-left: 20px; }
-        li { margin-bottom: 10px; font-size: 16px; }
+        /* LISTA MAIS APERTADA */
+        ul { margin: 15px 0; padding-left: 20px; }
+        li { margin-bottom: 8px; font-size: 16px; }
 
-        /* OFERTA BOX */
-        .offer-box { background: #fffbe6; border: 2px dashed #e6c300; padding: 20px; text-align: center; margin: 30px 0; border-radius: 10px; }
-        .old-price { text-decoration: line-through; color: #999; font-size: 16px; }
-        .new-price { color: #27ae60; font-size: 36px; font-weight: 900; }
+        /* OFERTA BOX COMPACTA */
+        .offer-box { background: #fffbe6; border: 2px dashed #e6c300; padding: 15px; text-align: center; margin: 20px 0; border-radius: 12px; }
+        .old-price { text-decoration: line-through; color: #999; font-size: 14px; }
+        .new-price { color: #27ae60; font-size: 34px; font-weight: 900; line-height: 1; }
         
         .cta-button {
             display: block;
             width: 100%;
             background: linear-gradient(to bottom, #2ecc71, #27ae60);
             color: #fff;
-            padding: 20px;
+            padding: 16px; 
             text-align: center;
             font-size: 20px;
             font-weight: bold;
             text-decoration: none;
             border-radius: 50px;
             box-shadow: 0 4px 0 #1e8449;
-            margin-top: 15px;
+            margin-top: 12px;
             animation: pulse 2s infinite;
         }
         .cta-button:active { transform: translateY(4px); box-shadow: none; }
 
         /* AVISOS DE SEGURANÇA */
         .security-text { 
-            margin-top: 15px; 
-            font-size: 13px; 
-            color: #555; 
-            background-color: #f0f0f0; 
-            padding: 10px; 
-            border-radius: 8px;
+            margin-top: 12px; 
+            font-size: 12px; 
+            color: #666; 
+            background-color: #f5f5f5; 
+            padding: 8px; 
+            border-radius: 6px;
             display: inline-block;
             width: 100%;
         }
 
-        /* COMENTÁRIOS */
-        .comments-section { margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px; }
-        .fb-comment { display: flex; margin-bottom: 15px; }
-        .avatar { width: 50px; height: 50px; background: #ddd; border-radius: 50%; margin-right: 10px; flex-shrink: 0; overflow: hidden; }
+        /* COMENTÁRIOS COMPACTOS */
+        .comments-section { margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; }
+        .fb-comment { display: flex; margin-bottom: 12px; }
+        .avatar { width: 40px; height: 40px; background: #ddd; border-radius: 50%; margin-right: 8px; flex-shrink: 0; overflow: hidden; } 
         .avatar img { width: 100%; height: 100%; object-fit: cover; }
-        .comment-body { background: #f0f2f5; padding: 10px 15px; border-radius: 18px; font-size: 14px; }
-        .name { font-weight: bold; color: #365899; font-size: 14px; }
-        .time { font-size: 12px; color: #999; margin-left: 10px; }
-        .likes { color: #365899; font-size: 12px; margin-top: 5px; cursor: pointer; }
+        .comment-body { background: #f0f2f5; padding: 8px 12px; border-radius: 15px; font-size: 13px; } 
+        .name { font-weight: bold; color: #365899; font-size: 13px; }
+        .time { font-size: 11px; color: #999; margin-left: 8px; }
+        .likes { color: #365899; font-size: 11px; margin-top: 4px; cursor: pointer; }
 
         /* FOOTER */
-        footer { text-align: center; font-size: 12px; color: #999; margin-top: 50px; padding-bottom: 20px; }
+        footer { text-align: center; font-size: 11px; color: #aaa; margin-top: 30px; padding-bottom: 20px; }
         
         @keyframes pulse {
             0% { transform: scale(1); }
@@ -96,35 +92,42 @@
 </head>
 <body>
 
-    <div style="background: #cc0000; color: #fff; text-align: center; padding: 10px; font-size: 14px; font-weight: bold;">
+    <div style="background: #cc0000; color: #fff; text-align: center; padding: 8px; font-size: 13px; font-weight: bold;">
         🔥 ÚLTIMAS 7 UNIDADES COM DESCONTO
     </div>
 
     <div class="container">
         
         <h1 class="headline">O Fim do Inchaço: Como 1 Copo Disso Por Dia Pode "Sugar" a Gordura da Barriga</h1>
-        <p class="subheadline">Nunca mais repita o mesmo suco ruim. Descubra o segredo dos sabores que emagrecem.</p>
+        <p class="subheadline">Nunca mais repita o mesmo suco ruim. Descubra os sabores que emagrecem.</p>
 
         <a href="https://pay.kiwify.com.br/JBNa0U3" style="text-decoration: none;">
             <div class="video-box">
-                <div style="position: absolute; width: 100%; height: 100%; background: url('https://placehold.co/600x400/000000/FFF?text=TOQUE+AQUI+PARA+VER+O+SEGREDO') center/cover;"></div>
+                
+                <div style="position: absolute; width: 100%; height: 100%; background: url('SEU_LINK_DA_IMAGEM_AQUI') center/cover;"></div>
+                
             </div>
         </a>
 
-        <p>Você começa a dieta na segunda e para na quarta porque cansou de comer ovo e salada?</p>
-        <p>O segredo das famosas não é passar fome. É saber misturar os ingredientes certos para ativar o <span class="highlight">Modo Queima de Gordura</span>.</p>
+        <p>Cansou de começar a dieta na segunda e parar na quarta comendo ovo e salada?</p>
+        
+        <p>O segredo das famosas <strong>não é passar fome.</strong></p>
+        
+        <p>É saber misturar os ingredientes certos para ativar o <span class="highlight">Modo Queima de Gordura</span> natural do corpo.</p>
         
         <p>Apresentamos o guia definitivo: <strong>120 Sucos Detox Exterminadores de Gordura.</strong></p>
 
-        <p>✅ Receitas que ficam prontas em 2 minutos.<br>
-        ✅ Ingredientes baratos que você acha no mercado da esquina.<br>
-        ✅ Sabores deliciosos (você vai esquecer que é dieta).</p>
+        <ul style="margin-top: 10px; margin-bottom: 10px;">
+            <li>✅ Prontos em 2 minutos.</li>
+            <li>✅ Ingredientes baratos de mercado.</li>
+            <li>✅ Sabores deliciosos (adeus suco amargo).</li>
+        </ul>
 
         <div class="offer-box">
-            <p style="font-weight: bold; margin-bottom: 10px;">VOCÊ VAI RECEBER:</p>
-            <div style="text-align: left; margin-bottom: 15px; font-size: 15px; padding: 0 10px;">
+            <p style="font-weight: bold; margin-bottom: 5px; font-size: 16px;">VOCÊ VAI RECEBER:</p>
+            <div style="text-align: left; margin-bottom: 10px; font-size: 14px; padding: 0 5px;">
                 📚 <strong>E-book:</strong> 120 Receitas de Sucos Detox<br>
-                🎁 <strong>BÔNUS GRÁTIS:</strong> 10 Jantares Low Carb (Para Secar Dormindo)<br>
+                🎁 <strong>BÔNUS GRÁTIS:</strong> 10 Jantares Low Carb<br>
             </div>
 
             <div class="old-price">De R$ 97,00</div>
@@ -134,19 +137,19 @@
             
             <div class="security-text">
                 🔒 <strong>Compra 100% Segura</strong><br>
-                📧 Acesso Imediato enviado para seu E-mail
+                📧 Acesso Imediato no seu E-mail
             </div>
         </div>
 
         <div class="comments-section">
-            <h3 style="margin-bottom: 20px;">Quem comprou, amou:</h3>
+            <h3 style="margin-bottom: 15px; font-size: 18px;">Quem comprou, amou:</h3>
 
             <div class="fb-comment">
                 <div class="avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto"></div>
                 <div>
                     <div class="comment-body">
                         <div class="name">Fernanda Lima</div>
-                        Gente, funciona mesmo! Em 2 dias desinchei muito. Já perdi medidas na cintura. Por 19 reais tá de graça.
+                        Gente, funciona mesmo! Em 2 dias desinchei muito e já perdi medidas. Por 19 reais tá de graça.
                     </div>
                     <div class="likes">Curtir · Responder · 3 min</div>
                 </div>
@@ -157,7 +160,7 @@
                 <div>
                     <div class="comment-body">
                         <div class="name">Cláudia Martins</div>
-                        Comprei ontem. O material é muito bem feito e os sucos são deliciosos, nada a ver com aquele gosto amargo de folha. Amei!
+                        O material é muito bem feito e os sucos são deliciosos, nada a ver com gosto amargo. Amei!
                     </div>
                     <div class="likes">Curtir · Responder · 12 min</div>
                 </div>
@@ -168,7 +171,7 @@
                 <div>
                     <div class="comment-body">
                         <div class="name">Patrícia Gomes</div>
-                        Eu tava com medo de não chegar, mas recebi no email na hora que paguei o Pix. Já tô fazendo o jantar do bônus!
+                        Tava com medo mas recebi no email na hora que paguei o Pix. Já tô fazendo o jantar do bônus!
                     </div>
                     <div class="likes">Curtir · Responder · 55 min</div>
                 </div>
@@ -181,7 +184,7 @@
     <footer>
         <p>Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook.</p>
         <p>&copy; 2026 Essência Detox. Todos os direitos reservados.</p>
-        <p style="margin-top: 10px; font-size: 10px;">Pirataria é crime.</p>
+        <p style="margin-top: 5px; font-size: 10px;">Pirataria é crime.</p>
     </footer>
 
 </body>
