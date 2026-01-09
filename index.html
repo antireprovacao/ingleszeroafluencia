@@ -3,96 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatório Confidencial - Bancos</title>
+    <title>Relatório Confidencial - O Código</title>
     <style>
-        /* ESTILO DOSSIÊ / LEITURA */
+        /* ESTILO GERAL (DOSSIÊ) */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Georgia', 'Times New Roman', serif; }
-        body { background-color: #f4f4f4; color: #333; line-height: 1.6; }
+        body { background-color: #f0f2f5; color: #1c1e21; line-height: 1.6; padding-bottom: 60px; }
         
-        .container { max-width: 700px; margin: 0 auto; background: #fff; padding: 40px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+        .container { max-width: 700px; margin: 20px auto; background: #fff; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-radius: 4px; }
         
-        /* ALERTA DE TOPO */
-        .alert-box { background: #ffeded; border: 1px solid #ffcccc; color: #cc0000; padding: 15px; font-family: Arial, sans-serif; font-size: 0.9rem; text-align: center; margin-bottom: 30px; font-weight: bold; }
+        /* ALERTA TOPO */
+        .alert-box { background: #fee; border: 1px solid #fcc; color: #c00; padding: 10px; font-family: Arial, sans-serif; font-size: 0.85rem; text-align: center; margin-bottom: 25px; font-weight: bold; border-radius: 4px; }
 
-        /* HEADLINE (MANCHETE) */
-        h1 { font-family: 'Arial', sans-serif; font-size: 2.2rem; line-height: 1.1; color: #000; margin-bottom: 10px; text-align: center; letter-spacing: -1px; }
-        .subhead { font-family: 'Arial', sans-serif; font-size: 1.2rem; text-align: center; color: #555; margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px; }
+        /* HEADLINE */
+        h1 { font-family: 'Arial', sans-serif; font-size: 2rem; line-height: 1.1; color: #000; margin-bottom: 10px; text-align: center; letter-spacing: -0.5px; }
+        .subhead { font-family: 'Arial', sans-serif; font-size: 1.1rem; text-align: center; color: #555; margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 20px; }
 
-        /* CORPO DO TEXTO */
-        p { margin-bottom: 20px; font-size: 1.1rem; text-align: justify; }
-        .highlight { background-color: #ffffcc; }
-        b { font-weight: 900; }
-        
-        /* ELEMENTOS VISUAIS */
-        .print-screen { width: 100%; border: 1px solid #ddd; margin: 20px 0; display: block; }
-        .box-segredo { background: #e8f4fd; border-left: 5px solid #2196F3; padding: 20px; margin: 30px 0; font-family: Arial, sans-serif; }
+        /* TEXTO */
+        p { margin-bottom: 18px; font-size: 1.1rem; text-align: justify; }
+        .highlight { background-color: #fffae6; padding: 2px 5px; border-radius: 3px; }
+        b { font-weight: 900; color: #000; }
 
-        /* BOTÃO DE COMPRA */
-        .cta-button { display: block; width: 100%; background: #27ae60; color: #fff; text-align: center; padding: 25px; font-size: 1.5rem; font-family: Arial, sans-serif; font-weight: bold; text-decoration: none; border-radius: 5px; border-bottom: 4px solid #1e8449; margin: 40px 0; box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4); animation: pulse 2s infinite; }
-        .cta-button:hover { background: #2ecc71; }
+        /* CAIXA DE IMAGEM (EVIDÊNCIA) */
+        .evidence-box { background: #f9f9f9; border: 1px dashed #ccc; padding: 10px; margin: 30px 0; text-align: center; }
+        .evidence-box img { max-width: 100%; display: block; margin: 0 auto; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .caption { font-family: Arial, sans-serif; font-size: 0.8rem; color: #777; margin-top: 8px; font-style: italic; }
 
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
+        /* DEPOIMENTOS */
+        .testimonials-area { background: #f5f7f9; padding: 20px; border-radius: 8px; margin: 40px 0; border: 1px solid #e1e4e8; }
+        .testi-item { background: #fff; padding: 15px; margin-bottom: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); display: flex; align-items: flex-start; }
+        .testi-avatar { width: 40px; height: 40px; background: #ddd; border-radius: 50%; margin-right: 15px; flex-shrink: 0; }
+        .testi-content h4 { font-family: Arial, sans-serif; font-size: 0.95rem; margin-bottom: 5px; color: #2e7d32; }
+        .testi-content p { font-size: 0.9rem; font-family: Arial, sans-serif; color: #444; margin-bottom: 0; text-align: left; }
 
-        footer { text-align: center; font-family: Arial, sans-serif; font-size: 0.8rem; color: #888; margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; }
+        /* BOTÃO E CRONÔMETRO */
+        .cta-area { text-align: center; margin: 40px 0; background: #fafafa; padding: 20px; border: 2px dashed #ccc; border-radius: 10px; }
+        .timer { font-family: 'Courier New', monospace; font-size: 1.5rem; color: #c00; font-weight: bold; margin-bottom: 10px; display: block; }
+        .cta-button { display: block; width: 100%; background: #27ae60; color: #fff; text-align: center; padding: 20px; font-size: 1.4rem; font-family: Arial, sans-serif; font-weight: bold; text-decoration: none; border-radius: 6px; border-bottom: 5px solid #1e8449; transition: transform 0.2s; }
+        .cta-button:active { transform: translateY(4px); border-bottom: 0; }
+        .stock-warning { font-family: Arial, sans-serif; font-size: 0.9rem; color: #e67e22; margin-top: 10px; font-weight: bold; }
+
+        /* NOTIFICAÇÃO POP-UP (TOAST) */
+        .sales-toast { position: fixed; bottom: 20px; right: 20px; background: #fff; padding: 15px 20px; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); display: flex; align-items: center; z-index: 9999; transform: translateX(120%); transition: transform 0.5s ease-out; border-left: 5px solid #27ae60; max-width: 300px; }
+        .sales-toast.show { transform: translateX(0); }
+        .toast-icon { font-size: 1.5rem; margin-right: 15px; }
+        .toast-text p { font-family: Arial, sans-serif; font-size: 0.85rem; margin: 0; }
+        .toast-text strong { color: #27ae60; }
+        .toast-time { font-size: 0.7rem; color: #999; }
+
+        footer { text-align: center; font-family: Arial, sans-serif; font-size: 0.75rem; color: #999; margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; }
+
+        /* MOBILE FIX */
+        @media (max-width: 600px) {
+            .sales-toast { left: 10px; right: 10px; bottom: 10px; max-width: none; }
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        
-        <div class="alert-box">
-            ⚠️ ATENÇÃO: Esta página pode sair do ar a qualquer momento por solicitação das instituições financeiras.
-        </div>
+        <div class="alert-box">⚠️ COMUNICADO: Informações sensíveis sobre o sistema bancário.</div>
 
-        <h1>O "Botão Secreto" dentro do seu App do Banco que libera pagamentos mensais na sua conta</h1>
-        <p class="subhead">Não é erro do sistema. É uma lei pouco conhecida que obriga os bancos a dividirem o lucro com você. Veja como ativar.</p>
+        <h1>Ex-Gerente revela o "Código" para ativar rendimentos ocultos no seu app</h1>
+        <p class="subhead">Você tem dinheiro parado perdendo valor? Leia este relatório antes que ele seja removido.</p>
 
-        <p style="font-family: Arial, sans-serif; font-size: 0.9rem; color: #666;">
-            São Paulo, <span id="data-hoje"></span><br>
-            <b>De:</b> Ex-Gerente Financeiro
+        <p style="font-family: Arial, sans-serif; font-size: 0.9rem; color: #555;">
+            <b>Por:</b> Roberto M. (Ex-Gerente)<br>
+            <b>Data:</b> <span id="data-hoje"></span>
         </p>
 
         <p>Caro leitor,</p>
+        <p>O que você vai ver abaixo é a prova cabal de que seu banco não joga limpo com você.</p>
+        <p>Durante 12 anos, fui obrigado a esconder uma função simples dos clientes comuns. Uma função que transforma "poupança" em "lucro real".</p>
 
-        <p>O que vou te mostrar nas próximas linhas vai deixar o seu gerente furioso.</p>
-
-        <p>Você já notou que o banco lucra bilhões todo ano, mas a sua poupança rende apenas centavos? A culpa não é da economia. <b>A culpa é de uma configuração padrão na sua conta.</b></p>
-
-        <p>Eles chamam isso de <span class="highlight">"Spread Bancário"</span>.</p>
-
-        <p>Basicamente, eles pegam o seu dinheiro, investem em ativos seguros que pagam 10x mais, e te devolvem migalhas. Eles ficam com o filé mignon e te dão o osso.</p>
-        
-        <div class="box-segredo">
-            <h3>🔒 A Configuração Oculta</h3>
-            <p>Existe um caminho dentro do menu do Nubank, Inter e Itaú que inverte esse jogo. Ao clicar nos botões certos, você obriga o sistema a te pagar a taxa real de juros do mercado.</p>
+        <div class="evidence-box">
+            <img src="https://placehold.co/600x300/e0e0e0/555?text=COLE+O+LINK+DA+SUA+FOTO+AQUI+(PROVA+1)" alt="Prova de Rendimento">
+            <div class="caption">Figura 1: A diferença brutal entre Poupança (Esq) e o Código Ativado (Dir).</div>
         </div>
 
-        <p>Eu trabalhei 12 anos no setor bancário e fui proibido de ensinar isso aos clientes "comuns". Apenas clientes com mais de R$ 1 milhão na conta tinham acesso a essa informação.</p>
+        <p>Veja a imagem acima. É o mesmo valor, no mesmo banco, no mesmo mês.</p>
+        <p>A única diferença? No lado direito, o cliente ativou o <span class="highlight">Código Bancário</span>. No lado esquerdo, ele aceitou o padrão do banco.</p>
 
-        <p><b>Mas hoje, eu decidi quebrar o silêncio.</b></p>
+        <div class="evidence-box">
+            <h3>🔒 O Que é o Código?</h3>
+            <p>Não é mágica. É uma configuração de 3 cliques (que fica escondida no menu "Mais Opções") que obriga o banco a te pagar 100% da taxa CDI, isento de taxas de administração.</p>
+        </div>
 
-        <p>Eu criei um manual digital chamado <b>"O CÓDIGO BANCÁRIO"</b>. É um passo a passo simples, com prints de tela, mostrando exatamente onde você deve clicar no seu celular hoje para começar a ver o dinheiro pingar amanhã.</p>
+        <p>Eu decidi vazar esse manual. Criei um PDF simples, direto ao ponto, com prints da tela do celular mostrando onde clicar.</p>
+        
+        <div class="testimonials-area">
+            <h3 style="font-family: Arial, sans-serif; font-size: 1.2rem; margin-bottom: 15px; text-align: center;">Resultados de quem ativou hoje:</h3>
+            
+            <div class="testi-item">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="testi-avatar" alt="Foto">
+                <div class="testi-content">
+                    <h4>Carlos Eduardo (SP)</h4>
+                    <p>"Eu achei que era golpe, mas fiz o passo a passo no Nubank e funcionou na hora. Meu saldo já atualizou."</p>
+                </div>
+            </div>
 
-        <p>Não precisa baixar app estranho. Não é aposta. Não é criptomoeda.</p>
-        <p>É o seu próprio banco, funcionando do jeito que deveria funcionar para você.</p>
+            <div class="testi-item">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="testi-avatar" alt="Foto">
+                <div class="testi-content">
+                    <h4>Mariana S. (MG)</h4>
+                    <p>"Só de raiva do meu gerente eu comprei. Vale cada centavo. O manual é super fácil de entender."</p>
+                </div>
+            </div>
+        </div>
 
-        <a href="SEU_LINK_KIWIFY_AQUI" class="cta-button">
-            QUERO ACESSAR O MANUAL POR R$ 97
-        </a>
+        <div class="cta-area">
+            <p style="font-family: Arial, sans-serif; color: #555; margin-bottom: 5px;">A oferta encerra em:</p>
+            <span class="timer" id="countdown">09:59</span>
+            
+            <a href="SEU_LINK_KIWIFY_AQUI" class="cta-button">
+                BAIXAR MANUAL AGORA (R$ 97)
+            </a>
+            
+            <p class="stock-warning">🔥 Restam apenas <span id="stock-count">7</span> cópias disponíveis.</p>
+        </div>
 
-        <p style="text-align: center; font-size: 0.9rem;">🔒 Compra Segura • Acesso Imediato via E-mail</p>
-
+        <p style="text-align: center; font-size: 0.9rem;">🔒 Pagamento Único • Garantia de 7 Dias</p>
     </div>
 
     <footer>
-        <p>Este site não possui vínculo com nenhuma instituição bancária.<br>Resultados podem variar.</p>
-        <p>Copyright © 2024</p>
+        <p>Este site não é afiliado ao Facebook ou a qualquer entidade bancária.<br>Os resultados podem variar.</p>
+        <p>© 2024 Relatório Financeiro</p>
     </footer>
 
+    <div class="sales-toast" id="toast">
+        <div class="toast-icon">💰</div>
+        <div class="toast-text">
+            <p><strong id="buyer-name">Ricardo</strong> de <span id="buyer-city">SP</span></p>
+            <p>Acabou de liberar o acesso.</p>
+            <span class="toast-time">Agora mesmo</span>
+        </div>
+    </div>
+
     <script>
+        // 1. DATA ATUAL
         const dataHoje = new Date();
-        const opcoes = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+        const opcoes = { year: 'numeric', month: 'long', day: 'numeric' };
         document.getElementById('data-hoje').innerText = dataHoje.toLocaleDateString('pt-BR', opcoes);
+
+        // 2. CRONÔMETRO (Contagem Regressiva)
+        let time = 600; // 10 minutos em segundos
+        const timerElement = document.getElementById('countdown');
+        
+        setInterval(() => {
+            let minutes = Math.floor(time / 60);
+            let seconds = time % 60;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            timerElement.innerHTML = `0${minutes}:${seconds}`;
+            if(time > 0) time--;
+        }, 1000);
+
+        // 3. POP-UP DE VENDAS (FAKE SALES)
+        const names = ["Ricardo", "Ana", "Felipe", "Juliana", "Marcos", "Bruna", "Eduardo"];
+        const cities = ["SP", "RJ", "MG", "RS", "PR", "SC", "BA"];
+        const toast = document.getElementById('toast');
+        const buyerName = document.getElementById('buyer-name');
+        const buyerCity = document.getElementById('buyer-city');
+        const stockCount = document.getElementById('stock-count');
+        
+        function showToast() {
+            // Escolhe nome e cidade aleatórios
+            buyerName.innerText = names[Math.floor(Math.random() * names.length)];
+            buyerCity.innerText = cities[Math.floor(Math.random() * cities.length)];
+            
+            // Mostra o Pop-up
+            toast.classList.add('show');
+            
+            // Reduz o estoque visualmente (gatilho de escassez)
+            let currentStock = parseInt(stockCount.innerText);
+            if(currentStock > 2) {
+                stockCount.innerText = currentStock - 1;
+            }
+
+            // Esconde depois de 4 segundos
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4000);
+        }
+
+        // Roda o Pop-up a cada 15 a 25 segundos aleatoriamente
+        function randomInterval() {
+            let randomTime = Math.floor(Math.random() * 10000) + 15000; // Entre 15s e 25s
+            setTimeout(() => {
+                showToast();
+                randomInterval();
+            }, randomTime);
+        }
+        
+        // Começa logo que abre a página
+        setTimeout(showToast, 5000); // Primeiro pop-up em 5s
+        randomInterval();
+
     </script>
 
 </body>
