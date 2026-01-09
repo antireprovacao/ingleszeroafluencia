@@ -3,146 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Código Bancário - Configuração Oculta</title>
+    <title>Relatório Confidencial - Bancos</title>
     <style>
-        /* RESET E BASE */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
-        body { background-color: #000; color: #fff; line-height: 1.6; }
+        /* ESTILO DOSSIÊ / LEITURA */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Georgia', 'Times New Roman', serif; }
+        body { background-color: #f4f4f4; color: #333; line-height: 1.6; }
         
-        /* GATILHOS VISUAIS */
-        .scarcity-bar { background: #cc0000; color: #fff; text-align: center; padding: 10px; font-weight: bold; font-size: 0.9rem; animation: pulseRed 2s infinite; }
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .container { max-width: 700px; margin: 0 auto; background: #fff; padding: 40px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
         
-        /* HEADLINE */
-        header { text-align: center; margin-bottom: 20px; }
-        h1 { font-size: 1.8rem; color: #fff; text-transform: uppercase; margin-bottom: 10px; line-height: 1.2; }
-        h1 span { color: #00ff00; background: rgba(0, 255, 0, 0.1); padding: 0 5px; }
-        .subheadline { font-size: 1.1rem; color: #ccc; margin-bottom: 20px; }
-        
-        /* VSL (VÍDEO) */
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border: 2px solid #333; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 255, 0, 0.2); margin-bottom: 25px; background: #111; }
-        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-        
-        /* BOTÃO PULSANTE */
-        .cta-button { display: block; width: 100%; background: linear-gradient(to bottom, #00b300, #008000); color: #fff; text-align: center; padding: 20px; font-size: 1.3rem; font-weight: bold; text-decoration: none; border-radius: 8px; border-bottom: 5px solid #004d00; text-transform: uppercase; animation: pulseBtn 1.5s infinite; margin-bottom: 10px; cursor: pointer; }
-        .cta-sub { text-align: center; font-size: 0.8rem; color: #888; margin-bottom: 40px; }
-        
-        /* PROVA SOCIAL / COMENTÁRIOS */
-        .comments-section { background: #111; padding: 20px; border-radius: 10px; margin-bottom: 30px; }
-        .comment { display: flex; margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px; }
-        .avatar { width: 50px; height: 50px; background: #333; border-radius: 50%; margin-right: 15px; overflow: hidden; }
-        .avatar img { width: 100%; }
-        .comment-body h4 { color: #00ff00; font-size: 0.9rem; margin-bottom: 5px; }
-        .comment-body p { font-size: 0.9rem; color: #ddd; }
-        .comment-meta { font-size: 0.75rem; color: #666; margin-top: 5px; }
+        /* ALERTA DE TOPO */
+        .alert-box { background: #ffeded; border: 1px solid #ffcccc; color: #cc0000; padding: 15px; font-family: Arial, sans-serif; font-size: 0.9rem; text-align: center; margin-bottom: 30px; font-weight: bold; }
 
-        /* RODAPÉ E DISCLAIMER (SEGURANÇA META) */
-        footer { text-align: center; font-size: 0.7rem; color: #555; padding: 40px 20px; border-top: 1px solid #222; margin-top: 40px; }
-        footer p { margin-bottom: 10px; }
+        /* HEADLINE (MANCHETE) */
+        h1 { font-family: 'Arial', sans-serif; font-size: 2.2rem; line-height: 1.1; color: #000; margin-bottom: 10px; text-align: center; letter-spacing: -1px; }
+        .subhead { font-family: 'Arial', sans-serif; font-size: 1.2rem; text-align: center; color: #555; margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px; }
 
-        /* ANIMAÇÕES */
-        @keyframes pulseRed { 0% { opacity: 1; } 50% { opacity: 0.8; } 100% { opacity: 1; } }
-        @keyframes pulseBtn { 0% { transform: scale(1); } 50% { transform: scale(1.02); box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); } 100% { transform: scale(1); } }
+        /* CORPO DO TEXTO */
+        p { margin-bottom: 20px; font-size: 1.1rem; text-align: justify; }
+        .highlight { background-color: #ffffcc; }
+        b { font-weight: 900; }
         
-        /* UTILITÁRIOS */
-        .highlight { color: #ffe600; font-weight: bold; }
-        .hidden { display: none; }
+        /* ELEMENTOS VISUAIS */
+        .print-screen { width: 100%; border: 1px solid #ddd; margin: 20px 0; display: block; }
+        .box-segredo { background: #e8f4fd; border-left: 5px solid #2196F3; padding: 20px; margin: 30px 0; font-family: Arial, sans-serif; }
+
+        /* BOTÃO DE COMPRA */
+        .cta-button { display: block; width: 100%; background: #27ae60; color: #fff; text-align: center; padding: 25px; font-size: 1.5rem; font-family: Arial, sans-serif; font-weight: bold; text-decoration: none; border-radius: 5px; border-bottom: 4px solid #1e8449; margin: 40px 0; box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4); animation: pulse 2s infinite; }
+        .cta-button:hover { background: #2ecc71; }
+
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
+
+        footer { text-align: center; font-family: Arial, sans-serif; font-size: 0.8rem; color: #888; margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; }
     </style>
 </head>
 <body>
 
-    <div class="scarcity-bar">
-        ⚠️ ATENÇÃO: Este vídeo sairá do ar hoje, <span id="data-hoje"></span>.
-    </div>
-
     <div class="container">
         
-        <header>
-            <h1>O Segredo que o seu <span style="color: #ff3333;">Gerente</span> não quer que você saiba</h1>
-            <p class="subheadline">Descubra como ativar a <b>"Configuração Oculta"</b> no app do seu banco e receber pagamentos justos todos os meses.</p>
-        </header>
-
-        <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID?controls=0&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="alert-box">
+            ⚠️ ATENÇÃO: Esta página pode sair do ar a qualquer momento por solicitação das instituições financeiras.
         </div>
 
-        <div id="cta-container" class="hidden">
-            <a href="SEU_LINK_DE_CHECKOUT_AQUI" class="cta-button">
-                QUERO ATIVAR A CONFIGURAÇÃO AGORA
-            </a>
-            <p class="cta-sub">🔒 Acesso Imediato e Seguro. 7 Dias de Garantia.</p>
+        <h1>O "Botão Secreto" dentro do seu App do Banco que libera pagamentos mensais na sua conta</h1>
+        <p class="subhead">Não é erro do sistema. É uma lei pouco conhecida que obriga os bancos a dividirem o lucro com você. Veja como ativar.</p>
+
+        <p style="font-family: Arial, sans-serif; font-size: 0.9rem; color: #666;">
+            São Paulo, <span id="data-hoje"></span><br>
+            <b>De:</b> Ex-Gerente Financeiro
+        </p>
+
+        <p>Caro leitor,</p>
+
+        <p>O que vou te mostrar nas próximas linhas vai deixar o seu gerente furioso.</p>
+
+        <p>Você já notou que o banco lucra bilhões todo ano, mas a sua poupança rende apenas centavos? A culpa não é da economia. <b>A culpa é de uma configuração padrão na sua conta.</b></p>
+
+        <p>Eles chamam isso de <span class="highlight">"Spread Bancário"</span>.</p>
+
+        <p>Basicamente, eles pegam o seu dinheiro, investem em ativos seguros que pagam 10x mais, e te devolvem migalhas. Eles ficam com o filé mignon e te dão o osso.</p>
+        
+        <div class="box-segredo">
+            <h3>🔒 A Configuração Oculta</h3>
+            <p>Existe um caminho dentro do menu do Nubank, Inter e Itaú que inverte esse jogo. Ao clicar nos botões certos, você obriga o sistema a te pagar a taxa real de juros do mercado.</p>
         </div>
 
-        <div style="margin: 30px 0; border: 1px dashed #333; padding: 15px;">
-            <p style="margin-bottom: 15px;">🔴 <b>O Problema:</b> Se você deixa dinheiro na poupança, você está <u>perdendo</u> dinheiro para a inflação todos os dias.</p>
-            <p>🟢 <b>A Solução:</b> Existe uma lei que obriga os bancos a pagarem mais. Mas essa opção fica "escondida" no menu de configurações. Eu vou te mostrar onde clicar.</p>
-        </div>
+        <p>Eu trabalhei 12 anos no setor bancário e fui proibido de ensinar isso aos clientes "comuns". Apenas clientes com mais de R$ 1 milhão na conta tinham acesso a essa informação.</p>
 
-        <div class="comments-section">
-            <h3 style="margin-bottom: 20px; color: #fff;">O que estão falando...</h3>
-            
-            <div class="comment">
-                <div class="avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User"></div>
-                <div class="comment-body">
-                    <h4>Ricardo S.</h4>
-                    <p>Mano, eu tenho conta no Nubank há 3 anos e NUNCA tinha visto essa opção das caixinhas turbinadas. Fiz hoje e já rendeu.</p>
-                    <p class="comment-meta">Há 12 minutos • Curtir • Responder</p>
-                </div>
-            </div>
+        <p><b>Mas hoje, eu decidi quebrar o silêncio.</b></p>
 
-            <div class="comment">
-                <div class="avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User"></div>
-                <div class="comment-body">
-                    <h4>Fernanda Lima</h4>
-                    <p>Meu gerente do Itaú tentou me empurrar um título de capitalização. Cancelei tudo e ativei o Código. Melhor coisa que fiz.</p>
-                    <p class="comment-meta">Há 45 minutos • Curtir • Responder</p>
-                </div>
-            </div>
-            
-            <div class="comment">
-                <div class="avatar"><img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User"></div>
-                <div class="comment-body">
-                    <h4>Carlos Eduardo</h4>
-                    <p>Paguei pra ver e realmente funciona. É simples, só precisa saber onde clicar. Valeu demais!</p>
-                    <p class="comment-meta">Há 1 hora • Curtir • Responder</p>
-                </div>
-            </div>
-        </div>
+        <p>Eu criei um manual digital chamado <b>"O CÓDIGO BANCÁRIO"</b>. É um passo a passo simples, com prints de tela, mostrando exatamente onde você deve clicar no seu celular hoje para começar a ver o dinheiro pingar amanhã.</p>
 
-        <div style="margin-bottom: 40px;">
-            <h3 style="color: #00ff00; margin-bottom: 15px;">Dúvidas Frequentes</h3>
-            <details style="margin-bottom: 10px; background: #222; padding: 10px; border-radius: 5px;">
-                <summary style="cursor: pointer; font-weight: bold;">Preciso ter muito dinheiro?</summary>
-                <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">Não. O método funciona com qualquer valor, mesmo que você tenha apenas R$ 50,00 na conta.</p>
-            </details>
-            <details style="margin-bottom: 10px; background: #222; padding: 10px; border-radius: 5px;">
-                <summary style="cursor: pointer; font-weight: bold;">É seguro? É legal?</summary>
-                <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">100% Seguro e Legal. Você vai usar o aplicativo oficial do seu próprio banco. Não vamos pedir senha nem acesso à sua conta.</p>
-            </details>
-        </div>
+        <p>Não precisa baixar app estranho. Não é aposta. Não é criptomoeda.</p>
+        <p>É o seu próprio banco, funcionando do jeito que deveria funcionar para você.</p>
+
+        <a href="SEU_LINK_KIWIFY_AQUI" class="cta-button">
+            QUERO ACESSAR O MANUAL POR R$ 97
+        </a>
+
+        <p style="text-align: center; font-size: 0.9rem;">🔒 Compra Segura • Acesso Imediato via E-mail</p>
 
     </div>
 
     <footer>
-        <p><b>Copyright © 2024 - Todos os direitos reservados.</b></p>
-        <p>Este site não é afiliado ao Facebook ou a qualquer entidade do Meta. Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site.</p>
-        <p style="font-size: 0.6rem; color: #444;">
-            Isenção de responsabilidade: Os resultados podem variar de pessoa para pessoa. Todos os investimentos envolvem riscos. O conteúdo é meramente educacional e não representa recomendação oficial de compra e venda de ativos mobiliários (CVM).
-        </p>
-        <p><a href="#" style="color: #666;">Termos de Uso</a> | <a href="#" style="color: #666;">Políticas de Privacidade</a></p>
+        <p>Este site não possui vínculo com nenhuma instituição bancária.<br>Resultados podem variar.</p>
+        <p>Copyright © 2024</p>
     </footer>
 
     <script>
-        // Coloca a data de hoje na barra de aviso
         const dataHoje = new Date();
-        const opcoes = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const opcoes = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
         document.getElementById('data-hoje').innerText = dataHoje.toLocaleDateString('pt-BR', opcoes);
-
-        // Delay do botão (Para VSL) - Aparece após X segundos
-        // Mude o valor 0 para o tempo do seu vídeo em milissegundos (Ex: 60000 para 1 min)
-        setTimeout(function(){
-            document.querySelector('#cta-container').classList.remove('hidden');
-        }, 3000); // Está em 3 segundos pra você testar rápido. Mude pra sincronizar com o vídeo.
     </script>
 
 </body>
