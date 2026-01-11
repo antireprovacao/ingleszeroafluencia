@@ -2,353 +2,160 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Consulta Pública - Protocolo de Ressarcimento</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    
-    // SUBSTITUA PELO SEU PIXEL
-    fbq('init', 'SEU_PIXEL_AQUI'); 
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=SEU_PIXEL_AQUI&ev=PageView&noscript=1"
-    /></noscript>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo Matinal</title>
     <style>
-        :root {
-            --primary: #003366; /* Azul Governo/Banco */
-            --secondary: #0056b3;
-            --accent: #28a745; /* Verde Sucesso */
-            --bg: #f8f9fa;
-            --text: #333;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; -webkit-tap-highlight-color: transparent; }
+        /* RESET E ESTILO GERAL - PRETO E AGRESSIVO */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+        body { background-color: #000000; color: #ffffff; text-align: center; line-height: 1.6; }
         
-        body { 
-            background-color: var(--bg); 
-            color: var(--text);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+        /* CONTAINER PRINCIPAL */
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
 
-        /* HEADER OFICIAL */
-        header {
-            background: #fff;
-            padding: 15px 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 3px solid var(--accent);
-        }
-        
-        .logo-area { display: flex; align-items: center; gap: 10px; }
-        .shield-icon { color: var(--primary); font-size: 24px; }
-        .logo-text { font-size: 14px; font-weight: 700; color: var(--primary); text-transform: uppercase; line-height: 1.2; }
-        .secure-badge { background: #e8f5e9; color: var(--accent); padding: 4px 8px; border-radius: 4px; font-size: 10px; font-weight: bold; display: flex; align-items: center; gap: 5px; }
+        /* HEADLINE (MANCHETE) */
+        .headline { font-size: 22px; font-weight: bold; color: #ffffff; margin-bottom: 10px; padding: 0 10px; }
+        .highlight { color: #ff0000; text-transform: uppercase; } /* Vermelho Alerta */
+        .sub-headline { font-size: 16px; color: #cccccc; margin-bottom: 20px; }
 
-        /* MAIN CONTENT */
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+        /* VSL (VIDEO) */
+        .video-box {
             width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        /* PROGRESS BAR */
-        .progress-container {
-            width: 100%;
-            margin-bottom: 30px;
-        }
-        .progress-label { display: flex; justify-content: space-between; font-size: 12px; color: #666; margin-bottom: 5px; font-weight: 500; }
-        .progress-track { background: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden; }
-        .progress-fill { background: var(--secondary); height: 100%; width: 20%; transition: width 0.5s ease; }
-
-        /* CARDS */
-        .card {
-            background: #fff;
-            padding: 30px 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            width: 100%;
-            text-align: center;
-            display: none; /* Hidden by default */
-            animation: slideUp 0.4s ease-out;
-        }
-        .card.active { display: block; }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        h1 { font-size: 20px; font-weight: 700; color: var(--primary); margin-bottom: 15px; }
-        p.desc { font-size: 15px; color: #555; margin-bottom: 25px; line-height: 1.5; }
-
-        /* BUTTONS */
-        .btn-group { display: flex; flex-direction: column; gap: 12px; }
-        
-        .btn {
-            background: #fff;
-            border: 2px solid #e0e0e0;
-            padding: 18px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            color: #444;
-            cursor: pointer;
-            transition: all 0.2s;
-            position: relative;
-            overflow: hidden;
+            aspect-ratio: 16/9;
+            background: #1a1a1a;
+            border: 2px solid #333;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-        }
-
-        .btn:hover, .btn:active {
-            border-color: var(--secondary);
-            color: var(--secondary);
-            background: #f0f8ff;
+            color: #555;
+            font-size: 14px;
         }
         
-        .btn.primary {
-            background: var(--secondary);
+        /* BOTÃO DE COMPRA (DELAY) */
+        .cta-container { display: none; margin-top: 20px; } /* Começa escondido */
+        .btn-pulse {
+            background: #28a745; /* Verde Venda */
             color: white;
-            border: none;
-            box-shadow: 0 4px 10px rgba(0,86,179,0.3);
+            padding: 20px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 0 20px rgba(40, 167, 69, 0.6);
+            display: inline-block;
+            animation: pulse 2s infinite;
+            width: 100%;
+            max-width: 400px;
+            border: 2px solid #fff;
         }
-        .btn.primary:hover { background: #004494; transform: translateY(-2px); }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+        }
+        .security-icons { margin-top: 10px; width: 80%; max-width: 300px; opacity: 0.8; }
 
-        /* LOADING TERMINAL STYLE */
-        .loader-content { text-align: center; }
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #e9ecef;
-            border-top: 5px solid var(--accent);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px auto;
-        }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-        .terminal-log {
-            background: #f1f1f1;
-            padding: 15px;
-            border-radius: 6px;
-            font-family: 'Courier New', monospace;
-            font-size: 12px;
-            color: #333;
-            text-align: left;
-            height: 120px;
-            overflow: hidden;
-            border-left: 3px solid var(--secondary);
-            margin-top: 15px;
-        }
-        .log-item { margin-bottom: 5px; display: none; }
-        .log-item.success { color: #28a745; }
-        .log-item.warning { color: #e67e22; }
+        /* COMENTÁRIOS FACEBOOK (PROVA SOCIAL) */
+        .comments-section { text-align: left; background: #fff; color: #333; padding: 20px; margin-top: 40px; border-radius: 10px; }
+        .fb-header { font-weight: bold; margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        .comment { display: flex; margin-bottom: 15px; }
+        .avatar { width: 50px; height: 50px; background: #ddd; border-radius: 50%; margin-right: 10px; object-fit: cover;}
+        .comment-body { background: #f0f2f5; padding: 10px; border-radius: 15px; flex: 1; }
+        .name { font-weight: bold; color: #385898; font-size: 14px; }
+        .text { font-size: 14px; margin-top: 3px; }
+        .meta { font-size: 12px; color: #65676b; margin-top: 5px; }
+        .like-icon { color: #385898; font-weight: bold; cursor: pointer; }
 
         /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 11px;
-            color: #aaa;
-            border-top: 1px solid #eee;
-            margin-top: auto;
-            background: #fff;
-        }
-
-        /* UTILS */
-        .highlight { color: var(--secondary); font-weight: 700; }
+        footer { margin-top: 50px; font-size: 11px; color: #555; border-top: 1px solid #222; padding-top: 20px; }
+        footer a { color: #555; text-decoration: none; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo-area">
-            <i class="fas fa-university shield-icon"></i>
-            <div class="logo-text">Sistema Nacional<br>de Verificação</div>
-        </div>
-        <div class="secure-badge">
-            <i class="fas fa-lock"></i> SSL SEGURO
-        </div>
-    </header>
+    <div style="background: #cc0000; color: white; padding: 5px; font-size: 12px; font-weight: bold;">
+        ⚠️ AVISO: Este vídeo sairá do ar em <span id="data-hoje"></span>
+    </div>
 
-    <main>
+    <div class="container">
         
-        <div class="progress-container">
-            <div class="progress-label">
-                <span>Progresso da Análise</span>
-                <span id="percent-text">0%</span>
+        <h1 class="headline">
+            O "Ritual Matinal" de 30 Segundos que <span class="highlight">Drena a Gordura Profunda</span> Sem Academia
+        </h1>
+        <p class="sub-headline">Não é dieta. É um truque biológico simples que as indústrias farmacêuticas tentaram esconder.</p>
+
+        <div class="video-box">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/SEU_VIDEO_AQUI?controls=0&modestbranding=1&rel=0" title="Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <div class="progress-track">
-                <div class="progress-fill" id="progress-bar"></div>
-            </div>
+
+        <p style="font-size: 14px; color: #888;">🔊 Por favor, verifique se o som está ligado.</p>
+
+        <div class="cta-container" id="cta-box">
+            <a href="SEU_LINK_DE_CHECKOUT_AQUI" class="btn-pulse">
+                QUERO O RITUAL AGORA ➤
+            </a>
+            <br>
+            <img src="https://img.shields.io/badge/Compra-100%25_Segura-green?style=for-the-badge&logo=shield" alt="Compra Segura" class="security-icons">
+            <p style="font-size: 12px; margin-top: 10px;">Garantia de 7 dias ou seu dinheiro de volta.</p>
         </div>
 
-        <div id="step1" class="card active">
-            <div style="margin-bottom: 15px; color: var(--secondary); font-size: 40px;">
-                <i class="fas fa-mobile-alt"></i>
+        <div class="comments-section">
+            <div class="fb-header">12 Comentários</div>
+
+            <div class="comment">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana" class="avatar">
+                <div class="comment-body">
+                    <div class="name">Ana Paula Souza</div>
+                    <div class="text">Gente, eu achava que era mentira, mas em 3 dias desinchei muito! Minha calça jeans entrou folgada hoje. Obrigada por compartilhar! 😍</div>
+                    <div class="meta"><span class="like-icon">Curtir</span> · Responder · 2 min</div>
+                </div>
             </div>
-            <h1>Uso de Aplicativo Bancário</h1>
-            <p class="desc">Para verificar a elegibilidade do seu CPF no <span class="highlight">Protocolo de 2024</span>, responda com sinceridade:</p>
-            <p class="desc" style="font-weight: 600;">Você possui o aplicativo de algum banco instalado no seu celular hoje?</p>
-            
-            <div class="btn-group">
-                <button class="btn" onclick="nextStep(2)">
-                    <i class="far fa-check-circle"></i> SIM, EU POSSUO
-                </button>
-                <button class="btn" onclick="nextStep(2)">
-                    <i class="far fa-times-circle"></i> NÃO POSSUO
-                </button>
+
+            <div class="comment">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Marta" class="avatar">
+                <div class="comment-body">
+                    <div class="name">Marta Oliveira</div>
+                    <div class="text">Meu marido nem acreditou quando me viu. Só façam, meninas. O suco 3 é o melhor.</div>
+                    <div class="meta"><span class="like-icon">Curtir</span> · Responder · 14 min</div>
+                </div>
             </div>
+
+            <div class="comment">
+                <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Fernanda" class="avatar">
+                <div class="comment-body">
+                    <div class="name">Fernanda Lima</div>
+                    <div class="text">Comprei semana passada. Vale cada centavo só pelas receitas de desintoxicação.</div>
+                    <div class="meta"><span class="like-icon">Curtir</span> · Responder · 1 h</div>
+                </div>
+            </div>
+
         </div>
 
-        <div id="step2" class="card">
-            <div style="margin-bottom: 15px; color: var(--secondary); font-size: 40px;">
-                <i class="fas fa-calendar-check"></i>
-            </div>
-            <h1>Frequência de Movimentação</h1>
-            <p class="desc">O sistema identificou uma possível pendência.</p>
-            <p class="desc" style="font-weight: 600;">Você realizou alguma transação (Pix, cartão ou boleto) nos últimos 7 dias?</p>
-            
-            <div class="btn-group">
-                <button class="btn" onclick="nextStep(3)">
-                    <i class="far fa-check-circle"></i> SIM, RECENTEMENTE
-                </button>
-                <button class="btn" onclick="nextStep(3)">
-                    <i class="far fa-clock"></i> FAZ MAIS TEMPO
-                </button>
-            </div>
-        </div>
+        <footer>
+            <p>Este site não faz parte do Facebook ou do Facebook Inc. Além disso, este site não é endossado pelo Facebook de nenhuma maneira.</p>
+            <br>
+            <a href="#">Termos de Uso</a> | <a href="#">Privacidade</a>
+            <br><br>
+            <p>&copy; 2026 Todos os direitos reservados.</p>
+        </footer>
 
-        <div id="step3" class="card">
-            <div style="margin-bottom: 15px; color: var(--secondary); font-size: 40px;">
-                <i class="fas fa-shield-alt"></i>
-            </div>
-            <h1>Verificação Final</h1>
-            <p class="desc">Estamos prontos para consultar a base de dados.</p>
-            <p class="desc">Você confirma que é o titular da conta e deseja visualizar o saldo disponível para resgate?</p>
-            
-            <div class="btn-group">
-                <button class="btn primary" onclick="startLoading()">
-                    CONFIRMAR E CONSULTAR
-                </button>
-            </div>
-        </div>
-
-        <div id="loading" class="card">
-            <div class="loader-content">
-                <div class="spinner"></div>
-                <h2 style="color: var(--primary); font-size: 18px; margin-bottom: 10px;">Conectando ao Servidor...</h2>
-                <p style="font-size: 13px; color: #666;">Por favor, não feche esta página.</p>
-                
-                <div class="terminal-log" id="terminal">
-                    </div>
-            </div>
-        </div>
-
-    </main>
-
-    <footer>
-        <p>Copyright © 2024 - Todos os direitos reservados.</p>
-        <p style="margin-top: 5px;">Política de Privacidade | Termos de Uso | LGPD</p>
-    </footer>
+    </div>
 
     <script>
-        // ============================================
-        // CONFIGURAÇÃO: COLE O LINK DA VSL/PÁGINA DE VENDAS ABAIXO
-        // ============================================
-        const redirectUrl = "https://app.kirvano.com/products/034ce8df-c9e3-4933-a73f-0a4c06d44541/checkouts"; 
-        // ============================================
+        // 1. Script da Data Atual (Para dar senso de urgência)
+        const dataHoje = new Date();
+        const opcoes = { day: 'numeric', month: 'long', year: 'numeric' };
+        document.getElementById('data-hoje').innerText = dataHoje.toLocaleDateString('pt-BR', opcoes);
 
-        function updateProgress(percent) {
-            document.getElementById('progress-bar').style.width = percent + '%';
-            document.getElementById('percent-text').innerText = percent + '%';
-        }
+        // 2. Script de Delay do Botão (O Pulo do Gato)
+        // Mude o número abaixo para os segundos que você quer (Ex: 600 = 10 minutos)
+        // Se quiser que apareça na hora pra testar, coloque 0
+        const tempoDelaySegundos = 600; 
 
-        function nextStep(step) {
-            // Vibração para mobile (feedback tátil)
-            if (navigator.vibrate) navigator.vibrate(50);
-
-            // Esconder cartões
-            document.querySelectorAll('.card').forEach(el => el.classList.remove('active'));
-            
-            // Mostrar atual
-            document.getElementById('step' + step).classList.add('active');
-            
-            // Atualizar barra
-            if(step === 2) updateProgress(50);
-            if(step === 3) updateProgress(85);
-        }
-
-        function startLoading() {
-            if (navigator.vibrate) navigator.vibrate(50);
-            
-            document.getElementById('step3').classList.remove('active');
-            document.getElementById('loading').classList.add('active');
-            updateProgress(90);
-
-            const terminal = document.getElementById('terminal');
-            const logs = [
-                { text: "> Iniciando conexão segura (SSL)...", delay: 500 },
-                { text: "> Validando dispositivo...", delay: 1500 },
-                { text: "> Acessando base de dados nacional...", delay: 2500, type: 'warning' },
-                { text: "> CPF Verificado. Status: ATIVO", delay: 3500, type: 'success' },
-                { text: "> Calculando valores pendentes...", delay: 4500 },
-                { text: "> PROTOCOLO AUTORIZADO!", delay: 5500, type: 'success' }
-            ];
-
-            let logIndex = 0;
-
-            function addLog() {
-                if (logIndex < logs.length) {
-                    const log = logs[logIndex];
-                    setTimeout(() => {
-                        const p = document.createElement('div');
-                        p.className = 'log-item ' + (log.type || '');
-                        p.style.display = 'block';
-                        p.innerText = log.text;
-                        terminal.appendChild(p);
-                        terminal.scrollTop = terminal.scrollHeight; // Auto scroll
-                        
-                        if (logIndex === logs.length - 1) {
-                            setTimeout(() => {
-                                updateProgress(100);
-                                window.location.href = redirectUrl;
-                            }, 1500);
-                        }
-                        
-                        logIndex++;
-                        addLog();
-                    }, logIndex === 0 ? log.delay : 1000); // Intervalo entre linhas
-                }
-            }
-
-            addLog();
-        }
+        setTimeout(function() {
+            document.getElementById('cta-box').style.display = 'block';
+        }, tempoDelaySegundos * 1000);
     </script>
 
 </body>
