@@ -3,160 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protocolo Matinal</title>
+    <title>Protocolo Matinal Revelado</title>
     <style>
-        /* RESET E ESTILO GERAL - PRETO E AGRESSIVO */
+        /* ESTILO GERAL - BLACK E AGRESSIVO */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-        body { background-color: #000000; color: #ffffff; text-align: center; line-height: 1.6; }
+        body { background-color: #000000; color: #ffffff; line-height: 1.6; }
         
-        /* CONTAINER PRINCIPAL */
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        /* CONTAINER */
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; background: #0a0a0a; }
 
-        /* HEADLINE (MANCHETE) */
-        .headline { font-size: 22px; font-weight: bold; color: #ffffff; margin-bottom: 10px; padding: 0 10px; }
-        .highlight { color: #ff0000; text-transform: uppercase; } /* Vermelho Alerta */
-        .sub-headline { font-size: 16px; color: #cccccc; margin-bottom: 20px; }
-
-        /* VSL (VIDEO) */
-        .video-box {
-            width: 100%;
-            aspect-ratio: 16/9;
-            background: #1a1a1a;
-            border: 2px solid #333;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #555;
+        /* HEADER DE ALERTA */
+        .alert-bar {
+            background: #cc0000;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
             font-size: 14px;
+            text-transform: uppercase;
+            animation: piscar 1.5s infinite;
         }
-        
-        /* BOTÃO DE COMPRA (DELAY) */
-        .cta-container { display: none; margin-top: 20px; } /* Começa escondido */
+        @keyframes piscar { 0% {opacity: 1;} 50% {opacity: 0.8;} 100% {opacity: 1;} }
+
+        /* HEADLINE */
+        .headline { 
+            font-size: 26px; 
+            font-weight: 900; 
+            color: #ffffff; 
+            text-align: center; 
+            margin: 20px 0; 
+            line-height: 1.3;
+        }
+        .highlight { color: #00ff00; background: rgba(0,255,0,0.1); padding: 0 5px; } /* Verde Dinheiro/Saude */
+        .red-text { color: #ff0000; }
+
+        /* IMAGEM DA "RECEITA" OU "ANTES E DEPOIS" */
+        .hero-img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid #333;
+            margin-bottom: 20px;
+        }
+
+        /* TEXTO DA CARTA (COPY) */
+        .copy-text { font-size: 18px; color: #dcdcdc; text-align: left; margin-bottom: 15px; }
+        .copy-text strong { color: #fff; font-weight: bold; }
+
+        /* BOX DE DESTAQUE */
+        .secret-box {
+            background: #151515;
+            border-left: 4px solid #cc0000;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #ccc;
+        }
+
+        /* OFERTA */
+        .offer-box {
+            background: linear-gradient(145deg, #1a1a1a, #000);
+            border: 1px solid #333;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+        }
+        .price-old { text-decoration: line-through; color: #777; font-size: 16px; }
+        .price-new { font-size: 38px; font-weight: bold; color: #00ff00; margin: 10px 0; }
+
+        /* BOTÃO PULSANTE */
         .btn-pulse {
-            background: #28a745; /* Verde Venda */
+            background: #00b300;
             color: white;
-            padding: 20px 30px;
+            padding: 20px 15px;
             font-size: 20px;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 50px;
-            box-shadow: 0 0 20px rgba(40, 167, 69, 0.6);
-            display: inline-block;
-            animation: pulse 2s infinite;
+            border-radius: 8px;
+            display: block;
             width: 100%;
-            max-width: 400px;
-            border: 2px solid #fff;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(0, 179, 0, 0.5);
+            animation: pulse 1.5s infinite;
+            margin-top: 10px;
         }
         @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
         }
-        .security-icons { margin-top: 10px; width: 80%; max-width: 300px; opacity: 0.8; }
 
-        /* COMENTÁRIOS FACEBOOK (PROVA SOCIAL) */
-        .comments-section { text-align: left; background: #fff; color: #333; padding: 20px; margin-top: 40px; border-radius: 10px; }
-        .fb-header { font-weight: bold; margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        /* COMENTÁRIOS */
+        .comments-section { background: #fff; color: #333; padding: 20px; margin-top: 40px; border-radius: 8px; }
+        .fb-header { font-weight: bold; font-size: 16px; margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
         .comment { display: flex; margin-bottom: 15px; }
-        .avatar { width: 50px; height: 50px; background: #ddd; border-radius: 50%; margin-right: 10px; object-fit: cover;}
-        .comment-body { background: #f0f2f5; padding: 10px; border-radius: 15px; flex: 1; }
-        .name { font-weight: bold; color: #385898; font-size: 14px; }
-        .text { font-size: 14px; margin-top: 3px; }
-        .meta { font-size: 12px; color: #65676b; margin-top: 5px; }
-        .like-icon { color: #385898; font-weight: bold; cursor: pointer; }
+        .avatar { width: 40px; height: 40px; background: #ddd; border-radius: 50%; margin-right: 10px; }
+        .comment-body { background: #f0f2f5; padding: 10px; border-radius: 15px; flex: 1; text-align: left; }
+        .name { font-weight: bold; color: #385898; font-size: 13px; }
+        .text { font-size: 13px; margin-top: 3px; }
+        .meta { font-size: 11px; color: #65676b; margin-top: 5px; }
 
-        /* FOOTER */
-        footer { margin-top: 50px; font-size: 11px; color: #555; border-top: 1px solid #222; padding-top: 20px; }
-        footer a { color: #555; text-decoration: none; }
+        footer { text-align: center; font-size: 10px; color: #555; margin-top: 40px; padding-bottom: 20px;}
     </style>
 </head>
 <body>
 
-    <div style="background: #cc0000; color: white; padding: 5px; font-size: 12px; font-weight: bold;">
-        ⚠️ AVISO: Este vídeo sairá do ar em <span id="data-hoje"></span>
+    <div class="alert-bar">
+        ⚠️ Atenção: Esta receita sai do ar hoje às 23:59
     </div>
 
     <div class="container">
         
         <h1 class="headline">
-            O "Ritual Matinal" de 30 Segundos que <span class="highlight">Drena a Gordura Profunda</span> Sem Academia
+            O Copo de 200ml que <span class="highlight">"Derrete" o Inchaço</span> e Limpa o Intestino Enquanto Você Dorme
         </h1>
-        <p class="sub-headline">Não é dieta. É um truque biológico simples que as indústrias farmacêuticas tentaram esconder.</p>
 
-        <div class="video-box">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/SEU_VIDEO_AQUI?controls=0&modestbranding=1&rel=0" title="Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+        <img src="https://placehold.co/600x400/111/00ff00?text=IMAGEM+DO+SUCO+AQUI" alt="O Segredo" class="hero-img">
 
-        <p style="font-size: 14px; color: #888;">🔊 Por favor, verifique se o som está ligado.</p>
+        <p class="copy-text">
+            Você já sentiu que, não importa o quanto tente, sua barriga continua inchada?
+        </p>
+        <p class="copy-text">
+            A culpa <strong>NÃO É SUA.</strong>
+        </p>
+        <p class="copy-text">
+            Estudos recentes vazados de Harvard mostram que 93% das mulheres acima de 30 anos sofrem de <span class="red-text" style="font-weight:bold;">"Bloqueio Linfático"</span>.
+        </p>
 
-        <div class="cta-container" id="cta-box">
-            <a href="SEU_LINK_DE_CHECKOUT_AQUI" class="btn-pulse">
-                QUERO O RITUAL AGORA ➤
+        <div class="secret-box">
+            "É como se o ralo da sua cozinha estivesse entupido. Você pode parar de jogar comida, mas a sujeira antiga continua lá, apodrecendo."
+        </div>
+
+        <p class="copy-text">
+            A indústria da dieta quer te vender remédios caros. Mas a solução estava na feira esse tempo todo.
+        </p>
+        <p class="copy-text">
+            Existe uma combinação específica de <strong>3 ingredientes baratos</strong> que, quando batidos juntos, criam uma enzima capaz de destravar seu metabolismo em 48 horas.
+        </p>
+        
+        <h2 style="color: #fff; margin: 30px 0 15px 0; text-align: center;">O Que Você Vai Receber:</h2>
+        
+        <ul style="text-align: left; margin-left: 20px; color: #ddd; font-size: 18px; margin-bottom: 30px;">
+            <li style="margin-bottom: 10px;">✅ <strong>As 10 Receitas Secretas</strong> de Sucos Detox;</li>
+            <li style="margin-bottom: 10px;">✅ <strong>O Cronograma de 7 Dias</strong> para desinchar;</li>
+            <li style="margin-bottom: 10px;">✅ <strong>A Lista de Compras</strong> de R$ 30,00;</li>
+            <li style="margin-bottom: 10px;">✅ <strong>Bônus:</strong> Chá Seca Barriga Noturno.</li>
+        </ul>
+
+        <div class="offer-box">
+            <p style="color: #fff; font-size: 14px;">ACESSO VITALÍCIO + BÔNUS</p>
+            <p class="price-old">De R$ 97,00 por apenas:</p>
+            <p class="price-new">R$ 19,90</p> <a href="SEU_LINK_DE_CHECKOUT_AQUI" class="btn-pulse">
+                SIM! QUERO LIMPAR MEU CORPO ➤
             </a>
-            <br>
-            <img src="https://img.shields.io/badge/Compra-100%25_Segura-green?style=for-the-badge&logo=shield" alt="Compra Segura" class="security-icons">
-            <p style="font-size: 12px; margin-top: 10px;">Garantia de 7 dias ou seu dinheiro de volta.</p>
+            
+            <p style="font-size: 12px; color: #777; margin-top: 15px;">🔒 Compra Segura via Kirvano/Ticto</p>
         </div>
 
         <div class="comments-section">
-            <div class="fb-header">12 Comentários</div>
+            <div class="fb-header">Mostrando 4 de 182 comentários</div>
 
             <div class="comment">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana" class="avatar">
+                <img src="https://randomuser.me/api/portraits/women/66.jpg" alt="Foto" class="avatar">
                 <div class="comment-body">
-                    <div class="name">Ana Paula Souza</div>
-                    <div class="text">Gente, eu achava que era mentira, mas em 3 dias desinchei muito! Minha calça jeans entrou folgada hoje. Obrigada por compartilhar! 😍</div>
-                    <div class="meta"><span class="like-icon">Curtir</span> · Responder · 2 min</div>
+                    <div class="name">Cláudia Martins</div>
+                    <div class="text">Gente, o suco de couve com limão e aquele ingrediente secreto salvou meu vestido de casamento. Entrei nele folgado!</div>
+                    <div class="meta">Curtir · Responder · 12 min</div>
                 </div>
             </div>
 
             <div class="comment">
-                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Marta" class="avatar">
+                <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Foto" class="avatar">
                 <div class="comment-body">
-                    <div class="name">Marta Oliveira</div>
-                    <div class="text">Meu marido nem acreditou quando me viu. Só façam, meninas. O suco 3 é o melhor.</div>
-                    <div class="meta"><span class="like-icon">Curtir</span> · Responder · 14 min</div>
+                    <div class="name">Patrícia Gomes</div>
+                    <div class="text">Paguei 19 reais, achava que era golpe, mas recebi o e-book na hora. As receitas são deliciosas.</div>
+                    <div class="meta">Curtir · Responder · 33 min</div>
                 </div>
             </div>
 
             <div class="comment">
-                <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Fernanda" class="avatar">
+                <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Foto" class="avatar">
                 <div class="comment-body">
-                    <div class="name">Fernanda Lima</div>
-                    <div class="text">Comprei semana passada. Vale cada centavo só pelas receitas de desintoxicação.</div>
-                    <div class="meta"><span class="like-icon">Curtir</span> · Responder · 1 h</div>
+                    <div class="name">Renata Silveira</div>
+                    <div class="text">Meu intestino funcionava a cada 3 dias, agora vai todo dia parecendo um relógio. Me sinto muito mais leve.</div>
+                    <div class="meta">Curtir · Responder · 1 h</div>
                 </div>
             </div>
 
         </div>
 
         <footer>
-            <p>Este site não faz parte do Facebook ou do Facebook Inc. Além disso, este site não é endossado pelo Facebook de nenhuma maneira.</p>
-            <br>
-            <a href="#">Termos de Uso</a> | <a href="#">Privacidade</a>
-            <br><br>
-            <p>&copy; 2026 Todos os direitos reservados.</p>
+            <p>Pirataria é crime. Produto exclusivo.<br>Este site não tem vínculo com o Facebook.</p>
         </footer>
 
     </div>
-
-    <script>
-        // 1. Script da Data Atual (Para dar senso de urgência)
-        const dataHoje = new Date();
-        const opcoes = { day: 'numeric', month: 'long', year: 'numeric' };
-        document.getElementById('data-hoje').innerText = dataHoje.toLocaleDateString('pt-BR', opcoes);
-
-        // 2. Script de Delay do Botão (O Pulo do Gato)
-        // Mude o número abaixo para os segundos que você quer (Ex: 600 = 10 minutos)
-        // Se quiser que apareça na hora pra testar, coloque 0
-        const tempoDelaySegundos = 600; 
-
-        setTimeout(function() {
-            document.getElementById('cta-box').style.display = 'block';
-        }, tempoDelaySegundos * 1000);
-    </script>
 
 </body>
 </html>
